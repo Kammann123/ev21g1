@@ -1,0 +1,82 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/GitHub/ev21g1/simulation/modelsim
+valu
+!s110 1621217312
+!i10b 1
+!s100 0dJW;TBR[CIF8jT0:a:VF2
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I5U:T@X2ged]f8geX8ZN@k2
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1621217301
+8C:/GitHub/ev21g1/modules/alu.v
+FC:/GitHub/ev21g1/modules/alu.v
+!i122 7
+L0 1 60
+Z3 OV;L;2020.1;71
+r1
+!s85 0
+31
+!s108 1621217312.000000
+!s107 C:/GitHub/ev21g1/modules/alu.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/GitHub/ev21g1/modules|C:/GitHub/ev21g1/modules/alu.v|
+!i113 1
+Z4 o-vlog01compat -work work
+!s92 -vlog01compat -work work +incdir+C:/GitHub/ev21g1/modules
+Z5 tCvgOpt 0
+valu_tb
+!s110 1621217314
+!i10b 1
+!s100 mQOS]]i;WZkY@j]SA=^<E2
+R1
+I^zYa]IETc]D4hmB>@TA?l3
+R2
+R0
+w1621215322
+8C:/GitHub/ev21g1/testbenches/alu_tb.v
+FC:/GitHub/ev21g1/testbenches/alu_tb.v
+!i122 8
+L0 1 130
+R3
+r1
+!s85 0
+31
+!s108 1621217314.000000
+!s107 C:/GitHub/ev21g1/testbenches/alu_tb.v|
+!s90 -reportprogress|300|-work|work|C:/GitHub/ev21g1/testbenches/alu_tb.v|
+!i113 1
+o-work work
+R5
+vhard_block
+!s110 1621216903
+!i10b 1
+!s100 RoHYIj49<hLOO^7Q39z3i0
+R1
+IA>1K;BkPlF@<KjHP_MZiz1
+R2
+R0
+w1621216887
+8ev21g1.vo
+Fev21g1.vo
+!i122 0
+L0 6117 34
+R3
+r1
+!s85 0
+31
+!s108 1621216903.000000
+!s107 ev21g1.vo|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+.|ev21g1.vo|
+!i113 1
+R4
+!s92 -vlog01compat -work work +incdir+.
+R5

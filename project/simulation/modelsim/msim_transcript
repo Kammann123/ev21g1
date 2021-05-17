@@ -1,0 +1,161 @@
+# Reading pref.tcl
+# do ev21g1_run_msim_gate_verilog.do
+# if {[file exists gate_work]} {
+# 	vdel -lib gate_work -all
+# }
+# vlib gate_work
+# vmap work gate_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work gate_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+. {ev21g1.vo}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:01:43 on May 16,2021
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+." ev21g1.vo 
+# -- Compiling module alu
+# -- Compiling module hard_block
+# 
+# Top level modules:
+# 	alu
+# End time: 23:01:43 on May 16,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vsim rtl_work.alu_tb
+# vsim rtl_work.alu_tb 
+# Start time: 23:01:52 on May 16,2021
+# Loading rtl_work.alu_tb
+# Loading rtl_work.alu
+add wave -position end  sim:/alu_tb/ina
+add wave -position end  sim:/alu_tb/inb
+add wave -position end  sim:/alu_tb/aluc
+add wave -position end  sim:/alu_tb/cin
+add wave -position end  sim:/alu_tb/out
+add wave -position end  sim:/alu_tb/cout
+add wave -position end  sim:/alu_tb/negative
+add wave -position end  sim:/alu_tb/zero
+add wave -position end  sim:/alu_tb/overflow
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: Lucas A. Kammann  Hostname: LAPTOP-QSA5NM2C  ProcessID: 7832
+#           Attempting to use alternate WLF file "./wlftgqv95t".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftgqv95t
+run -all
+vlog -work work C:/GitHub/ev21g1/testbenches/alu_tb.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:03:22 on May 16,2021
+# vlog -reportprogress 300 -work work C:/GitHub/ev21g1/testbenches/alu_tb.v 
+# -- Compiling module alu_tb
+# 
+# Top level modules:
+# 	alu_tb
+# End time: 23:03:22 on May 16,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+run -all
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run -all
+vlog -vlog01compat -work work +incdir+C:/GitHub/ev21g1/modules C:/GitHub/ev21g1/modules/alu.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:04:09 on May 16,2021
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/GitHub/ev21g1/modules" C:/GitHub/ev21g1/modules/alu.v 
+# -- Compiling module alu
+# 
+# Top level modules:
+# 	alu
+# End time: 23:04:10 on May 16,2021, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+restart -f
+run -all
+vlog -vlog01compat -work work +incdir+C:/GitHub/ev21g1/modules C:/GitHub/ev21g1/modules/alu.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:04:31 on May 16,2021
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/GitHub/ev21g1/modules" C:/GitHub/ev21g1/modules/alu.v 
+# -- Compiling module alu
+# 
+# Top level modules:
+# 	alu
+# End time: 23:04:32 on May 16,2021, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+vlog -work work C:/GitHub/ev21g1/testbenches/alu_tb.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:04:33 on May 16,2021
+# vlog -reportprogress 300 -work work C:/GitHub/ev21g1/testbenches/alu_tb.v 
+# -- Compiling module alu_tb
+# 
+# Top level modules:
+# 	alu_tb
+# End time: 23:04:33 on May 16,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+restart -f
+run -all
+vsim work.alu_tb
+# End time: 23:05:27 on May 16,2021, Elapsed time: 0:03:35
+# Errors: 0, Warnings: 0
+# vsim work.alu_tb 
+# Start time: 23:05:27 on May 16,2021
+# Loading work.alu_tb
+# Loading work.alu
+add wave -position end  sim:/alu_tb/ina
+add wave -position end  sim:/alu_tb/inb
+add wave -position end  sim:/alu_tb/aluc
+add wave -position end  sim:/alu_tb/cin
+add wave -position end  sim:/alu_tb/out
+add wave -position end  sim:/alu_tb/cout
+add wave -position end  sim:/alu_tb/negative
+add wave -position end  sim:/alu_tb/zero
+add wave -position end  sim:/alu_tb/overflow
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: Lucas A. Kammann  Hostname: LAPTOP-QSA5NM2C  ProcessID: 7832
+#           Attempting to use alternate WLF file "./wlftq04dkm".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftq04dkm
+run -all
+vlog -vlog01compat -work work +incdir+C:/GitHub/ev21g1/modules C:/GitHub/ev21g1/modules/alu.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:08:29 on May 16,2021
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/GitHub/ev21g1/modules" C:/GitHub/ev21g1/modules/alu.v 
+# -- Compiling module alu
+# 
+# Top level modules:
+# 	alu
+# End time: 23:08:30 on May 16,2021, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+vlog -work work C:/GitHub/ev21g1/testbenches/alu_tb.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:08:30 on May 16,2021
+# vlog -reportprogress 300 -work work C:/GitHub/ev21g1/testbenches/alu_tb.v 
+# -- Compiling module alu_tb
+# 
+# Top level modules:
+# 	alu_tb
+# End time: 23:08:30 on May 16,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -vlog01compat -work work +incdir+C:/GitHub/ev21g1/modules C:/GitHub/ev21g1/modules/alu.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:08:32 on May 16,2021
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/GitHub/ev21g1/modules" C:/GitHub/ev21g1/modules/alu.v 
+# -- Compiling module alu
+# 
+# Top level modules:
+# 	alu
+# End time: 23:08:32 on May 16,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -work work C:/GitHub/ev21g1/testbenches/alu_tb.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:08:34 on May 16,2021
+# vlog -reportprogress 300 -work work C:/GitHub/ev21g1/testbenches/alu_tb.v 
+# -- Compiling module alu_tb
+# 
+# Top level modules:
+# 	alu_tb
+# End time: 23:08:34 on May 16,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.alu_tb
+# Loading work.alu
+run -all
+# End time: 23:14:42 on May 16,2021, Elapsed time: 0:09:15
+# Errors: 0, Warnings: 0
