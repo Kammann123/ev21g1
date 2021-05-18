@@ -1,3 +1,8 @@
+/*
+ * register32
+ *
+ * 32-bit Register
+ */
 module register32(
 	in,	// 32 bit input
 	out,	// 32 bit output

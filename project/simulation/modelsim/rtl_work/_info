@@ -8,51 +8,75 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dC:/GitHub/ev21g1/simulation/modelsim
-valu
-!s110 1621215060
+Z0 dC:/GitHub/ev21g1/project/simulation/modelsim
+veregister32
+Z1 !s110 1621307329
 !i10b 1
-!s100 QD4BS`6ClHH5R@D9f@Uj03
-Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
-I7HJV7dOb:<^L^Tz_HVcb91
-Z2 VDg1SIo80bB@j0V0VzS_@n1
+!s100 14]B>=U0;?5e13M9=@cSA0
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I]PZ2?a8PL4E1Z^lABNC^K2
+Z3 VDg1SIo80bB@j0V0VzS_@n1
 R0
-w1621214795
-8C:/GitHub/ev21g1/modules/alu.v
-FC:/GitHub/ev21g1/modules/alu.v
-!i122 0
-L0 1 66
-Z3 OV;L;2020.1;71
+w1621307053
+8C:/GitHub/ev21g1/project/modules/eregister32.v
+FC:/GitHub/ev21g1/project/modules/eregister32.v
+!i122 1
+L0 1 47
+Z4 OV;L;2020.1;71
 r1
 !s85 0
 31
-!s108 1621215060.000000
-!s107 C:/GitHub/ev21g1/modules/alu.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/GitHub/ev21g1/modules|C:/GitHub/ev21g1/modules/alu.v|
+Z5 !s108 1621307329.000000
+!s107 C:/GitHub/ev21g1/project/modules/eregister32.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/GitHub/ev21g1/project/modules|C:/GitHub/ev21g1/project/modules/eregister32.v|
 !i113 1
-o-vlog01compat -work work
-!s92 -vlog01compat -work work +incdir+C:/GitHub/ev21g1/modules
-Z4 tCvgOpt 0
-valu_tb
-!s110 1621216826
+Z6 o-vlog01compat -work work
+Z7 !s92 -vlog01compat -work work +incdir+C:/GitHub/ev21g1/project/modules
+Z8 tCvgOpt 0
+veregister32_tb
+!s110 1621307352
 !i10b 1
-!s100 mQOS]]i;WZkY@j]SA=^<E2
-R1
-I^zYa]IETc]D4hmB>@TA?l3
+!s100 K=H[kdigSzDI6W;f<2EE43
 R2
-R0
-w1621215322
-8C:/GitHub/ev21g1/testbenches/alu_tb.v
-FC:/GitHub/ev21g1/testbenches/alu_tb.v
-!i122 13
-L0 1 130
+I4L6b=1fC53[Ba`>3FjNT31
 R3
+R0
+w1621306953
+8C:/GitHub/ev21g1/project/testbenches/eregister32_tb.v
+FC:/GitHub/ev21g1/project/testbenches/eregister32_tb.v
+!i122 2
+L0 1 80
+R4
 r1
 !s85 0
 31
-!s108 1621216826.000000
-!s107 C:/GitHub/ev21g1/testbenches/alu_tb.v|
-!s90 -reportprogress|300|-work|work|C:/GitHub/ev21g1/testbenches/alu_tb.v|
+!s108 1621307352.000000
+!s107 C:/GitHub/ev21g1/project/testbenches/eregister32_tb.v|
+!s90 -reportprogress|300|-work|work|C:/GitHub/ev21g1/project/testbenches/eregister32_tb.v|
 !i113 1
 o-work work
+R8
+vregister32
+R1
+!i10b 1
+!s100 EPWMTdHKbE74DReK^37]83
+R2
+I>MM9zM[aFLH4^SfH:S5:A0
+R3
+R0
+w1621219160
+8C:/GitHub/ev21g1/project/modules/register32.v
+FC:/GitHub/ev21g1/project/modules/register32.v
+!i122 0
+L0 1 25
 R4
+r1
+!s85 0
+31
+R5
+!s107 C:/GitHub/ev21g1/project/modules/register32.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/GitHub/ev21g1/project/modules|C:/GitHub/ev21g1/project/modules/register32.v|
+!i113 1
+R6
+R7
+R8

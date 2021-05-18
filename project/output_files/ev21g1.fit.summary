@@ -1,15 +1,15 @@
-Fitter Status : Successful - Sun May 16 23:01:18 2021
+Fitter Status : Successful - Tue May 18 00:07:07 2021
 Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 Revision Name : ev21g1
-Top-level Entity Name : alu
+Top-level Entity Name : eregister32
 Family : Cyclone IV E
 Device : EP4CE6F17C6
 Timing Models : Final
-Total logic elements : 248 / 6,272 ( 4 % )
-    Total combinational functions : 248 / 6,272 ( 4 % )
-    Dedicated logic registers : 0 / 6,272 ( 0 % )
-Total registers : 0
-Total pins : 105 / 180 ( 58 % )
+Total logic elements : 33 / 6,272 ( < 1 % )
+    Total combinational functions : 1 / 6,272 ( < 1 % )
+    Dedicated logic registers : 32 / 6,272 ( < 1 % )
+Total registers : 32
+Total pins : 67 / 180 ( 37 % )
 Total virtual pins : 0
 Total memory bits : 0 / 276,480 ( 0 % )
 Embedded Multiplier 9-bit elements : 0 / 30 ( 0 % )

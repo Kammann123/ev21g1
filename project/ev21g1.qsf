@@ -52,14 +52,16 @@ set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_symbol
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_signal_integrity
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_boundary_scan
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name VERILOG_FILE testbenches/register32_en_tri_tb.v
+set_global_assignment -name VERILOG_FILE modules/register32_en_tri.v
 set_global_assignment -name VERILOG_FILE testbenches/shifter_tb.v
 set_global_assignment -name VERILOG_FILE modules/shifter.v
 set_global_assignment -name VERILOG_FILE modules/alu.v
 set_global_assignment -name BDF_FILE ev21g1.bdf
 set_global_assignment -name VERILOG_FILE testbenches/alu_tb.v
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name VERILOG_FILE modules/register32.v
 set_global_assignment -name VERILOG_FILE modules/register16.v
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

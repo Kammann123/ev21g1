@@ -1,3 +1,9 @@
+/*
+ * alu
+ *
+ * Arithmetic logic unit (ALU) using input and output ports of 32-bit width, 4-bit width control
+ * line aluc to determine what operation to apply and some output ports for status flags.
+ */
 module alu(
 	ina,			// Input Bus A
 	inb,			// Input Bus B

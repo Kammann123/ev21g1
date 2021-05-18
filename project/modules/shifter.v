@@ -1,3 +1,8 @@
+/*
+ * shifter
+ *
+ * Shifter module for input and output ports of 32-bit width, using 3-bit width control line.
+ */
 module shifter(
 	in,	// Input bus
 	out,	// Output bus

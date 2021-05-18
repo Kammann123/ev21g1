@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ev21g1
-Sun May 16 23:01:09 2021
+Tue May 18 00:07:00 2021
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -13,12 +13,10 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. User-Specified and Inferred Latches
-  9. General Register Statistics
- 10. Multiplexer Restructuring Statistics (Restructuring Performed)
- 11. Post-Synthesis Netlist Statistics for Top Partition
- 12. Elapsed Time Per Partition
- 13. Analysis & Synthesis Messages
+  8. General Register Statistics
+  9. Post-Synthesis Netlist Statistics for Top Partition
+ 10. Elapsed Time Per Partition
+ 11. Analysis & Synthesis Messages
 
 
 
@@ -45,16 +43,16 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun May 16 23:01:09 2021       ;
+; Analysis & Synthesis Status        ; Successful - Tue May 18 00:07:00 2021       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; ev21g1                                      ;
-; Top-level Entity Name              ; alu                                         ;
+; Top-level Entity Name              ; eregister32                                 ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 248                                         ;
-;     Total combinational functions  ; 248                                         ;
-;     Dedicated logic registers      ; 0                                           ;
-; Total registers                    ; 0                                           ;
-; Total pins                         ; 105                                         ;
+; Total logic elements               ; 33                                          ;
+;     Total combinational functions  ; 1                                           ;
+;     Dedicated logic registers      ; 32                                          ;
+; Total registers                    ; 32                                          ;
+; Total pins                         ; 67                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -67,7 +65,7 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
-; Top-level entity name                                            ; alu                ; ev21g1             ;
+; Top-level entity name                                            ; eregister32        ; ev21g1             ;
 ; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
@@ -156,105 +154,64 @@ https://fpgasoftware.intel.com/eula.
 ; Maximum allowed            ; 2           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 2           ;
+; Maximum used               ; 1           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                 ;
-+----------------------------------+-----------------+------------------------+--------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path   ; Library ;
-+----------------------------------+-----------------+------------------------+--------------------------------+---------+
-; modules/alu.v                    ; yes             ; User Verilog HDL File  ; C:/GitHub/ev21g1/modules/alu.v ;         ;
-+----------------------------------+-----------------+------------------------+--------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                 ;
++----------------------------------+-----------------+------------------------+------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                   ; Library ;
++----------------------------------+-----------------+------------------------+------------------------------------------------+---------+
+; modules/register32.v             ; yes             ; User Verilog HDL File  ; C:/GitHub/ev21g1/project/modules/register32.v  ;         ;
+; modules/eregister32.v            ; yes             ; User Verilog HDL File  ; C:/GitHub/ev21g1/project/modules/eregister32.v ;         ;
++----------------------------------+-----------------+------------------------+------------------------------------------------+---------+
 
 
-+-------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                 ;
-+---------------------------------------------+---------------+
-; Resource                                    ; Usage         ;
-+---------------------------------------------+---------------+
-; Estimated Total logic elements              ; 248           ;
-;                                             ;               ;
-; Total combinational functions               ; 248           ;
-; Logic element usage by number of LUT inputs ;               ;
-;     -- 4 input functions                    ; 107           ;
-;     -- 3 input functions                    ; 108           ;
-;     -- <=2 input functions                  ; 33            ;
-;                                             ;               ;
-; Logic elements by mode                      ;               ;
-;     -- normal mode                          ; 186           ;
-;     -- arithmetic mode                      ; 62            ;
-;                                             ;               ;
-; Total registers                             ; 0             ;
-;     -- Dedicated logic registers            ; 0             ;
-;     -- I/O registers                        ; 0             ;
-;                                             ;               ;
-; I/O pins                                    ; 105           ;
-;                                             ;               ;
-; Embedded Multiplier 9-bit elements          ; 0             ;
-;                                             ;               ;
-; Maximum fan-out node                        ; aluc[1]~input ;
-; Maximum fan-out                             ; 86            ;
-; Total fan-out                               ; 957           ;
-; Average fan-out                             ; 2.09          ;
-+---------------------------------------------+---------------+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimated Total logic elements              ; 33    ;
+;                                             ;       ;
+; Total combinational functions               ; 1     ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 0     ;
+;     -- 3 input functions                    ; 0     ;
+;     -- <=2 input functions                  ; 1     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 1     ;
+;     -- arithmetic mode                      ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 32    ;
+;     -- Dedicated logic registers            ; 32    ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 67    ;
+;                                             ;       ;
+; Embedded Multiplier 9-bit elements          ; 0     ;
+;                                             ;       ;
+; Maximum fan-out node                        ; rclk  ;
+; Maximum fan-out                             ; 32    ;
+; Total fan-out                               ; 197   ;
+; Average fan-out                             ; 1.18  ;
++---------------------------------------------+-------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                      ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; |alu                       ; 248 (248)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 105  ; 0            ; |alu                ; alu         ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                            ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name       ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------+-------------+--------------+
+; |eregister32               ; 1 (1)               ; 32 (0)                    ; 0           ; 0            ; 0       ; 0         ; 67   ; 0            ; |eregister32              ; eregister32 ; work         ;
+;    |register32:r|          ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eregister32|register32:r ; register32  ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+----------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                ;
-+-----------------------------------------------------+---------------------+------------------------+
-; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
-+-----------------------------------------------------+---------------------+------------------------+
-; out[0]$latch                                        ; Mux32               ; yes                    ;
-; out[1]$latch                                        ; Mux32               ; yes                    ;
-; out[2]$latch                                        ; Mux32               ; yes                    ;
-; out[3]$latch                                        ; Mux32               ; yes                    ;
-; out[4]$latch                                        ; Mux32               ; yes                    ;
-; out[5]$latch                                        ; Mux32               ; yes                    ;
-; out[6]$latch                                        ; Mux32               ; yes                    ;
-; out[7]$latch                                        ; Mux32               ; yes                    ;
-; out[8]$latch                                        ; Mux32               ; yes                    ;
-; out[9]$latch                                        ; Mux32               ; yes                    ;
-; out[10]$latch                                       ; Mux32               ; yes                    ;
-; out[11]$latch                                       ; Mux32               ; yes                    ;
-; out[12]$latch                                       ; Mux32               ; yes                    ;
-; out[13]$latch                                       ; Mux32               ; yes                    ;
-; out[14]$latch                                       ; Mux32               ; yes                    ;
-; out[15]$latch                                       ; Mux32               ; yes                    ;
-; out[16]$latch                                       ; Mux32               ; yes                    ;
-; out[17]$latch                                       ; Mux32               ; yes                    ;
-; out[18]$latch                                       ; Mux32               ; yes                    ;
-; out[19]$latch                                       ; Mux32               ; yes                    ;
-; out[20]$latch                                       ; Mux32               ; yes                    ;
-; out[21]$latch                                       ; Mux32               ; yes                    ;
-; out[22]$latch                                       ; Mux32               ; yes                    ;
-; out[23]$latch                                       ; Mux32               ; yes                    ;
-; out[24]$latch                                       ; Mux32               ; yes                    ;
-; out[25]$latch                                       ; Mux32               ; yes                    ;
-; out[26]$latch                                       ; Mux32               ; yes                    ;
-; out[27]$latch                                       ; Mux32               ; yes                    ;
-; out[28]$latch                                       ; Mux32               ; yes                    ;
-; out[29]$latch                                       ; Mux32               ; yes                    ;
-; out[30]$latch                                       ; Mux32               ; yes                    ;
-; out[31]$latch                                       ; Mux32               ; yes                    ;
-; Number of user-specified and inferred latches = 32  ;                     ;                        ;
-+-----------------------------------------------------+---------------------+------------------------+
-Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
 +------------------------------------------------------+
@@ -262,7 +219,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 0     ;
+; Total registers                              ; 32    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -272,34 +229,21 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 11:1               ; 32 bits   ; 224 LEs       ; 224 LEs              ; 0 LEs                  ; No         ; |alu|Mux0                  ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-
-
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 105                         ;
-; cycloneiii_lcell_comb ; 250                         ;
-;     arith             ; 62                          ;
-;         2 data inputs ; 30                          ;
-;         3 data inputs ; 32                          ;
-;     normal            ; 188                         ;
-;         0 data inputs ; 1                           ;
-;         1 data inputs ; 2                           ;
-;         2 data inputs ; 2                           ;
-;         3 data inputs ; 76                          ;
-;         4 data inputs ; 107                         ;
+; boundary_port         ; 67                          ;
+; cycloneiii_ff         ; 32                          ;
+;     plain             ; 32                          ;
+; cycloneiii_io_obuf    ; 32                          ;
+; cycloneiii_lcell_comb ; 1                           ;
+;     normal            ; 1                           ;
+;         2 data inputs ; 1                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 10.10                       ;
-; Average LUT depth     ; 7.56                        ;
+; Max LUT depth         ; 1.00                        ;
+; Average LUT depth     ; 0.03                        ;
 +-----------------------+-----------------------------+
 
 
@@ -308,7 +252,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:02     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -318,132 +262,41 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Sun May 16 23:00:53 2021
+    Info: Processing started: Tue May 18 00:06:47 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ev21g1 -c ev21g1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file testbenches/shifter_tb.v
-    Info (12023): Found entity 1: shifter_tb File: C:/GitHub/ev21g1/testbenches/shifter_tb.v Line: 1
+    Info (12023): Found entity 1: shifter_tb File: C:/GitHub/ev21g1/project/testbenches/shifter_tb.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file modules/shifter.v
-    Info (12023): Found entity 1: shifter File: C:/GitHub/ev21g1/modules/shifter.v Line: 1
+    Info (12023): Found entity 1: shifter File: C:/GitHub/ev21g1/project/modules/shifter.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file modules/alu.v
-    Info (12023): Found entity 1: alu File: C:/GitHub/ev21g1/modules/alu.v Line: 1
+    Info (12023): Found entity 1: alu File: C:/GitHub/ev21g1/project/modules/alu.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file ev21g1.bdf
     Info (12023): Found entity 1: ev21g1
 Info (12021): Found 1 design units, including 1 entities, in source file testbenches/alu_tb.v
-    Info (12023): Found entity 1: alu_tb File: C:/GitHub/ev21g1/testbenches/alu_tb.v Line: 1
-Info (12127): Elaborating entity "alu" for the top level hierarchy
-Warning (10240): Verilog HDL Always Construct warning at alu.v(33): inferring latch(es) for variable "out", which holds its previous value in one or more paths through the always construct File: C:/GitHub/ev21g1/modules/alu.v Line: 33
-Warning (10034): Output port "cout" at alu.v(25) has no driver File: C:/GitHub/ev21g1/modules/alu.v Line: 25
-Info (10041): Inferred latch for "out[0]" at alu.v(33) File: C:/GitHub/ev21g1/modules/alu.v Line: 33
-Info (10041): Inferred latch for "out[1]" at alu.v(33) File: C:/GitHub/ev21g1/modules/alu.v Line: 33
-Info (10041): Inferred latch for "out[2]" at alu.v(33) File: C:/GitHub/ev21g1/modules/alu.v Line: 33
-Info (10041): Inferred latch for "out[3]" at alu.v(33) File: C:/GitHub/ev21g1/modules/alu.v Line: 33
-Info (10041): Inferred latch for "out[4]" at alu.v(33) File: C:/GitHub/ev21g1/modules/alu.v Line: 33
-Info (10041): Inferred latch for "out[5]" at alu.v(33) File: C:/GitHub/ev21g1/modules/alu.v Line: 33
-Info (10041): Inferred latch for "out[6]" at alu.v(33) File: C:/GitHub/ev21g1/modules/alu.v Line: 33
-Info (10041): Inferred latch for "out[7]" at alu.v(33) File: C:/GitHub/ev21g1/modules/alu.v Line: 33
-Info (10041): Inferred latch for "out[8]" at alu.v(33) File: C:/GitHub/ev21g1/modules/alu.v Line: 33
-Info (10041): Inferred latch for "out[9]" at alu.v(33) File: C:/GitHub/ev21g1/modules/alu.v Line: 33
-Info (10041): Inferred latch for "out[10]" at alu.v(33) File: C:/GitHub/ev21g1/modules/alu.v Line: 33
-Info (10041): Inferred latch for "out[11]" at alu.v(33) File: C:/GitHub/ev21g1/modules/alu.v Line: 33
-Info (10041): Inferred latch for "out[12]" at alu.v(33) File: C:/GitHub/ev21g1/modules/alu.v Line: 33
-Info (10041): Inferred latch for "out[13]" at alu.v(33) File: C:/GitHub/ev21g1/modules/alu.v Line: 33
-Info (10041): Inferred latch for "out[14]" at alu.v(33) File: C:/GitHub/ev21g1/modules/alu.v Line: 33
-Info (10041): Inferred latch for "out[15]" at alu.v(33) File: C:/GitHub/ev21g1/modules/alu.v Line: 33
-Info (10041): Inferred latch for "out[16]" at alu.v(33) File: C:/GitHub/ev21g1/modules/alu.v Line: 33
-Info (10041): Inferred latch for "out[17]" at alu.v(33) File: C:/GitHub/ev21g1/modules/alu.v Line: 33
-Info (10041): Inferred latch for "out[18]" at alu.v(33) File: C:/GitHub/ev21g1/modules/alu.v Line: 33
-Info (10041): Inferred latch for "out[19]" at alu.v(33) File: C:/GitHub/ev21g1/modules/alu.v Line: 33
-Info (10041): Inferred latch for "out[20]" at alu.v(33) File: C:/GitHub/ev21g1/modules/alu.v Line: 33
-Info (10041): Inferred latch for "out[21]" at alu.v(33) File: C:/GitHub/ev21g1/modules/alu.v Line: 33
-Info (10041): Inferred latch for "out[22]" at alu.v(33) File: C:/GitHub/ev21g1/modules/alu.v Line: 33
-Info (10041): Inferred latch for "out[23]" at alu.v(33) File: C:/GitHub/ev21g1/modules/alu.v Line: 33
-Info (10041): Inferred latch for "out[24]" at alu.v(33) File: C:/GitHub/ev21g1/modules/alu.v Line: 33
-Info (10041): Inferred latch for "out[25]" at alu.v(33) File: C:/GitHub/ev21g1/modules/alu.v Line: 33
-Info (10041): Inferred latch for "out[26]" at alu.v(33) File: C:/GitHub/ev21g1/modules/alu.v Line: 33
-Info (10041): Inferred latch for "out[27]" at alu.v(33) File: C:/GitHub/ev21g1/modules/alu.v Line: 33
-Info (10041): Inferred latch for "out[28]" at alu.v(33) File: C:/GitHub/ev21g1/modules/alu.v Line: 33
-Info (10041): Inferred latch for "out[29]" at alu.v(33) File: C:/GitHub/ev21g1/modules/alu.v Line: 33
-Info (10041): Inferred latch for "out[30]" at alu.v(33) File: C:/GitHub/ev21g1/modules/alu.v Line: 33
-Info (10041): Inferred latch for "out[31]" at alu.v(33) File: C:/GitHub/ev21g1/modules/alu.v Line: 33
-Warning (13012): Latch out[0]$latch has unsafe behavior File: C:/GitHub/ev21g1/modules/alu.v Line: 33
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal aluc[3] File: C:/GitHub/ev21g1/modules/alu.v Line: 18
-Warning (13012): Latch out[1]$latch has unsafe behavior File: C:/GitHub/ev21g1/modules/alu.v Line: 33
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal aluc[1] File: C:/GitHub/ev21g1/modules/alu.v Line: 18
-Warning (13012): Latch out[2]$latch has unsafe behavior File: C:/GitHub/ev21g1/modules/alu.v Line: 33
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal aluc[1] File: C:/GitHub/ev21g1/modules/alu.v Line: 18
-Warning (13012): Latch out[3]$latch has unsafe behavior File: C:/GitHub/ev21g1/modules/alu.v Line: 33
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal aluc[1] File: C:/GitHub/ev21g1/modules/alu.v Line: 18
-Warning (13012): Latch out[4]$latch has unsafe behavior File: C:/GitHub/ev21g1/modules/alu.v Line: 33
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal aluc[1] File: C:/GitHub/ev21g1/modules/alu.v Line: 18
-Warning (13012): Latch out[5]$latch has unsafe behavior File: C:/GitHub/ev21g1/modules/alu.v Line: 33
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal aluc[1] File: C:/GitHub/ev21g1/modules/alu.v Line: 18
-Warning (13012): Latch out[6]$latch has unsafe behavior File: C:/GitHub/ev21g1/modules/alu.v Line: 33
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal aluc[1] File: C:/GitHub/ev21g1/modules/alu.v Line: 18
-Warning (13012): Latch out[7]$latch has unsafe behavior File: C:/GitHub/ev21g1/modules/alu.v Line: 33
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal aluc[1] File: C:/GitHub/ev21g1/modules/alu.v Line: 18
-Warning (13012): Latch out[8]$latch has unsafe behavior File: C:/GitHub/ev21g1/modules/alu.v Line: 33
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal aluc[1] File: C:/GitHub/ev21g1/modules/alu.v Line: 18
-Warning (13012): Latch out[9]$latch has unsafe behavior File: C:/GitHub/ev21g1/modules/alu.v Line: 33
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal aluc[1] File: C:/GitHub/ev21g1/modules/alu.v Line: 18
-Warning (13012): Latch out[10]$latch has unsafe behavior File: C:/GitHub/ev21g1/modules/alu.v Line: 33
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal aluc[1] File: C:/GitHub/ev21g1/modules/alu.v Line: 18
-Warning (13012): Latch out[11]$latch has unsafe behavior File: C:/GitHub/ev21g1/modules/alu.v Line: 33
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal aluc[1] File: C:/GitHub/ev21g1/modules/alu.v Line: 18
-Warning (13012): Latch out[12]$latch has unsafe behavior File: C:/GitHub/ev21g1/modules/alu.v Line: 33
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal aluc[1] File: C:/GitHub/ev21g1/modules/alu.v Line: 18
-Warning (13012): Latch out[13]$latch has unsafe behavior File: C:/GitHub/ev21g1/modules/alu.v Line: 33
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal aluc[1] File: C:/GitHub/ev21g1/modules/alu.v Line: 18
-Warning (13012): Latch out[14]$latch has unsafe behavior File: C:/GitHub/ev21g1/modules/alu.v Line: 33
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal aluc[1] File: C:/GitHub/ev21g1/modules/alu.v Line: 18
-Warning (13012): Latch out[15]$latch has unsafe behavior File: C:/GitHub/ev21g1/modules/alu.v Line: 33
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal aluc[1] File: C:/GitHub/ev21g1/modules/alu.v Line: 18
-Warning (13012): Latch out[16]$latch has unsafe behavior File: C:/GitHub/ev21g1/modules/alu.v Line: 33
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal aluc[1] File: C:/GitHub/ev21g1/modules/alu.v Line: 18
-Warning (13012): Latch out[17]$latch has unsafe behavior File: C:/GitHub/ev21g1/modules/alu.v Line: 33
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal aluc[1] File: C:/GitHub/ev21g1/modules/alu.v Line: 18
-Warning (13012): Latch out[18]$latch has unsafe behavior File: C:/GitHub/ev21g1/modules/alu.v Line: 33
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal aluc[1] File: C:/GitHub/ev21g1/modules/alu.v Line: 18
-Warning (13012): Latch out[19]$latch has unsafe behavior File: C:/GitHub/ev21g1/modules/alu.v Line: 33
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal aluc[1] File: C:/GitHub/ev21g1/modules/alu.v Line: 18
-Warning (13012): Latch out[20]$latch has unsafe behavior File: C:/GitHub/ev21g1/modules/alu.v Line: 33
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal aluc[1] File: C:/GitHub/ev21g1/modules/alu.v Line: 18
-Warning (13012): Latch out[21]$latch has unsafe behavior File: C:/GitHub/ev21g1/modules/alu.v Line: 33
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal aluc[1] File: C:/GitHub/ev21g1/modules/alu.v Line: 18
-Warning (13012): Latch out[22]$latch has unsafe behavior File: C:/GitHub/ev21g1/modules/alu.v Line: 33
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal aluc[1] File: C:/GitHub/ev21g1/modules/alu.v Line: 18
-Warning (13012): Latch out[23]$latch has unsafe behavior File: C:/GitHub/ev21g1/modules/alu.v Line: 33
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal aluc[1] File: C:/GitHub/ev21g1/modules/alu.v Line: 18
-Warning (13012): Latch out[24]$latch has unsafe behavior File: C:/GitHub/ev21g1/modules/alu.v Line: 33
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal aluc[1] File: C:/GitHub/ev21g1/modules/alu.v Line: 18
-Warning (13012): Latch out[25]$latch has unsafe behavior File: C:/GitHub/ev21g1/modules/alu.v Line: 33
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal aluc[1] File: C:/GitHub/ev21g1/modules/alu.v Line: 18
-Warning (13012): Latch out[26]$latch has unsafe behavior File: C:/GitHub/ev21g1/modules/alu.v Line: 33
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal aluc[1] File: C:/GitHub/ev21g1/modules/alu.v Line: 18
-Warning (13012): Latch out[27]$latch has unsafe behavior File: C:/GitHub/ev21g1/modules/alu.v Line: 33
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal aluc[1] File: C:/GitHub/ev21g1/modules/alu.v Line: 18
-Warning (13012): Latch out[28]$latch has unsafe behavior File: C:/GitHub/ev21g1/modules/alu.v Line: 33
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal aluc[1] File: C:/GitHub/ev21g1/modules/alu.v Line: 18
-Warning (13012): Latch out[29]$latch has unsafe behavior File: C:/GitHub/ev21g1/modules/alu.v Line: 33
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal aluc[1] File: C:/GitHub/ev21g1/modules/alu.v Line: 18
-Warning (13012): Latch out[30]$latch has unsafe behavior File: C:/GitHub/ev21g1/modules/alu.v Line: 33
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal aluc[1] File: C:/GitHub/ev21g1/modules/alu.v Line: 18
-Warning (13012): Latch out[31]$latch has unsafe behavior File: C:/GitHub/ev21g1/modules/alu.v Line: 33
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal aluc[1] File: C:/GitHub/ev21g1/modules/alu.v Line: 18
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "cout" is stuck at GND File: C:/GitHub/ev21g1/modules/alu.v Line: 25
+    Info (12023): Found entity 1: alu_tb File: C:/GitHub/ev21g1/project/testbenches/alu_tb.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file modules/register32.v
+    Info (12023): Found entity 1: register32 File: C:/GitHub/ev21g1/project/modules/register32.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file modules/register16.v
+    Info (12023): Found entity 1: register16 File: C:/GitHub/ev21g1/project/modules/register16.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file modules/eregister32.v
+    Info (12023): Found entity 1: eregister32 File: C:/GitHub/ev21g1/project/modules/eregister32.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file testbenches/eregister32_tb.v
+    Info (12023): Found entity 1: eregister32_tb File: C:/GitHub/ev21g1/project/testbenches/eregister32_tb.v Line: 1
+Info (12127): Elaborating entity "eregister32" for the top level hierarchy
+Info (12128): Elaborating entity "register32" for hierarchy "register32:r" File: C:/GitHub/ev21g1/project/modules/eregister32.v Line: 35
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 353 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 69 input pins
-    Info (21059): Implemented 36 output pins
-    Info (21061): Implemented 248 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 69 warnings
-    Info: Peak virtual memory: 4728 megabytes
-    Info: Processing ended: Sun May 16 23:01:09 2021
-    Info: Elapsed time: 00:00:16
-    Info: Total CPU time (on all processors): 00:00:33
+Info (21057): Implemented 100 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 35 input pins
+    Info (21059): Implemented 32 output pins
+    Info (21061): Implemented 33 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4722 megabytes
+    Info: Processing ended: Tue May 18 00:07:00 2021
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:30
 
 

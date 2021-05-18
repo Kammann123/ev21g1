@@ -132,291 +132,143 @@
 					"strict" : false
 				},
 				{
-					"name" : "negative",
+					"name" : "eno",
 					"strict" : false
 				},
 				{
-					"name" : "zero",
+					"name" : "in[0]",
 					"strict" : false
 				},
 				{
-					"name" : "overflow",
+					"name" : "in[1]",
 					"strict" : false
 				},
 				{
-					"name" : "inb[31]",
+					"name" : "in[2]",
 					"strict" : false
 				},
 				{
-					"name" : "ina[31]",
+					"name" : "in[3]",
 					"strict" : false
 				},
 				{
-					"name" : "aluc[2]",
+					"name" : "in[4]",
 					"strict" : false
 				},
 				{
-					"name" : "aluc[3]",
+					"name" : "in[5]",
 					"strict" : false
 				},
 				{
-					"name" : "aluc[1]",
+					"name" : "in[6]",
 					"strict" : false
 				},
 				{
-					"name" : "aluc[0]",
+					"name" : "in[7]",
 					"strict" : false
 				},
 				{
-					"name" : "inb[0]",
+					"name" : "in[8]",
 					"strict" : false
 				},
 				{
-					"name" : "ina[0]",
+					"name" : "in[9]",
 					"strict" : false
 				},
 				{
-					"name" : "cin",
+					"name" : "in[10]",
 					"strict" : false
 				},
 				{
-					"name" : "inb[1]",
+					"name" : "in[11]",
 					"strict" : false
 				},
 				{
-					"name" : "ina[1]",
+					"name" : "in[12]",
 					"strict" : false
 				},
 				{
-					"name" : "inb[2]",
+					"name" : "in[13]",
 					"strict" : false
 				},
 				{
-					"name" : "ina[2]",
+					"name" : "in[14]",
 					"strict" : false
 				},
 				{
-					"name" : "inb[3]",
+					"name" : "in[15]",
 					"strict" : false
 				},
 				{
-					"name" : "ina[3]",
+					"name" : "in[16]",
 					"strict" : false
 				},
 				{
-					"name" : "inb[4]",
+					"name" : "in[17]",
 					"strict" : false
 				},
 				{
-					"name" : "ina[4]",
+					"name" : "in[18]",
 					"strict" : false
 				},
 				{
-					"name" : "inb[5]",
+					"name" : "in[19]",
 					"strict" : false
 				},
 				{
-					"name" : "ina[5]",
+					"name" : "in[20]",
 					"strict" : false
 				},
 				{
-					"name" : "inb[6]",
+					"name" : "in[21]",
 					"strict" : false
 				},
 				{
-					"name" : "ina[6]",
+					"name" : "in[22]",
 					"strict" : false
 				},
 				{
-					"name" : "inb[7]",
+					"name" : "in[23]",
 					"strict" : false
 				},
 				{
-					"name" : "ina[7]",
+					"name" : "in[24]",
 					"strict" : false
 				},
 				{
-					"name" : "inb[8]",
+					"name" : "in[25]",
 					"strict" : false
 				},
 				{
-					"name" : "ina[8]",
+					"name" : "in[26]",
 					"strict" : false
 				},
 				{
-					"name" : "inb[9]",
+					"name" : "in[27]",
 					"strict" : false
 				},
 				{
-					"name" : "ina[9]",
+					"name" : "in[28]",
 					"strict" : false
 				},
 				{
-					"name" : "inb[10]",
+					"name" : "in[29]",
 					"strict" : false
 				},
 				{
-					"name" : "ina[10]",
+					"name" : "in[30]",
 					"strict" : false
 				},
 				{
-					"name" : "inb[11]",
+					"name" : "in[31]",
 					"strict" : false
 				},
 				{
-					"name" : "ina[11]",
+					"name" : "eni",
 					"strict" : false
 				},
 				{
-					"name" : "inb[12]",
-					"strict" : false
-				},
-				{
-					"name" : "ina[12]",
-					"strict" : false
-				},
-				{
-					"name" : "inb[13]",
-					"strict" : false
-				},
-				{
-					"name" : "ina[13]",
-					"strict" : false
-				},
-				{
-					"name" : "inb[14]",
-					"strict" : false
-				},
-				{
-					"name" : "ina[14]",
-					"strict" : false
-				},
-				{
-					"name" : "inb[15]",
-					"strict" : false
-				},
-				{
-					"name" : "ina[15]",
-					"strict" : false
-				},
-				{
-					"name" : "inb[16]",
-					"strict" : false
-				},
-				{
-					"name" : "ina[16]",
-					"strict" : false
-				},
-				{
-					"name" : "inb[17]",
-					"strict" : false
-				},
-				{
-					"name" : "ina[17]",
-					"strict" : false
-				},
-				{
-					"name" : "inb[18]",
-					"strict" : false
-				},
-				{
-					"name" : "ina[18]",
-					"strict" : false
-				},
-				{
-					"name" : "inb[19]",
-					"strict" : false
-				},
-				{
-					"name" : "ina[19]",
-					"strict" : false
-				},
-				{
-					"name" : "inb[20]",
-					"strict" : false
-				},
-				{
-					"name" : "ina[20]",
-					"strict" : false
-				},
-				{
-					"name" : "inb[21]",
-					"strict" : false
-				},
-				{
-					"name" : "ina[21]",
-					"strict" : false
-				},
-				{
-					"name" : "inb[22]",
-					"strict" : false
-				},
-				{
-					"name" : "ina[22]",
-					"strict" : false
-				},
-				{
-					"name" : "inb[23]",
-					"strict" : false
-				},
-				{
-					"name" : "ina[23]",
-					"strict" : false
-				},
-				{
-					"name" : "inb[24]",
-					"strict" : false
-				},
-				{
-					"name" : "ina[24]",
-					"strict" : false
-				},
-				{
-					"name" : "inb[25]",
-					"strict" : false
-				},
-				{
-					"name" : "ina[25]",
-					"strict" : false
-				},
-				{
-					"name" : "inb[26]",
-					"strict" : false
-				},
-				{
-					"name" : "ina[26]",
-					"strict" : false
-				},
-				{
-					"name" : "inb[27]",
-					"strict" : false
-				},
-				{
-					"name" : "ina[27]",
-					"strict" : false
-				},
-				{
-					"name" : "inb[28]",
-					"strict" : false
-				},
-				{
-					"name" : "ina[28]",
-					"strict" : false
-				},
-				{
-					"name" : "inb[29]",
-					"strict" : false
-				},
-				{
-					"name" : "ina[29]",
-					"strict" : false
-				},
-				{
-					"name" : "inb[30]",
-					"strict" : false
-				},
-				{
-					"name" : "ina[30]",
+					"name" : "clk",
 					"strict" : false
 				}
 			]

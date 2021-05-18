@@ -1,3 +1,8 @@
+/*
+ * register16
+ *
+ * 16-bit Register
+ */
 module register16(
 	in,	// 16 bit input
 	out,	// 16 bit output

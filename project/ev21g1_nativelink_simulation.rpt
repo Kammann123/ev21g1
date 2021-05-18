@@ -1,183 +1,23 @@
 Info: Start Nativelink Simulation process
+Info: NativeLink has detected Verilog design -- Verilog simulation models will be used
 
 ========= EDA Simulation Settings =====================
 
-Sim Mode              :  Gate
+Sim Mode              :  RTL
 Family                :  cycloneive
 Quartus root          :  c:/intelfpga_lite/20.1/quartus/bin64/
 Quartus sim root      :  c:/intelfpga_lite/20.1/quartus/eda/sim_lib
 Simulation Tool       :  modelsim-altera
 Simulation Language   :  verilog
 Simulation Mode       :  GUI
-Sim Output File       :  ev21g1.vo
-Sim SDF file          :  ev21g1__verilog.sdo
+Sim Output File       :  
+Sim SDF file          :  
 Sim dir               :  simulation\modelsim
 
 =======================================================
 
 Info: Starting NativeLink simulation with ModelSim-Altera software
 Sourced NativeLink script c:/intelfpga_lite/20.1/quartus/common/tcl/internal/nativelink/modelsim.tcl
-Warning: File ev21g1_run_msim_gate_verilog.do already exists - backing up current file as ev21g1_run_msim_gate_verilog.do.bak8
-Probing transcript
-ModelSim-Altera Info: # Reading pref.tcl
-ModelSim-Altera Info: # do ev21g1_run_msim_gate_verilog.do
-ModelSim-Altera Info: # if {[file exists gate_work]} {
-ModelSim-Altera Info: # 	vdel -lib gate_work -all
-ModelSim-Altera Info: # }
-ModelSim-Altera Info: # vlib gate_work
-ModelSim-Altera Info: # vmap work gate_work
-ModelSim-Altera Info: # Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
-ModelSim-Altera Info: # vmap work gate_work 
-ModelSim-Altera Info: # Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
-ModelSim-Altera Info: # Modifying modelsim.ini
-ModelSim-Altera Info: # 
-ModelSim-Altera Info: # vlog -vlog01compat -work work +incdir+. {ev21g1.vo}
-ModelSim-Altera Info: # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-ModelSim-Altera Info: # Start time: 23:01:43 on May 16,2021
-ModelSim-Altera Info: # vlog -reportprogress 300 -vlog01compat -work work "+incdir+." ev21g1.vo 
-ModelSim-Altera Info: # -- Compiling module alu
-ModelSim-Altera Info: # -- Compiling module hard_block
-ModelSim-Altera Info: # 
-ModelSim-Altera Info: # Top level modules:
-ModelSim-Altera Info: # 	alu
-ModelSim-Altera Info: # End time: 23:01:43 on May 16,2021, Elapsed time: 0:00:00
-ModelSim-Altera Info: # Errors: 0, Warnings: 0
-ModelSim-Altera Info: # 
-ModelSim-Altera Info: vsim rtl_work.alu_tb
-ModelSim-Altera Info: # vsim rtl_work.alu_tb 
-ModelSim-Altera Info: # Start time: 23:01:52 on May 16,2021
-ModelSim-Altera Info: # Loading rtl_work.alu_tb
-ModelSim-Altera Info: # Loading rtl_work.alu
-ModelSim-Altera Info: add wave -position end  sim:/alu_tb/ina
-ModelSim-Altera Info: add wave -position end  sim:/alu_tb/inb
-ModelSim-Altera Info: add wave -position end  sim:/alu_tb/aluc
-ModelSim-Altera Info: add wave -position end  sim:/alu_tb/cin
-ModelSim-Altera Info: add wave -position end  sim:/alu_tb/out
-ModelSim-Altera Info: add wave -position end  sim:/alu_tb/cout
-ModelSim-Altera Info: add wave -position end  sim:/alu_tb/negative
-ModelSim-Altera Info: add wave -position end  sim:/alu_tb/zero
-ModelSim-Altera Info: add wave -position end  sim:/alu_tb/overflow
-ModelSim-Altera Warning: # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-ModelSim-Altera Info: #           File in use by: Lucas A. Kammann  Hostname: LAPTOP-QSA5NM2C  ProcessID: 7832
-ModelSim-Altera Info: #           Attempting to use alternate WLF file "./wlftgqv95t".
-ModelSim-Altera Warning: # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-ModelSim-Altera Info: #           Using alternate file: ./wlftgqv95t
-ModelSim-Altera Info: run -all
-ModelSim-Altera Info: vlog -work work C:/GitHub/ev21g1/testbenches/alu_tb.v
-ModelSim-Altera Info: # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-ModelSim-Altera Info: # Start time: 23:03:22 on May 16,2021
-ModelSim-Altera Info: # vlog -reportprogress 300 -work work C:/GitHub/ev21g1/testbenches/alu_tb.v 
-ModelSim-Altera Info: # -- Compiling module alu_tb
-ModelSim-Altera Info: # 
-ModelSim-Altera Info: # Top level modules:
-ModelSim-Altera Info: # 	alu_tb
-ModelSim-Altera Info: # End time: 23:03:22 on May 16,2021, Elapsed time: 0:00:00
-ModelSim-Altera Info: # Errors: 0, Warnings: 0
-ModelSim-Altera Info: run -all
-ModelSim-Altera Info: restart -f
-ModelSim-Altera Info: # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-ModelSim-Altera Info: run -all
-ModelSim-Altera Info: vlog -vlog01compat -work work +incdir+C:/GitHub/ev21g1/modules C:/GitHub/ev21g1/modules/alu.v
-ModelSim-Altera Info: # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-ModelSim-Altera Info: # Start time: 23:04:09 on May 16,2021
-ModelSim-Altera Info: # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/GitHub/ev21g1/modules" C:/GitHub/ev21g1/modules/alu.v 
-ModelSim-Altera Info: # -- Compiling module alu
-ModelSim-Altera Info: # 
-ModelSim-Altera Info: # Top level modules:
-ModelSim-Altera Info: # 	alu
-ModelSim-Altera Info: # End time: 23:04:10 on May 16,2021, Elapsed time: 0:00:01
-ModelSim-Altera Info: # Errors: 0, Warnings: 0
-ModelSim-Altera Info: restart -f
-ModelSim-Altera Info: run -all
-ModelSim-Altera Info: vlog -vlog01compat -work work +incdir+C:/GitHub/ev21g1/modules C:/GitHub/ev21g1/modules/alu.v
-ModelSim-Altera Info: # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-ModelSim-Altera Info: # Start time: 23:04:31 on May 16,2021
-ModelSim-Altera Info: # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/GitHub/ev21g1/modules" C:/GitHub/ev21g1/modules/alu.v 
-ModelSim-Altera Info: # -- Compiling module alu
-ModelSim-Altera Info: # 
-ModelSim-Altera Info: # Top level modules:
-ModelSim-Altera Info: # 	alu
-ModelSim-Altera Info: # End time: 23:04:32 on May 16,2021, Elapsed time: 0:00:01
-ModelSim-Altera Info: # Errors: 0, Warnings: 0
-ModelSim-Altera Info: vlog -work work C:/GitHub/ev21g1/testbenches/alu_tb.v
-ModelSim-Altera Info: # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-ModelSim-Altera Info: # Start time: 23:04:33 on May 16,2021
-ModelSim-Altera Info: # vlog -reportprogress 300 -work work C:/GitHub/ev21g1/testbenches/alu_tb.v 
-ModelSim-Altera Info: # -- Compiling module alu_tb
-ModelSim-Altera Info: # 
-ModelSim-Altera Info: # Top level modules:
-ModelSim-Altera Info: # 	alu_tb
-ModelSim-Altera Info: # End time: 23:04:33 on May 16,2021, Elapsed time: 0:00:00
-ModelSim-Altera Info: # Errors: 0, Warnings: 0
-ModelSim-Altera Info: restart -f
-ModelSim-Altera Info: run -all
-ModelSim-Altera Info: vsim work.alu_tb
-ModelSim-Altera Info: # End time: 23:05:27 on May 16,2021, Elapsed time: 0:03:35
-ModelSim-Altera Info: # Errors: 0, Warnings: 0
-ModelSim-Altera Info: # vsim work.alu_tb 
-ModelSim-Altera Info: # Start time: 23:05:27 on May 16,2021
-ModelSim-Altera Info: # Loading work.alu_tb
-ModelSim-Altera Info: # Loading work.alu
-ModelSim-Altera Info: add wave -position end  sim:/alu_tb/ina
-ModelSim-Altera Info: add wave -position end  sim:/alu_tb/inb
-ModelSim-Altera Info: add wave -position end  sim:/alu_tb/aluc
-ModelSim-Altera Info: add wave -position end  sim:/alu_tb/cin
-ModelSim-Altera Info: add wave -position end  sim:/alu_tb/out
-ModelSim-Altera Info: add wave -position end  sim:/alu_tb/cout
-ModelSim-Altera Info: add wave -position end  sim:/alu_tb/negative
-ModelSim-Altera Info: add wave -position end  sim:/alu_tb/zero
-ModelSim-Altera Info: add wave -position end  sim:/alu_tb/overflow
-ModelSim-Altera Warning: # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-ModelSim-Altera Info: #           File in use by: Lucas A. Kammann  Hostname: LAPTOP-QSA5NM2C  ProcessID: 7832
-ModelSim-Altera Info: #           Attempting to use alternate WLF file "./wlftq04dkm".
-ModelSim-Altera Warning: # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-ModelSim-Altera Info: #           Using alternate file: ./wlftq04dkm
-ModelSim-Altera Info: run -all
-ModelSim-Altera Info: vlog -vlog01compat -work work +incdir+C:/GitHub/ev21g1/modules C:/GitHub/ev21g1/modules/alu.v
-ModelSim-Altera Info: # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-ModelSim-Altera Info: # Start time: 23:08:29 on May 16,2021
-ModelSim-Altera Info: # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/GitHub/ev21g1/modules" C:/GitHub/ev21g1/modules/alu.v 
-ModelSim-Altera Info: # -- Compiling module alu
-ModelSim-Altera Info: # 
-ModelSim-Altera Info: # Top level modules:
-ModelSim-Altera Info: # 	alu
-ModelSim-Altera Info: # End time: 23:08:30 on May 16,2021, Elapsed time: 0:00:01
-ModelSim-Altera Info: # Errors: 0, Warnings: 0
-ModelSim-Altera Info: vlog -work work C:/GitHub/ev21g1/testbenches/alu_tb.v
-ModelSim-Altera Info: # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-ModelSim-Altera Info: # Start time: 23:08:30 on May 16,2021
-ModelSim-Altera Info: # vlog -reportprogress 300 -work work C:/GitHub/ev21g1/testbenches/alu_tb.v 
-ModelSim-Altera Info: # -- Compiling module alu_tb
-ModelSim-Altera Info: # 
-ModelSim-Altera Info: # Top level modules:
-ModelSim-Altera Info: # 	alu_tb
-ModelSim-Altera Info: # End time: 23:08:30 on May 16,2021, Elapsed time: 0:00:00
-ModelSim-Altera Info: # Errors: 0, Warnings: 0
-ModelSim-Altera Info: vlog -vlog01compat -work work +incdir+C:/GitHub/ev21g1/modules C:/GitHub/ev21g1/modules/alu.v
-ModelSim-Altera Info: # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-ModelSim-Altera Info: # Start time: 23:08:32 on May 16,2021
-ModelSim-Altera Info: # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/GitHub/ev21g1/modules" C:/GitHub/ev21g1/modules/alu.v 
-ModelSim-Altera Info: # -- Compiling module alu
-ModelSim-Altera Info: # 
-ModelSim-Altera Info: # Top level modules:
-ModelSim-Altera Info: # 	alu
-ModelSim-Altera Info: # End time: 23:08:32 on May 16,2021, Elapsed time: 0:00:00
-ModelSim-Altera Info: # Errors: 0, Warnings: 0
-ModelSim-Altera Info: vlog -work work C:/GitHub/ev21g1/testbenches/alu_tb.v
-ModelSim-Altera Info: # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-ModelSim-Altera Info: # Start time: 23:08:34 on May 16,2021
-ModelSim-Altera Info: # vlog -reportprogress 300 -work work C:/GitHub/ev21g1/testbenches/alu_tb.v 
-ModelSim-Altera Info: # -- Compiling module alu_tb
-ModelSim-Altera Info: # 
-ModelSim-Altera Info: # Top level modules:
-ModelSim-Altera Info: # 	alu_tb
-ModelSim-Altera Info: # End time: 23:08:34 on May 16,2021, Elapsed time: 0:00:00
-ModelSim-Altera Info: # Errors: 0, Warnings: 0
-ModelSim-Altera Info: restart -f
-ModelSim-Altera Info: # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-ModelSim-Altera Info: # Loading work.alu_tb
-ModelSim-Altera Info: # Loading work.alu
-ModelSim-Altera Info: run -all
-ModelSim-Altera Info: # End time: 23:14:42 on May 16,2021, Elapsed time: 0:09:15
-ModelSim-Altera Info: # Errors: 0, Warnings: 0
+Warning: File ev21g1_run_msim_rtl_verilog.do already exists - backing up current file as ev21g1_run_msim_rtl_verilog.do.bak8
+Info: Spawning ModelSim-Altera Simulation software 
 Info: NativeLink simulation flow was successful
