@@ -1,0 +1,23 @@
+// Ignore Quartus Prime Lite auto-generated folders
+ev21g1/db
+ev21g1/qsys_edit
+ev21g1/incremental_db
+ev21g1/output_files
+ev21g1/simulation
+
+// Ignore temporal files created based on Verilog modules
+*.v.bak
+
+// Ignore auto-generated project related files
+*.qws
+*.rpt
+*.map.summary
+c5_pin_model_dump.txt
+*.done
+*.fit.smsg
+*.fit.summary
+*.jdi
+*.pin
+*.sld
+*.sof
+*.sta.summary
