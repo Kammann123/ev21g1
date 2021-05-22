@@ -1,9 +1,9 @@
 // Ignore Quartus Prime Lite auto-generated folders
 ev21g1/db
-ev21g1/qsys_edit
+ev21g1/qsys_editqsim
 ev21g1/incremental_db
 ev21g1/output_files
-ev21g1/simulation
+ev21g1/simulation/qsim
 
 // Ignore temporal files created based on Verilog modules
 *.v.bak
