@@ -5,6 +5,11 @@ ev21g1/incremental_db
 ev21g1/output_files
 ev21g1/simulation/qsim
 
+// Ignore simulation files
+ev21g1/simulation/ev21g1.sft
+ev21g1/simulation/ev21g1.vo
+ev21g1/simulation/ev21g1_modelsim.xrf
+
 // Ignore temporal files created based on Verilog modules
 *.v.bak
 
