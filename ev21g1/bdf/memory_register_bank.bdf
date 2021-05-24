@@ -1276,5 +1276,5 @@ https://fpgasoftware.intel.com/eula.
 (junction (pt 1568 80))
 (junction (pt 1352 248))
 (junction (pt 864 288))
-(text "MAR" (rect 1296 128 1323 147)(font "Intel Clear" (font_size 8)))
+(text "MAR" (rect 1296 120 1323 139)(font "Intel Clear" (font_size 8)))
 (text "MDR" (rect 1296 304 1324 323)(font "Intel Clear" (font_size 8)))
