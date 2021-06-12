@@ -35,7 +35,6 @@ ev21g1/simulation/vsim.wlf
 *.do.bak7
 *.do.bak8
 *.do.bak9
-*.do
 
 // Ignore auto-generated project related files
 *.qws
