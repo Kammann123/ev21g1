@@ -11,8 +11,6 @@ module alu(
 	aluc,			// ALU Control lines
 	cin,			// Carry In
 	cout,			// Carry Out
-	negative,	// Negative bit flag
-	zero,			// Zero bit flag
 	overflow		// Overflow bit flag
 );
 
@@ -29,8 +27,6 @@ module alu(
 	/**************************/
 	output reg [31:0] out;
 	output wire cout;
-	output wire negative;
-	output wire zero;
 	output wire overflow;
 	
 	/**************/
@@ -56,8 +52,6 @@ module alu(
 	/*****************/
 	/* Flags drivers */
 	/*****************/
-	assign negative = out[31];
-	assign zero = (out == 32'h00000000) ? 1'b1 : 1'b0;
 	assign overflow = (ina[31] & inb[31] & ~out[31]) | (~ina[31] & ~inb[31] & out[31]);
 	assign cout = (aluc != 4'b1011) & (((~out[31]) & (ina[31] | inb[31])) | (ina[31] & inb[31]) | (aluc == 4'b1100));	
 
