@@ -15,7 +15,7 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
-// CREATED		"Fri May 21 19:38:50 2021"
+// CREATED		"Fri Jun 11 19:05:52 2021"
 
 module general_register_bank(
 	clk,

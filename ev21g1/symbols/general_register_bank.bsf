@@ -21,7 +21,7 @@ https://fpgasoftware.intel.com/eula.
 */
 (header "symbol" (version "1.2"))
 (symbol
-	(rect 16 16 216 144)
+	(rect 64 64 264 192)
 	(text "general_register_bank" (rect 5 0 137 19)(font "Intel Clear" (font_size 8)))
 	(text "inst" (rect 8 107 24 124)(font "Intel Clear" ))
 	(port
@@ -32,32 +32,32 @@ https://fpgasoftware.intel.com/eula.
 		(line (pt 0 32)(pt 16 32)(line_width 3))
 	)
 	(port
-		(pt 0 48)
+		(pt 0 96)
 		(input)
 		(text "clk" (rect 0 0 16 19)(font "Intel Clear" (font_size 8)))
-		(text "clk" (rect 21 43 37 62)(font "Intel Clear" (font_size 8)))
-		(line (pt 0 48)(pt 16 48))
+		(text "clk" (rect 21 91 37 110)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 96)(pt 16 96))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "in_sel[5..0]" (rect 0 0 64 19)(font "Intel Clear" (font_size 8)))
+		(text "in_sel[5..0]" (rect 21 43 85 62)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
 	)
 	(port
 		(pt 0 64)
 		(input)
-		(text "in_sel[5..0]" (rect 0 0 64 19)(font "Intel Clear" (font_size 8)))
-		(text "in_sel[5..0]" (rect 21 59 85 78)(font "Intel Clear" (font_size 8)))
+		(text "outa_sel[5..0]" (rect 0 0 80 19)(font "Intel Clear" (font_size 8)))
+		(text "outa_sel[5..0]" (rect 21 59 101 78)(font "Intel Clear" (font_size 8)))
 		(line (pt 0 64)(pt 16 64)(line_width 3))
 	)
 	(port
 		(pt 0 80)
 		(input)
-		(text "outa_sel[5..0]" (rect 0 0 80 19)(font "Intel Clear" (font_size 8)))
-		(text "outa_sel[5..0]" (rect 21 75 101 94)(font "Intel Clear" (font_size 8)))
-		(line (pt 0 80)(pt 16 80)(line_width 3))
-	)
-	(port
-		(pt 0 96)
-		(input)
 		(text "outb_sel[5..0]" (rect 0 0 81 19)(font "Intel Clear" (font_size 8)))
-		(text "outb_sel[5..0]" (rect 21 91 102 110)(font "Intel Clear" (font_size 8)))
-		(line (pt 0 96)(pt 16 96)(line_width 3))
+		(text "outb_sel[5..0]" (rect 21 75 102 94)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 80)(pt 16 80)(line_width 3))
 	)
 	(port
 		(pt 200 32)
