@@ -9,6 +9,7 @@ EV21G1 Processor design and implementation in FPGA using Quartus Prime Lite
 * **simulation/** : Simulation waveform files for the Simulation Waveform Editor of Quartus Prime (.vwf) 
 * **symbols/** : Generated symbol files (.bsf)
 * **tests/** : Verilog HDL testing or testbench files (.v)
+* **waves/** : Waveforms for ModelSim Altera (.do)
 * *ev21g1.bdf* : Top level block diagram or schematic
 * *ev21g1.qpf* : Quartus Prime project file
 * *ev21g1.qps* : Quartus Prime settings file
