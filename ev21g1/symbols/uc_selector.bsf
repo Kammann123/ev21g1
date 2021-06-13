@@ -21,39 +21,24 @@ https://fpgasoftware.intel.com/eula.
 */
 (header "symbol" (version "1.2"))
 (symbol
-	(rect 64 40 192 160)
-	(text "buffer_tri" (rect 64 24 110 36)(font "Arial" ))
-	(text "inst" (rect 88 88 105 100)(font "Arial" ))
+	(rect 64 64 184 176)
+	(text "uc_selector" (rect 48 88 114 107)(font "Intel Clear" (font_size 8)))
+	(text "inst" (rect 88 8 104 25)(font "Intel Clear" ))
 	(port
-		(pt 0 64)
+		(pt 120 72)
 		(input)
-		(text "in[BUS_WIDTH-1..0]" (rect 0 24 102 36)(font "Arial" ))
-		(text "in" (rect 40 56 48 68)(font "Arial" )(invisible))
-		(line (pt 0 64)(pt 40 64)(line_width 3))
+		(text "mi[29..0]" (rect -8 8 46 27)(font "Intel Clear" (font_size 8)))
+		(text "mi[29..0]" (rect 41 64 95 83)(font "Intel Clear" (font_size 8)))
+		(line (pt 120 72)(pt 96 72)(line_width 3))
 	)
 	(port
-		(pt 64 120)
-		(input)
-		(text "en" (rect 56 45 75 59)(font "Intel Clear" (font_size 8))(vertical))
-		(text "en" (rect 40 96 59 110)(font "Intel Clear" (font_size 8))(vertical)(invisible))
-		(line (pt 64 120)(pt 64 80))
-	)
-	(port
-		(pt 128 64)
+		(pt 56 0)
 		(output)
-		(text "out[BUS_WIDTH-1..0]" (rect -152 24 -43 36)(font "Arial" ))
-		(text "out" (rect 72 56 87 68)(font "Arial" )(invisible))
-		(line (pt 128 64)(pt 88 64)(line_width 3))
+		(text "sel" (rect 48 24 67 40)(font "Intel Clear" (font_size 8))(vertical))
+		(text "sel" (rect 40 24 59 40)(font "Intel Clear" (font_size 8))(vertical))
+		(line (pt 56 0)(pt 56 24))
 	)
-	(parameter
-		"BUS_WIDTH"
-		"32"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
 	(drawing
-		(line (pt 88 64)(pt 40 96))
-		(line (pt 88 64)(pt 40 32))
-		(line (pt 40 32)(pt 40 96))
+		(rectangle (rect 16 24 96 88))
 	)
-	(annotation_block (parameter)(rect 296 -24 480 16))
 )
