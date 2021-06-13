@@ -25,13 +25,6 @@ https://fpgasoftware.intel.com/eula.
 	(text "cpu" (rect 5 0 26 19)(font "Intel Clear" (font_size 8)))
 	(text "inst" (rect 296 0 312 17)(font "Intel Clear" ))
 	(port
-		(pt 0 32)
-		(input)
-		(text "k[15..0]" (rect 0 0 46 19)(font "Intel Clear" (font_size 8)))
-		(text "k[15..0]" (rect 21 27 67 46)(font "Intel Clear" (font_size 8)))
-		(line (pt 0 32)(pt 16 32)(line_width 3))
-	)
-	(port
 		(pt 0 144)
 		(input)
 		(text "input_port0[31..0]" (rect 0 0 109 19)(font "Intel Clear" (font_size 8)))
@@ -46,18 +39,18 @@ https://fpgasoftware.intel.com/eula.
 		(line (pt 0 160)(pt 16 160)(line_width 3))
 	)
 	(port
-		(pt 0 48)
-		(input)
-		(text "microinstruction[29..0]" (rect 0 0 133 19)(font "Intel Clear" (font_size 8)))
-		(text "microinstruction[29..0]" (rect 21 43 154 62)(font "Intel Clear" (font_size 8)))
-		(line (pt 0 48)(pt 16 48)(line_width 3))
-	)
-	(port
 		(pt 0 184)
 		(input)
 		(text "clk" (rect 0 0 16 19)(font "Intel Clear" (font_size 8)))
 		(text "clk" (rect 21 179 37 198)(font "Intel Clear" (font_size 8)))
 		(line (pt 0 184)(pt 16 184))
+	)
+	(port
+		(pt 0 32)
+		(input)
+		(text "instruction[31..0]" (rect 0 0 100 19)(font "Intel Clear" (font_size 8)))
+		(text "instruction[31..0]" (rect 21 27 121 46)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
 	)
 	(port
 		(pt 320 32)

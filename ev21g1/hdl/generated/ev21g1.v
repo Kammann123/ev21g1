@@ -15,14 +15,13 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
-// CREATED		"Sat Jun 12 23:27:32 2021"
+// CREATED		"Mon Jun 14 00:13:16 2021"
 
 module ev21g1(
 	clk,
 	input_port0,
 	input_port1,
-	k,
-	microinstruction,
+	instruction,
 	output_port0,
 	output_port1
 );
@@ -31,8 +30,7 @@ module ev21g1(
 input wire	clk;
 input wire	[31:0] input_port0;
 input wire	[31:0] input_port1;
-input wire	[15:0] k;
-input wire	[29:0] microinstruction;
+input wire	[31:0] instruction;
 output wire	[31:0] output_port0;
 output wire	[31:0] output_port1;
 
@@ -63,10 +61,12 @@ cpu	b2v_inst(
 	.clk(clk),
 	.input_port0(input_port1),
 	.input_port1(input_port0),
-	.k(k),
-	.microinstruction(microinstruction),
+	.instruction(instruction),
 	.mem_read(mem_read),
 	.mem_write(mem_write),
+	
+	
+	
 	.mem_addr_bus(mem_addr_bus),
 	.mem_data_bus(mem_data_bus),
 	.output_port0(output_port0),
@@ -94,6 +94,10 @@ assign	ram_write = mem_write & cs_ram;
 
 assign	ram_read = mem_read & cs_ram;
 
+
+chip_select	b2v_inst5(
+	.address(mem_addr_bus),
+	.cs_ram(cs_ram));
 
 
 always@(posedge clk or negedge SYNTHESIZED_WIRE_1 or negedge SYNTHESIZED_WIRE_2)
@@ -133,6 +137,5 @@ end
 
 
 
-assign	cs_ram = 1;
 
 endmodule

@@ -45,7 +45,7 @@ module alu(
 			4'b1000: out = 32'b0;
 			4'b1001: out = 32'b1;
 			4'b1010: out = 32'hFFFFFFFF;
-			default: ;
+			default: out = 32'hXXXXXXXX;
 		endcase
 	end
 	
