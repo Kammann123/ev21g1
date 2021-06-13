@@ -3,6 +3,8 @@ ev21g1/db
 ev21g1/qsys_editqsim
 ev21g1/incremental_db
 ev21g1/output_files
+ev21g1/greybox_tmp
+ev21g1/symbols/greybox_tmp
 ev21g1/simulation/qsim
 
 // Ignore simulation files
@@ -13,6 +15,7 @@ ev21g1/simulation/msim_transcript
 ev21g1/simulation/modelsim.ini
 ev21g1/simulation/rtl_work
 ev21g1/simulation/vsim.wlf
+ev21g1/simulation/*.do
 
 // Ignore temporal files created based on Verilog modules
 *.v.bak

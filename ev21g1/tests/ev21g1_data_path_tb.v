@@ -1,6 +1,6 @@
 `define microinstruction(aluc, sh, kmx, read, write, a, b, c, flip, print) ((aluc << 26) | (sh << 23) | (kmx << 22) | (read << 21) | (write << 20) | (a << 14) | (b << 8) | (c << 2) | (flip << 1) | (print << 0))
 
-module ev21g1_data_path_tb;
+module ev21g1_memory_tb;
 
 	/*****************************/
 	/* Variables for Input Ports */
@@ -16,15 +16,11 @@ module ev21g1_data_path_tb;
 	/******************************/
 	wire [31:0] output_port0;
 	wire [31:0] output_port1;
-	wire [31:0] mem_data_bus;
-	wire [31:0] mem_addr_bus;
-	wire mem_read;
-	wire mem_write;
 	
 	/***********************/
 	/* Auxiliary variables */
 	/***********************/
-	reg [5:0] i;
+	reg [15:0] i;
 	
 	/*****************/
 	/* Instantiation */
