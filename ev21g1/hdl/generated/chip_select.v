@@ -15,22 +15,29 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
-// CREATED		"Sun Jun 13 23:14:35 2021"
+// CREATED		"Sun Jun 13 23:14:51 2021"
 
-module uc_selector(
-	mi,
-	sel
+module chip_select(
+	address,
+	cs_ram
 );
 
 
-input wire	[29:0] mi;
-output wire	sel;
+input wire	[31:0] address;
+output wire	cs_ram;
+
+wire	SYNTHESIZED_WIRE_0;
 
 
 
 
 
-assign	sel = mi[20] | mi[21];
+bus_or	b2v_inst(
+	.in(address),
+	.out(SYNTHESIZED_WIRE_0));
+	defparam	b2v_inst.BUS_WIDTH = 32;
+
+assign	cs_ram =  ~SYNTHESIZED_WIRE_0;
 
 
 endmodule
