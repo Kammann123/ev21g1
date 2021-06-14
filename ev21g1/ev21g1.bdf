@@ -190,27 +190,6 @@ https://fpgasoftware.intel.com/eula.
 		(text "output_port1[31..0]" (rect 181 155 299 174)(font "Intel Clear" (font_size 8)))
 		(line (pt 320 160)(pt 304 160)(line_width 3))
 	)
-	(port
-		(pt 0 96)
-		(output)
-		(text "ifu_jmp" (rect 24 88 70 107)(font "Intel Clear" (font_size 8)))
-		(text "ifu_jmp" (rect 28 88 74 107)(font "Intel Clear" (font_size 8)))
-		(line (pt 0 96)(pt 16 96))
-	)
-	(port
-		(pt 0 120)
-		(output)
-		(text "ifu_ret" (rect 24 112 62 131)(font "Intel Clear" (font_size 8)))
-		(text "ifu_ret" (rect 24 112 62 131)(font "Intel Clear" (font_size 8)))
-		(line (pt 0 120)(pt 16 120))
-	)
-	(port
-		(pt 0 72)
-		(output)
-		(text "ifu_bsr" (rect 24 64 65 83)(font "Intel Clear" (font_size 8)))
-		(text "ifu_bsr" (rect 24 64 65 83)(font "Intel Clear" (font_size 8)))
-		(line (pt 0 72)(pt 16 72))
-	)
 	(drawing
 		(text "CPU" (rect 136 88 186 110)(font "Arial" (color 0 0 0)(font_size 14)(bold)))
 		(rectangle (rect 16 16 304 200))
@@ -384,7 +363,7 @@ https://fpgasoftware.intel.com/eula.
 		(pt 64 24)
 		(output)
 		(text "OUT" (rect 48 15 65 27)(font "Courier New" (bold))(invisible))
-		(text "OUT" (rect 48 15 65 27)(font "Courier New" (bold))(invisible))
+		(text "OUT" (rect 48 15 62 27)(font "Courier New" (bold))(invisible))
 		(line (pt 42 24)(pt 64 24))
 	)
 	(drawing
@@ -416,7 +395,7 @@ https://fpgasoftware.intel.com/eula.
 		(pt 64 24)
 		(output)
 		(text "OUT" (rect 48 15 65 27)(font "Courier New" (bold))(invisible))
-		(text "OUT" (rect 48 15 65 27)(font "Courier New" (bold))(invisible))
+		(text "OUT" (rect 48 15 62 27)(font "Courier New" (bold))(invisible))
 		(line (pt 42 24)(pt 64 24))
 	)
 	(drawing
@@ -462,7 +441,7 @@ https://fpgasoftware.intel.com/eula.
 		(pt 64 24)
 		(output)
 		(text "Q" (rect 45 20 50 32)(font "Courier New" (bold)))
-		(text "Q" (rect 43 20 48 32)(font "Courier New" (bold)))
+		(text "Q" (rect 43 20 47 32)(font "Courier New" (bold)))
 		(line (pt 52 24)(pt 64 24))
 	)
 	(drawing
@@ -512,7 +491,7 @@ https://fpgasoftware.intel.com/eula.
 		(pt 64 24)
 		(output)
 		(text "Q" (rect 45 20 50 32)(font "Courier New" (bold)))
-		(text "Q" (rect 43 20 48 32)(font "Courier New" (bold)))
+		(text "Q" (rect 43 20 47 32)(font "Courier New" (bold)))
 		(line (pt 52 24)(pt 64 24))
 	)
 	(drawing
