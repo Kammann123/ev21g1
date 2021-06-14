@@ -1,8 +1,8 @@
 /*<simulation_settings>
-<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off ev21g1 -c ev21g1 --vector_source="D:/Facultad/4to/2do cuatri/Electro V/ev21g1/ev21g1/simulation/program_memory.vwf" --testbench_file="D:/Facultad/4to/2do cuatri/Electro V/ev21g1/ev21g1/simulation/qsim/program_memory.vwf.vt"</ftestbench_cmd>
-<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off ev21g1 -c ev21g1 --vector_source="D:/Facultad/4to/2do cuatri/Electro V/ev21g1/ev21g1/Waveform.vwf" --testbench_file="D:/Facultad/4to/2do cuatri/Electro V/ev21g1/ev21g1/simulation/qsim/Waveform.vwf.vt"</ttestbench_cmd>
-<fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory="D:/Facultad/4to/2do cuatri/Electro V/ev21g1/ev21g1/simulation/qsim/" ev21g1 -c ev21g1</fnetlist_cmd>
-<tnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=verilog --output_directory="D:/Facultad/4to/2do cuatri/Electro V/ev21g1/ev21g1/simulation/qsim/" ev21g1 -c ev21g1</tnetlist_cmd>
+<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off ev21g1 -c ev21g1 --vector_source="C:/GitHub/ev21g1/ev21g1/simulation/program_memory.vwf" --testbench_file="C:/GitHub/ev21g1/ev21g1/simulation/qsim/program_memory.vwf.vt"</ftestbench_cmd>
+<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off ev21g1 -c ev21g1 --vector_source="C:/GitHub/ev21g1/ev21g1/simulation/program_memory.vwf" --testbench_file="C:/GitHub/ev21g1/ev21g1/simulation/qsim/simulation/program_memory.vwf.vt"</ttestbench_cmd>
+<fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory="C:/GitHub/ev21g1/ev21g1/simulation/qsim/" ev21g1 -c ev21g1</fnetlist_cmd>
+<tnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=verilog --output_directory="C:/GitHub/ev21g1/ev21g1/simulation/qsim/" ev21g1 -c ev21g1</tnetlist_cmd>
 <modelsim_script>onerror {exit -code 1}
 vlib work
 vlog -work work ev21g1.vo
@@ -20,12 +20,11 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
-
 </modelsim_script>
 <modelsim_script_timing>onerror {exit -code 1}
 vlib work
 vlog -work work ev21g1.vo
-vlog -work work Waveform.vwf.vt
+vlog -work work simulation/program_memory.vwf.vt
 vsim -novopt -c -t 1ps -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.program_memory_vlg_vec_tst
 vcd file -direction ev21g1.msim.vcd
 vcd add -internal program_memory_vlg_vec_tst/*
@@ -39,7 +38,6 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
-
 </modelsim_script_timing>
 <hdl_lang>verilog</hdl_lang>
 </simulation_settings>*/
