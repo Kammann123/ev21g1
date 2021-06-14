@@ -48,9 +48,16 @@ https://fpgasoftware.intel.com/eula.
 	(port
 		(pt 0 32)
 		(input)
-		(text "instruction[31..0]" (rect 0 0 100 19)(font "Intel Clear" (font_size 8)))
-		(text "instruction[31..0]" (rect 21 27 121 46)(font "Intel Clear" (font_size 8)))
+		(text "rom_data_bus[31..0]" (rect 0 0 125 19)(font "Intel Clear" (font_size 8)))
+		(text "rom_data_bus[31..0]" (rect 21 27 146 46)(font "Intel Clear" (font_size 8)))
 		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 0 128)
+		(input)
+		(text "reset" (rect 24 120 53 139)(font "Intel Clear" (font_size 8)))
+		(text "reset" (rect 24 120 53 139)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 128)(pt 16 128))
 	)
 	(port
 		(pt 320 32)
@@ -93,6 +100,20 @@ https://fpgasoftware.intel.com/eula.
 		(text "output_port1[31..0]" (rect 0 0 118 19)(font "Intel Clear" (font_size 8)))
 		(text "output_port1[31..0]" (rect 181 155 299 174)(font "Intel Clear" (font_size 8)))
 		(line (pt 320 160)(pt 304 160)(line_width 3))
+	)
+	(port
+		(pt 0 56)
+		(output)
+		(text "rom_addr_bus[12..0]" (rect 24 64 150 83)(font "Intel Clear" (font_size 8)))
+		(text "rom_addr_bus[12..0]" (rect 24 48 150 67)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 56)(pt 16 56)(color 128 0 255)(line_width 3))
+	)
+	(port
+		(pt 0 80)
+		(output)
+		(text "rom_read" (rect 24 72 81 91)(font "Intel Clear" (font_size 8)))
+		(text "rom_read" (rect 24 72 81 91)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 80)(pt 16 80))
 	)
 	(drawing
 		(text "CPU" (rect 136 88 186 110)(font "Arial" (color 0 0 0)(font_size 14)(bold)))

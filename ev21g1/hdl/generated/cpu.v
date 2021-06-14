@@ -15,32 +15,38 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
-// CREATED		"Mon Jun 14 00:13:06 2021"
+// CREATED		"Tue Jun 15 19:55:24 2021"
 
 module cpu(
 	clk,
+	reset,
 	input_port0,
 	input_port1,
-	instruction,
+	rom_data_bus,
 	mem_read,
 	mem_write,
+	rom_read,
 	mem_addr_bus,
 	mem_data_bus,
 	output_port0,
-	output_port1
+	output_port1,
+	rom_addr_bus
 );
 
 
 input wire	clk;
+input wire	reset;
 input wire	[31:0] input_port0;
 input wire	[31:0] input_port1;
-input wire	[31:0] instruction;
+input wire	[31:0] rom_data_bus;
 output wire	mem_read;
 output wire	mem_write;
+output wire	rom_read;
 output wire	[31:0] mem_addr_bus;
 inout wire	[31:0] mem_data_bus;
 output wire	[31:0] output_port0;
 output wire	[31:0] output_port1;
+output wire	[12:0] rom_addr_bus;
 
 wire	alu_carry;
 wire	alu_overflow;
@@ -65,6 +71,7 @@ wire	[29:0] mi_operand;
 wire	[29:0] mi_retire;
 wire	[31:0] psr;
 wire	ret;
+wire	[15:0] rom_addr;
 wire	sh_carry;
 wire	sh_overflow;
 wire	[31:0] SYNTHESIZED_WIRE_0;
@@ -79,13 +86,14 @@ wire	[31:0] SYNTHESIZED_WIRE_8;
 wire	SYNTHESIZED_WIRE_9;
 wire	[31:0] SYNTHESIZED_WIRE_10;
 wire	SYNTHESIZED_WIRE_11;
-wire	[31:0] SYNTHESIZED_WIRE_12;
+wire	SYNTHESIZED_WIRE_12;
 wire	SYNTHESIZED_WIRE_13;
 wire	[31:0] SYNTHESIZED_WIRE_14;
 wire	SYNTHESIZED_WIRE_15;
 wire	SYNTHESIZED_WIRE_18;
 wire	SYNTHESIZED_WIRE_19;
 
+assign	rom_read = clk;
 assign	SYNTHESIZED_WIRE_5 = 1;
 assign	SYNTHESIZED_WIRE_6 = 1;
 assign	SYNTHESIZED_WIRE_7 = 1;
@@ -113,7 +121,7 @@ shifter	b2v_inst1(
 	.sh(mi_execute[25:23]),
 	.cout(sh_carry),
 	.overflow(sh_overflow),
-	.out(SYNTHESIZED_WIRE_8));
+	.out(bus_c));
 
 
 port_register_bank	b2v_inst10(
@@ -157,7 +165,7 @@ register	b2v_inst2(
 	.en(SYNTHESIZED_WIRE_7),
 	.clk(clk),
 	.in(SYNTHESIZED_WIRE_8),
-	.out(SYNTHESIZED_WIRE_12));
+	.out(SYNTHESIZED_WIRE_21));
 	defparam	b2v_inst2.BUS_WIDTH = 32;
 
 
@@ -175,7 +183,7 @@ instruction_predecoder	b2v_inst20(
 register	b2v_inst21(
 	.en(SYNTHESIZED_WIRE_9),
 	.clk(clk),
-	.in(instruction),
+	.in(rom_data_bus),
 	.out(i_decode));
 	defparam	b2v_inst21.BUS_WIDTH = 32;
 
@@ -198,17 +206,29 @@ bus_mux	b2v_inst24(
 
 
 
+ifu	b2v_inst26(
+	.clk(SYNTHESIZED_WIRE_11),
+	.bsr(ifu_bsr),
+	.jmp(ifu_jmp),
+	.ret(ifu_ret),
+	.reset(reset),
+	.x(k[15:0]),
+	.next_address(rom_addr));
+
+
 uc_selector	b2v_inst27(
-	.mi(mi_retire),
-	.sel(SYNTHESIZED_WIRE_11));
+	.mi(mi_execute),
+	.sel(SYNTHESIZED_WIRE_12));
 
 
 bus_mux	b2v_inst28(
-	.sel(SYNTHESIZED_WIRE_11),
-	.in0(SYNTHESIZED_WIRE_12),
+	.sel(SYNTHESIZED_WIRE_12),
+	.in0(bus_c),
 	.in1(mem_data_bus),
-	.out(SYNTHESIZED_WIRE_21));
+	.out(SYNTHESIZED_WIRE_8));
 	defparam	b2v_inst28.BUS_WIDTH = 32;
+
+assign	SYNTHESIZED_WIRE_11 =  ~clk;
 
 
 register	b2v_inst3(
@@ -227,10 +247,10 @@ uc_ifu	b2v_inst36(
 	.jov(jcy),
 	.ret(ret),
 	.bsr(bsr),
-	.psr(psr)
-	
-	
-	);
+	.psr(psr),
+	.ifu_jmp(ifu_jmp),
+	.ifu_bsr(ifu_bsr),
+	.ifu_ret(ifu_ret));
 
 
 
@@ -291,6 +311,7 @@ register	b2v_inst9(
 assign	mem_read = mi_operand[21];
 assign	mem_write = mi_operand[20];
 assign	mem_addr_bus = bus_b;
+assign	rom_addr_bus[12:0] = rom_addr[12:0];
 assign	k[31:16] = 16'b0000000000000000;
 
 endmodule
