@@ -1,0 +1,213 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+*/
+(header "graphic" (version "1.4"))
+(pin
+	(input)
+	(rect 256 240 424 256)
+	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
+	(text "bus1[5..0]" (rect 5 0 52 17)(font "Intel Clear" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+)
+(pin
+	(input)
+	(rect 256 280 424 296)
+	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
+	(text "bus2[5..0]" (rect 5 0 55 12)(font "Arial" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+)
+(pin
+	(output)
+	(rect 1160 248 1336 264)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "equal" (rect 90 0 115 12)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+)
+(symbol
+	(rect 648 224 768 280)
+	(text "LPM_XOR" (rect 30 0 100 16)(font "Arial" (font_size 10)))
+	(text "6bcomp_inst1" (rect 3 45 82 59)(font "Arial" (font_size 8)))
+	(port
+		(pt 0 32)
+		(input)
+		(text "data[LPM_SIZE-1..0][LPM_WIDTH-1..0]" (rect 5 17 220 31)(font "Arial" (font_size 8)))
+		(text "data[][]" (rect 5 17 43 31)(font "Arial" (font_size 8)))
+		(line (pt 0 32)(pt 45 32)(line_width 3))
+	)
+	(port
+		(pt 120 32)
+		(output)
+		(text "result[LPM_WIDTH-1..0]" (rect 82 17 215 31)(font "Arial" (font_size 8)))
+		(text "result[]" (rect 82 17 120 31)(font "Arial" (font_size 8)))
+		(line (pt 80 32)(pt 120 32)(line_width 3))
+	)
+	(parameter
+		"LPM_SIZE"
+		"2"
+		"Number of inputs per gate, any integer > 0"
+		" 1" " 2" " 3" " 4" " 5" " 6" " 7" " 8" " 9" "10" "11" "12" "13" "14" "15" "16" "20" "24" "28" "32" "40" "48" "56" "64" 
+	)
+	(parameter
+		"LPM_WIDTH"
+		"6"
+		"Number of gates, any integer > 0"
+		" 1" " 2" " 3" " 4" " 5" " 6" " 7" " 8" " 9" "10" "11" "12" "13" "14" "15" "16" "20" "24" "28" "32" "40" "48" "56" "64" 
+	)
+	(drawing
+		(line (pt 46 21)(pt 57 21))
+		(line (pt 46 43)(pt 57 43))
+		(arc (pt 81 32)(pt 57 21)(rect 26 21 89 84))
+		(arc (pt 57 43)(pt 81 32)(rect 26 -19 89 44))
+		(arc (pt 40 44)(pt 40 20)(rect 11 15 46 50))
+		(arc (pt 39 37)(pt 39 27)(rect 18 16 51 49))
+	)
+	(annotation_block (parameter)(rect 648 160 780 217))
+)
+(symbol
+	(rect 816 224 936 280)
+	(text "LPM_INV" (rect 22 0 88 16)(font "Arial" (font_size 10)))
+	(text "6bcomp_inst2" (rect 3 45 69 62)(font "Intel Clear" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "data[LPM_WIDTH-1..0]" (rect 5 19 131 33)(font "Arial" (font_size 8)))
+		(text "data[]" (rect 5 19 36 33)(font "Arial" (font_size 8)))
+		(line (pt 0 32)(pt 45 32)(line_width 3))
+	)
+	(port
+		(pt 120 32)
+		(output)
+		(text "result[LPM_WIDTH-1..0]" (rect 83 19 216 33)(font "Arial" (font_size 8)))
+		(text "result[]" (rect 83 19 121 33)(font "Arial" (font_size 8)))
+		(line (pt 71 32)(pt 120 32)(line_width 3))
+	)
+	(parameter
+		"LPM_WIDTH"
+		"6"
+		"Number of gates, any integer > 0"
+		" 1" " 2" " 3" " 4" " 5" " 6" " 7" " 8" " 9" "10" "11" "12" "13" "14" "15" "16" "20" "24" "28" "32" "40" "48" "56" "64" 
+	)
+	(drawing
+		(line (pt 45 40)(pt 45 23))
+		(line (pt 45 41)(pt 63 32))
+		(line (pt 45 23)(pt 63 32))
+		(circle (rect 63 28 71 36))
+	)
+	(annotation_block (parameter)(rect 816 176 948 214))
+)
+(symbol
+	(rect 1000 224 1120 280)
+	(text "LPM_AND" (rect 25 0 96 16)(font "Arial" (font_size 10)))
+	(text "6bcomp_inst3" (rect 3 45 69 62)(font "Intel Clear" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "data[LPM_SIZE-1..0][LPM_WIDTH-1..0]" (rect 6 19 221 33)(font "Arial" (font_size 8)))
+		(text "data[][]" (rect 6 19 44 33)(font "Arial" (font_size 8)))
+		(line (pt 0 32)(pt 46 32)(line_width 3))
+	)
+	(port
+		(pt 120 32)
+		(output)
+		(text "result[LPM_WIDTH-1..0]" (rect 83 19 216 33)(font "Arial" (font_size 8)))
+		(text "result[]" (rect 83 19 121 33)(font "Arial" (font_size 8)))
+		(line (pt 74 32)(pt 120 32)(line_width 3))
+	)
+	(parameter
+		"LPM_SIZE"
+		"6"
+		"Number of inputs per gate, any integer > 0"
+		" 1" " 2" " 3" " 4" " 5" " 6" " 7" " 8" " 9" "10" "11" "12" "13" "14" "15" "16" "20" "24" "28" "32" "40" "48" "56" "64" 
+	)
+	(parameter
+		"LPM_WIDTH"
+		"1"
+		"Number of gates, any integer > 0"
+		" 1" " 2" " 3" " 4" " 5" " 6" " 7" " 8" " 9" "10" "11" "12" "13" "14" "15" "16" "20" "24" "28" "32" "40" "48" "56" "64" 
+	)
+	(drawing
+		(line (pt 46 44)(pt 63 44))
+		(line (pt 46 20)(pt 64 20))
+		(line (pt 46 44)(pt 46 20))
+		(arc (pt 63 45)(pt 62 20)(rect 50 20 75 45))
+	)
+	(annotation_block (parameter)(rect 1000 160 1132 217))
+)
+(connector
+	(text "data[0][5..0]" (rect 434 232 491 249)(font "Intel Clear" ))
+	(pt 424 248)
+	(pt 488 248)
+	(bus)
+)
+(connector
+	(text "data[1][5..0]" (rect 434 272 491 289)(font "Intel Clear" ))
+	(pt 424 288)
+	(pt 488 288)
+	(bus)
+)
+(connector
+	(text "data[1..0][5..0]" (rect 544 240 612 257)(font "Intel Clear" ))
+	(pt 648 256)
+	(pt 544 256)
+	(bus)
+)
+(connector
+	(pt 768 256)
+	(pt 816 256)
+	(bus)
+)
+(connector
+	(pt 936 256)
+	(pt 1000 256)
+	(bus)
+)
+(connector
+	(pt 1120 256)
+	(pt 1160 256)
+	(bus)
+)
