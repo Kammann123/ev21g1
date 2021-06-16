@@ -287,7 +287,7 @@ https://fpgasoftware.intel.com/eula.
 	(annotation_block (parameter)(rect 64 32 243 241))
 )
 (symbol
-	(rect 888 240 1144 400)
+	(rect 904 240 1160 400)
 	(text "VRAM" (rect 103 0 147 16)(font "Arial" (font_size 10)))
 	(text "inst1" (rect 8 144 30 161)(font "Intel Clear" ))
 	(port
@@ -330,14 +330,14 @@ https://fpgasoftware.intel.com/eula.
 		(input)
 		(text "clock" (rect 0 0 29 14)(font "Arial" (font_size 8)))
 		(text "clock" (rect 4 112 33 126)(font "Arial" (font_size 8)))
-		(line (pt 0 128)(pt 176 128))
+		(line (pt 0 128)(pt 104 128))
 	)
 	(port
 		(pt 256 88)
 		(output)
 		(text "q[2..0]" (rect 0 0 35 14)(font "Arial" (font_size 8)))
 		(text "q[2..0]" (rect 216 72 251 86)(font "Arial" (font_size 8)))
-		(line (pt 256 88)(pt 192 88)(line_width 3))
+		(line (pt 256 88)(pt 168 88)(line_width 3))
 	)
 	(drawing
 		(text "64000 Word(s)" (rect 134 18 146 89)(font "Arial" )(vertical))
@@ -388,15 +388,6 @@ https://fpgasoftware.intel.com/eula.
 		(line (pt 104 108)(pt 112 108))
 		(line (pt 120 104)(pt 128 104))
 		(line (pt 104 36)(pt 104 129))
-		(line (pt 176 92)(pt 176 129))
-		(line (pt 184 83)(pt 192 83))
-		(line (pt 192 83)(pt 192 95))
-		(line (pt 192 95)(pt 184 95))
-		(line (pt 184 95)(pt 184 83))
-		(line (pt 184 90)(pt 186 92))
-		(line (pt 186 92)(pt 184 94))
-		(line (pt 176 92)(pt 184 92))
-		(line (pt 168 88)(pt 184 88)(line_width 3))
 		(line (pt 0 0)(pt 257 0))
 		(line (pt 257 0)(pt 257 162))
 		(line (pt 0 162)(pt 257 162))
@@ -510,38 +501,6 @@ https://fpgasoftware.intel.com/eula.
 	(pt 584 312)
 )
 (connector
-	(pt 888 272)
-	(pt 832 272)
-	(bus)
-)
-(connector
-	(pt 888 288)
-	(pt 808 288)
-	(bus)
-)
-(connector
-	(pt 888 304)
-	(pt 768 304)
-)
-(connector
-	(pt 888 328)
-	(pt 792 328)
-	(bus)
-)
-(connector
-	(pt 888 344)
-	(pt 816 344)
-)
-(connector
-	(pt 888 368)
-	(pt 864 368)
-)
-(connector
-	(pt 1144 328)
-	(pt 1192 328)
-	(bus)
-)
-(connector
 	(pt 624 416)
 	(pt 608 416)
 	(bus)
@@ -559,6 +518,38 @@ https://fpgasoftware.intel.com/eula.
 (connector
 	(pt 608 360)
 	(pt 792 360)
+	(bus)
+)
+(connector
+	(pt 904 368)
+	(pt 864 368)
+)
+(connector
+	(pt 904 344)
+	(pt 816 344)
+)
+(connector
+	(pt 904 328)
+	(pt 792 328)
+	(bus)
+)
+(connector
+	(pt 904 304)
+	(pt 768 304)
+)
+(connector
+	(pt 904 288)
+	(pt 808 288)
+	(bus)
+)
+(connector
+	(pt 904 272)
+	(pt 832 272)
+	(bus)
+)
+(connector
+	(pt 1160 328)
+	(pt 1192 328)
 	(bus)
 )
 (junction (pt 304 440))
