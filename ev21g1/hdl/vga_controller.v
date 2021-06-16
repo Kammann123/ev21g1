@@ -102,12 +102,13 @@ module vga_controller(
 
 	
 	always @* begin
-	pixel_address = h_count * vtotal + v_count + 1;
+	
 		if (active) begin
-			
-			vga_rgb = pixel_rgb;
+			pixel_address <= h_count * vactive + v_count;
+			vga_rgb <= pixel_rgb;
 		end else begin
-			vga_rgb = 3'b000;
+			pixel_address <= 0;
+			vga_rgb <= 3'b000;
 		end
 	end
 endmodule
