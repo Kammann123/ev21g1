@@ -1,0 +1,24 @@
+// Load registers with initial value
+MLK 36,0000
+MLK 37,0000
+// Load -31 to register 0
+MMK 0,FFFF
+NOP
+MLK 0,FFE1
+NOP
+MLK 1,0001
+NOP
+// Start looping
+// Increase output port value
+ADD 36,36,1
+// Compare whether the loop is complete
+ADD 2,36,0
+NOP
+NOP
+NOP
+JNE 8
+NOP
+MLK 36,0000
+NOP
+JMP 8
+NOP

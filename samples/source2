@@ -1,0 +1,78 @@
+// Load registers with initial value
+MLK 36,0000
+
+MLK 37,0000
+
+NOP
+
+MLK 36,0001
+
+NOP
+
+MLK 36,0002
+
+NOP
+
+MLK 36,0003
+
+NOP
+
+MLK 36,0000
+
+NOP
+
+MLK 37,0001
+
+NOP
+
+MLK 36,0001
+
+NOP
+
+MLK 36,0002
+
+NOP
+
+MLK 36,0003
+
+NOP
+
+MLK 36,0000
+
+NOP
+
+MLK 37,0002
+
+NOP
+
+MLK 36,0001
+
+NOP
+
+MLK 36,0002
+
+NOP
+
+MLK 36,0003
+
+NOP
+
+MLK 36,0000
+
+NOP
+
+MLK 37,0003
+
+NOP
+
+MLK 36,0001
+
+NOP
+
+MLK 36,0002
+
+NOP
+
+MLK 36,0003
+
+NOP

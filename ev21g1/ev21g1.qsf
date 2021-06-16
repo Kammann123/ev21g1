@@ -62,6 +62,7 @@ set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name VERILOG_FILE hdl/freq_divider.v
 set_global_assignment -name BDF_FILE ev21g1.bdf
 set_global_assignment -name BDF_FILE bdf/cpu.bdf
 set_global_assignment -name VERILOG_FILE hdl/generated/ram.v
@@ -93,4 +94,20 @@ set_global_assignment -name VERILOG_FILE hdl/adder.v
 set_global_assignment -name VERILOG_FILE hdl/alu.v
 set_global_assignment -name VERILOG_FILE hdl/lifo.v
 set_global_assignment -name VERILOG_FILE tests/ev21g1_fetch_tb.v
+set_location_assignment PIN_R8 -to clk
+set_location_assignment PIN_E1 -to reset
+set_location_assignment PIN_A13 -to output_port0[1]
+set_location_assignment PIN_A15 -to output_port0[0]
+set_location_assignment PIN_B16 -to output_port1[1]
+set_location_assignment PIN_A14 -to output_port1[0]
+set_location_assignment PIN_M1 -to input_port0[0]
+set_location_assignment PIN_T8 -to input_port0[1]
+set_location_assignment PIN_B9 -to input_port1[0]
+set_location_assignment PIN_M15 -to input_port1[1]
+set_location_assignment PIN_B13 -to output_port0[2]
+set_location_assignment PIN_A11 -to output_port0[3]
+set_location_assignment PIN_D1 -to output_port0[4]
+set_location_assignment PIN_F3 -to output_port0[5]
+set_location_assignment PIN_B1 -to output_port0[6]
+set_location_assignment PIN_L3 -to output_port0[7]
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
