@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "Cyclone IV E"
 set_global_assignment -name DEVICE EP4CE22F17C6
-set_global_assignment -name TOP_LEVEL_ENTITY ev21g1
+set_global_assignment -name TOP_LEVEL_ENTITY uc1
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 20.1.1
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "10:04:34  MAY 22, 2021"
 set_global_assignment -name LAST_QUARTUS_VERSION "20.1.1 Lite Edition"
@@ -58,11 +58,14 @@ set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_
 set_global_assignment -name EDA_NETLIST_WRITER_OUTPUT_DIR simulation -section_id eda_simulation
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+<<<<<<< HEAD
 
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name BDF_FILE ev21g1.bdf
+=======
+>>>>>>> 82b070b... uc1 ready untested
 set_global_assignment -name BDF_FILE bdf/cpu.bdf
 set_global_assignment -name VERILOG_FILE hdl/generated/ram.v
 set_global_assignment -name VERILOG_FILE hdl/generated/rom.v
@@ -72,9 +75,9 @@ set_global_assignment -name BDF_FILE bdf/uc_selector.bdf
 set_global_assignment -name BDF_FILE bdf/uc_zero.bdf
 set_global_assignment -name BDF_FILE bdf/uc_carry.bdf
 set_global_assignment -name BDF_FILE bdf/uc_psr.bdf
-set_global_assignment -name BDF_FILE bdf/uc_ifu.bdf
+set_global_assignment -name VERILOG_FILE hdl/bus_mux.v
+set_global_assignment -name BDF_FILE bdf/memory_register_bank.bdf
 set_global_assignment -name BDF_FILE bdf/general_register_bank.bdf
-set_global_assignment -name BDF_FILE bdf/port_register_bank.bdf
 set_global_assignment -name BDF_FILE bdf/cpu_register.bdf
 set_global_assignment -name BDF_FILE bdf/bus_switch.bdf
 set_global_assignment -name BDF_FILE bdf/chip_select.bdf
@@ -91,6 +94,17 @@ set_global_assignment -name VERILOG_FILE hdl/register.v
 set_global_assignment -name VERILOG_FILE hdl/shifter.v
 set_global_assignment -name VERILOG_FILE hdl/adder.v
 set_global_assignment -name VERILOG_FILE hdl/alu.v
-set_global_assignment -name VERILOG_FILE hdl/lifo.v
-set_global_assignment -name VERILOG_FILE tests/ev21g1_fetch_tb.v
+set_global_assignment -name BDF_FILE bdf/port_register_bank.bdf
+set_global_assignment -name BDF_FILE bdf/uc_negative.bdf
+set_global_assignment -name BDF_FILE bdf/uc_zero.bdf
+set_global_assignment -name BDF_FILE bdf/uc_carry.bdf
+set_global_assignment -name VERILOG_FILE hdl/bus_or.v
+set_global_assignment -name BDF_FILE ev21g1.bdf
+set_global_assignment -name BDF_FILE bdf/uc_selector.bdf
+set_global_assignment -name BDF_FILE bdf/chip_select.bdf
+
+set_global_assignment -name BDF_FILE bdf/uc1.bdf
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
