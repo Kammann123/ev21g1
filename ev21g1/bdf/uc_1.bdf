@@ -207,24 +207,6 @@ https://fpgasoftware.intel.com/eula.
 	(bus)
 )
 (connector
-	(text "nop[19..2]" (rect 218 368 265 385)(font "Intel Clear" ))
-	(pt 312 392)
-	(pt 136 392)
-	(bus)
-)
-(connector
-	(text "nop[21..20]" (rect 218 392 271 409)(font "Intel Clear" ))
-	(pt 312 416)
-	(pt 136 416)
-	(bus)
-)
-(connector
-	(text "nop[29..22]" (rect 218 456 271 473)(font "Intel Clear" ))
-	(pt 136 480)
-	(pt 312 480)
-	(bus)
-)
-(connector
 	(pt 136 416)
 	(pt 136 432)
 	(bus)
@@ -238,5 +220,23 @@ https://fpgasoftware.intel.com/eula.
 	(text "nop[29..0]" (rect 474 312 521 329)(font "Intel Clear" ))
 	(pt 568 328)
 	(pt 464 328)
+	(bus)
+)
+(connector
+	(text "nop[7..2]" (rect 218 368 259 385)(font "Intel Clear" ))
+	(pt 312 392)
+	(pt 136 392)
+	(bus)
+)
+(connector
+	(text "nop[22..8]" (rect 218 392 265 409)(font "Intel Clear" ))
+	(pt 312 416)
+	(pt 136 416)
+	(bus)
+)
+(connector
+	(text "nop[29..23]" (rect 218 456 271 473)(font "Intel Clear" ))
+	(pt 136 480)
+	(pt 312 480)
 	(bus)
 )

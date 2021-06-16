@@ -15,7 +15,7 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
-// CREATED		"Tue Jun 15 19:55:24 2021"
+// CREATED		"Wed Jun 16 16:39:56 2021"
 
 module cpu(
 	clk,
@@ -55,6 +55,8 @@ wire	[31:0] bus_a;
 wire	[31:0] bus_b;
 wire	[31:0] bus_c;
 wire	cond_jmp;
+wire	condjmp_hold;
+wire	hold;
 wire	[31:0] i_decode;
 wire	ifu_bsr;
 wire	ifu_jmp;
@@ -72,36 +74,47 @@ wire	[29:0] mi_retire;
 wire	[31:0] psr;
 wire	ret;
 wire	[15:0] rom_addr;
+wire	rom_clk;
 wire	sh_carry;
 wire	sh_overflow;
 wire	[31:0] SYNTHESIZED_WIRE_0;
 wire	[31:0] SYNTHESIZED_WIRE_1;
 wire	[31:0] SYNTHESIZED_WIRE_2;
-wire	SYNTHESIZED_WIRE_20;
-wire	[31:0] SYNTHESIZED_WIRE_21;
+wire	SYNTHESIZED_WIRE_29;
+wire	[31:0] SYNTHESIZED_WIRE_30;
 wire	SYNTHESIZED_WIRE_5;
 wire	SYNTHESIZED_WIRE_6;
 wire	SYNTHESIZED_WIRE_7;
 wire	[31:0] SYNTHESIZED_WIRE_8;
 wire	SYNTHESIZED_WIRE_9;
-wire	[31:0] SYNTHESIZED_WIRE_10;
-wire	SYNTHESIZED_WIRE_11;
+wire	SYNTHESIZED_WIRE_10;
+wire	[31:0] SYNTHESIZED_WIRE_11;
 wire	SYNTHESIZED_WIRE_12;
 wire	SYNTHESIZED_WIRE_13;
-wire	[31:0] SYNTHESIZED_WIRE_14;
-wire	SYNTHESIZED_WIRE_15;
+wire	SYNTHESIZED_WIRE_14;
+wire	[31:0] SYNTHESIZED_WIRE_15;
+wire	SYNTHESIZED_WIRE_16;
+wire	SYNTHESIZED_WIRE_17;
 wire	SYNTHESIZED_WIRE_18;
 wire	SYNTHESIZED_WIRE_19;
+wire	SYNTHESIZED_WIRE_20;
+wire	SYNTHESIZED_WIRE_21;
+wire	SYNTHESIZED_WIRE_24;
+wire	SYNTHESIZED_WIRE_25;
+wire	[29:0] SYNTHESIZED_WIRE_26;
+wire	SYNTHESIZED_WIRE_27;
+wire	[29:0] SYNTHESIZED_WIRE_28;
 
-assign	rom_read = clk;
 assign	SYNTHESIZED_WIRE_5 = 1;
 assign	SYNTHESIZED_WIRE_6 = 1;
 assign	SYNTHESIZED_WIRE_7 = 1;
 assign	SYNTHESIZED_WIRE_9 = 1;
-assign	SYNTHESIZED_WIRE_13 = 1;
-assign	SYNTHESIZED_WIRE_15 = 1;
-assign	SYNTHESIZED_WIRE_18 = 1;
-assign	SYNTHESIZED_WIRE_19 = 1;
+assign	SYNTHESIZED_WIRE_14 = 1;
+assign	SYNTHESIZED_WIRE_17 = 1;
+assign	SYNTHESIZED_WIRE_20 = 1;
+assign	SYNTHESIZED_WIRE_21 = 0;
+assign	SYNTHESIZED_WIRE_24 = 1;
+assign	SYNTHESIZED_WIRE_27 = 1;
 
 
 
@@ -125,8 +138,8 @@ shifter	b2v_inst1(
 
 
 port_register_bank	b2v_inst10(
-	.clk(SYNTHESIZED_WIRE_20),
-	.in(SYNTHESIZED_WIRE_21),
+	.clk(SYNTHESIZED_WIRE_29),
+	.in(SYNTHESIZED_WIRE_30),
 	.in_sel(mi_retire[7:2]),
 	.input_port0(input_port0),
 	.input_port1(input_port1),
@@ -156,7 +169,7 @@ register	b2v_inst18(
 	.en(SYNTHESIZED_WIRE_6),
 	.clk(clk),
 	.in(k),
-	.out(SYNTHESIZED_WIRE_10));
+	.out(SYNTHESIZED_WIRE_11));
 	defparam	b2v_inst18.BUS_WIDTH = 32;
 
 
@@ -165,7 +178,7 @@ register	b2v_inst2(
 	.en(SYNTHESIZED_WIRE_7),
 	.clk(clk),
 	.in(SYNTHESIZED_WIRE_8),
-	.out(SYNTHESIZED_WIRE_21));
+	.out(SYNTHESIZED_WIRE_30));
 	defparam	b2v_inst2.BUS_WIDTH = 32;
 
 
@@ -182,12 +195,12 @@ instruction_predecoder	b2v_inst20(
 
 register	b2v_inst21(
 	.en(SYNTHESIZED_WIRE_9),
-	.clk(clk),
+	.clk(SYNTHESIZED_WIRE_10),
 	.in(rom_data_bus),
 	.out(i_decode));
 	defparam	b2v_inst21.BUS_WIDTH = 32;
 
-assign	SYNTHESIZED_WIRE_20 =  ~clk;
+assign	SYNTHESIZED_WIRE_29 =  ~clk;
 
 
 buffer_tri	b2v_inst23(
@@ -200,14 +213,14 @@ buffer_tri	b2v_inst23(
 bus_mux	b2v_inst24(
 	.sel(mi_operand[22]),
 	.in0(bus_a),
-	.in1(SYNTHESIZED_WIRE_10),
-	.out(SYNTHESIZED_WIRE_14));
+	.in1(SYNTHESIZED_WIRE_11),
+	.out(SYNTHESIZED_WIRE_15));
 	defparam	b2v_inst24.BUS_WIDTH = 32;
 
 
 
 ifu	b2v_inst26(
-	.clk(SYNTHESIZED_WIRE_11),
+	.clk(SYNTHESIZED_WIRE_12),
 	.bsr(ifu_bsr),
 	.jmp(ifu_jmp),
 	.ret(ifu_ret),
@@ -218,25 +231,39 @@ ifu	b2v_inst26(
 
 uc_selector	b2v_inst27(
 	.mi(mi_execute),
-	.sel(SYNTHESIZED_WIRE_12));
+	.sel(SYNTHESIZED_WIRE_13));
 
 
 bus_mux	b2v_inst28(
-	.sel(SYNTHESIZED_WIRE_12),
+	.sel(SYNTHESIZED_WIRE_13),
 	.in0(bus_c),
 	.in1(mem_data_bus),
 	.out(SYNTHESIZED_WIRE_8));
 	defparam	b2v_inst28.BUS_WIDTH = 32;
 
-assign	SYNTHESIZED_WIRE_11 =  ~clk;
-
 
 register	b2v_inst3(
-	.en(SYNTHESIZED_WIRE_13),
+	.en(SYNTHESIZED_WIRE_14),
 	.clk(clk),
-	.in(SYNTHESIZED_WIRE_14),
+	.in(SYNTHESIZED_WIRE_15),
 	.out(SYNTHESIZED_WIRE_0));
 	defparam	b2v_inst3.BUS_WIDTH = 32;
+
+
+uc_1	b2v_inst31(
+	.hold(hold),
+	.bus_inp(mi_operand),
+	.bus_out(SYNTHESIZED_WIRE_28));
+
+assign	SYNTHESIZED_WIRE_25 = clk & SYNTHESIZED_WIRE_16;
+
+assign	SYNTHESIZED_WIRE_16 =  ~hold;
+
+
+uc_1	b2v_inst34(
+	.hold(condjmp_hold),
+	.bus_inp(mi_decode),
+	.bus_out(SYNTHESIZED_WIRE_26));
 
 
 uc_ifu	b2v_inst36(
@@ -255,7 +282,7 @@ uc_ifu	b2v_inst36(
 
 
 register	b2v_inst4(
-	.en(SYNTHESIZED_WIRE_15),
+	.en(SYNTHESIZED_WIRE_17),
 	.clk(clk),
 	.in(bus_b),
 	.out(SYNTHESIZED_WIRE_1));
@@ -264,6 +291,18 @@ register	b2v_inst4(
 assign	k[15:0] = i_decode[21:6];
 
 
+
+
+uc_2	b2v_inst43(
+	.clk(clk),
+	.a(mi_operand[19:14]),
+	.b(mi_operand[13:8]),
+	.c(mi_execute[7:2]),
+	.hold(hold));
+
+assign	SYNTHESIZED_WIRE_12 =  ~rom_clk;
+
+assign	rom_clk = clk & SYNTHESIZED_WIRE_18;
 
 
 uc_psr	b2v_inst5(
@@ -277,15 +316,30 @@ uc_psr	b2v_inst5(
 	.sh(mi_execute[25:23]),
 	.psr(psr));
 
+assign	SYNTHESIZED_WIRE_18 =  ~hold;
+
+assign	SYNTHESIZED_WIRE_10 = clk & SYNTHESIZED_WIRE_19;
+
+assign	SYNTHESIZED_WIRE_19 =  ~hold;
+
+
+uc_cjmp	b2v_inst54(
+	.clk(clk),
+	.cond_jmp(SYNTHESIZED_WIRE_20),
+	.hold(SYNTHESIZED_WIRE_21),
+	.condjmp_hold(condjmp_hold));
+
 
 general_register_bank	b2v_inst6(
-	.clk(SYNTHESIZED_WIRE_20),
-	.in(SYNTHESIZED_WIRE_21),
+	.clk(SYNTHESIZED_WIRE_29),
+	.in(SYNTHESIZED_WIRE_30),
 	.in_sel(mi_retire[7:2]),
 	.outa_sel(mi_operand[19:14]),
 	.outb_sel(mi_operand[13:8]),
 	.outa(bus_a),
 	.outb(bus_b));
+
+
 
 
 instruction_decoder	b2v_inst7(
@@ -294,22 +348,23 @@ instruction_decoder	b2v_inst7(
 
 
 register	b2v_inst8(
-	.en(SYNTHESIZED_WIRE_18),
-	.clk(clk),
-	.in(mi_decode),
+	.en(SYNTHESIZED_WIRE_24),
+	.clk(SYNTHESIZED_WIRE_25),
+	.in(SYNTHESIZED_WIRE_26),
 	.out(mi_operand));
 	defparam	b2v_inst8.BUS_WIDTH = 30;
 
 
 register	b2v_inst9(
-	.en(SYNTHESIZED_WIRE_19),
+	.en(SYNTHESIZED_WIRE_27),
 	.clk(clk),
-	.in(mi_operand),
+	.in(SYNTHESIZED_WIRE_28),
 	.out(mi_execute));
 	defparam	b2v_inst9.BUS_WIDTH = 30;
 
 assign	mem_read = mi_operand[21];
 assign	mem_write = mi_operand[20];
+assign	rom_read = rom_clk;
 assign	mem_addr_bus = bus_b;
 assign	rom_addr_bus[12:0] = rom_addr[12:0];
 assign	k[31:16] = 16'b0000000000000000;
