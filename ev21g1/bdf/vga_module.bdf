@@ -284,7 +284,7 @@ https://fpgasoftware.intel.com/eula.
 	)
 )
 (symbol
-	(rect 328 280 560 392)
+	(rect 344 280 576 392)
 	(text "vga_controller" (rect 5 0 74 12)(font "Arial" ))
 	(text "inst5" (rect 8 96 30 113)(font "Intel Clear" ))
 	(port
@@ -357,6 +357,11 @@ https://fpgasoftware.intel.com/eula.
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
+		"htotal"
+		"400"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
 		"vactive"
 		"200"
 		""
@@ -376,10 +381,15 @@ https://fpgasoftware.intel.com/eula.
 		"6"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"vtotal"
+		"215"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
 	(drawing
 		(rectangle (rect 16 16 216 96))
 	)
-	(annotation_block (parameter)(rect 80 80 259 251))
+	(annotation_block (parameter)(rect 64 32 243 241))
 )
 (connector
 	(pt 808 136)
@@ -482,19 +492,6 @@ https://fpgasoftware.intel.com/eula.
 	(bus)
 )
 (connector
-	(pt 312 312)
-	(pt 328 312)
-	(bus)
-)
-(connector
-	(pt 264 328)
-	(pt 328 328)
-)
-(connector
-	(pt 304 344)
-	(pt 328 344)
-)
-(connector
 	(pt 304 344)
 	(pt 304 440)
 )
@@ -503,21 +500,34 @@ https://fpgasoftware.intel.com/eula.
 	(pt 304 472)
 )
 (connector
-	(pt 560 312)
-	(pt 584 312)
+	(pt 344 344)
+	(pt 304 344)
 )
 (connector
-	(pt 560 328)
+	(pt 344 328)
+	(pt 264 328)
+)
+(connector
+	(pt 344 312)
+	(pt 312 312)
+	(bus)
+)
+(connector
+	(pt 576 360)
+	(pt 792 360)
+	(bus)
+)
+(connector
+	(pt 584 344)
+	(pt 576 344)
+	(bus)
+)
+(connector
+	(pt 576 328)
 	(pt 584 328)
 )
 (connector
-	(pt 560 344)
-	(pt 584 344)
-	(bus)
-)
-(connector
-	(pt 560 360)
-	(pt 792 360)
-	(bus)
+	(pt 576 312)
+	(pt 584 312)
 )
 (junction (pt 304 440))

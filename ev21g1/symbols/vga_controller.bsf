@@ -94,6 +94,11 @@ https://fpgasoftware.intel.com/eula.
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
+		"htotal"
+		"800"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
 		"vactive"
 		"480"
 		""
@@ -111,6 +116,11 @@ https://fpgasoftware.intel.com/eula.
 	(parameter
 		"vbackporch"
 		"33"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"vtotal"
+		"525"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(drawing

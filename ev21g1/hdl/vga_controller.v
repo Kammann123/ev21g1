@@ -23,13 +23,14 @@ module vga_controller(
 	parameter hfrontporch = 16;
 	parameter hsyncpulse = 96;
 	parameter hbackporch = 48;
-	wire htotal = hactive + hfrontporch + hsyncpulse +  hbackporch;
+	parameter htotal = 800;
+	
 	
 	parameter vactive = 480;
 	parameter vfrontporch = 10;
 	parameter vsyncpulse = 2;
 	parameter vbackporch = 33;
-	wire vtotal = vactive + vfrontporch + vsyncpulse + vbackporch;
+	parameter vtotal = 525;
 
 	/**************************/
 	/* Declaring output ports */
@@ -104,11 +105,11 @@ module vga_controller(
 	always @* begin
 	
 		if (active) begin
-			pixel_address <= h_count * vactive + v_count;
-			vga_rgb <= pixel_rgb;
+			pixel_address = h_count * vactive + v_count;
+			vga_rgb = pixel_rgb;
 		end else begin
-			pixel_address <= 0;
-			vga_rgb <= 3'b000;
+			pixel_address = 0;
+			vga_rgb = 3'b000;
 		end
 	end
 endmodule
