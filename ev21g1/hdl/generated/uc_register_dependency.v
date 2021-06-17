@@ -15,45 +15,48 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
-// CREATED		"Wed Jun 16 12:28:10 2021"
+// CREATED		"Wed Jun 16 23:59:54 2021"
 
-module uc_2(
+module uc_register_dependency(
 	clk,
-	a,
-	b,
-	c,
+	reset,
+	mi_execute,
+	mi_operand,
 	hold
 );
 
 
 input wire	clk;
-input wire	[5:0] a;
-input wire	[5:0] b;
-input wire	[5:0] c;
+input wire	reset;
+input wire	[32:0] mi_execute;
+input wire	[32:0] mi_operand;
 output reg	hold;
 
 wire	SYNTHESIZED_WIRE_0;
-wire	SYNTHESIZED_WIRE_7;
+wire	SYNTHESIZED_WIRE_1;
 wire	SYNTHESIZED_WIRE_2;
 wire	SYNTHESIZED_WIRE_3;
+wire	SYNTHESIZED_WIRE_4;
 wire	SYNTHESIZED_WIRE_5;
 wire	SYNTHESIZED_WIRE_6;
+wire	SYNTHESIZED_WIRE_7;
+wire	SYNTHESIZED_WIRE_8;
 
 assign	SYNTHESIZED_WIRE_0 = 1;
-assign	SYNTHESIZED_WIRE_7 = 1;
+assign	SYNTHESIZED_WIRE_3 = 1;
 
 
 
 
 comp_6b	b2v_inst(
-	.bus1(a),
-	.bus2(c),
-	.equal(SYNTHESIZED_WIRE_6));
+	.a(mi_operand[19:14]),
+	.b(mi_execute[7:2]),
+	.equal(SYNTHESIZED_WIRE_4));
 
 
-always@(posedge SYNTHESIZED_WIRE_3 or negedge SYNTHESIZED_WIRE_7 or negedge SYNTHESIZED_WIRE_0)
+always@(posedge clk or negedge SYNTHESIZED_WIRE_1 or negedge SYNTHESIZED_WIRE_0)
 begin
-if (!SYNTHESIZED_WIRE_7)
+if (!SYNTHESIZED_WIRE_1)
 	begin
 	hold <= 0;
 	end
@@ -63,7 +66,7 @@ if (!SYNTHESIZED_WIRE_0)
 	hold <= 1;
 	end
 else
-if (SYNTHESIZED_WIRE_7)
+if (SYNTHESIZED_WIRE_3)
 	begin
 	hold <= SYNTHESIZED_WIRE_2;
 	end
@@ -71,15 +74,21 @@ end
 
 
 comp_6b	b2v_inst2(
-	.bus1(c),
-	.bus2(b),
+	.a(mi_operand[13:8]),
+	.b(mi_execute[7:2]),
 	.equal(SYNTHESIZED_WIRE_5));
 
-assign	SYNTHESIZED_WIRE_3 =  ~clk;
+assign	SYNTHESIZED_WIRE_1 =  ~reset;
 
 
 
-assign	SYNTHESIZED_WIRE_2 = SYNTHESIZED_WIRE_5 | SYNTHESIZED_WIRE_6;
+assign	SYNTHESIZED_WIRE_8 = SYNTHESIZED_WIRE_4 & mi_operand[30];
+
+assign	SYNTHESIZED_WIRE_7 = mi_operand[31] & SYNTHESIZED_WIRE_5;
+
+assign	SYNTHESIZED_WIRE_2 = mi_execute[32] & SYNTHESIZED_WIRE_6;
+
+assign	SYNTHESIZED_WIRE_6 = SYNTHESIZED_WIRE_7 | SYNTHESIZED_WIRE_8;
 
 
 endmodule

@@ -22,9 +22,9 @@ https://fpgasoftware.intel.com/eula.
 (header "graphic" (version "1.4"))
 (pin
 	(input)
-	(rect 352 208 520 224)
+	(rect 320 88 488 104)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "bus1[5..0]" (rect 5 0 51 17)(font "Intel Clear" ))
+	(text "a[5..0]" (rect 5 0 35 17)(font "Intel Clear" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -38,9 +38,9 @@ https://fpgasoftware.intel.com/eula.
 )
 (pin
 	(input)
-	(rect 360 296 528 312)
+	(rect 320 120 488 136)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "bus2[5..0]" (rect 5 0 54 12)(font "Arial" ))
+	(text "b[5..0]" (rect 5 0 37 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -339,66 +339,6 @@ https://fpgasoftware.intel.com/eula.
 	)
 )
 (connector
-	(text "bus1[0]" (rect 632 80 667 97)(font "Intel Clear" ))
-	(pt 680 96)
-	(pt 624 96)
-)
-(connector
-	(text "bus2[0]" (rect 632 96 667 113)(font "Intel Clear" ))
-	(pt 680 112)
-	(pt 624 112)
-)
-(connector
-	(text "bus1[1]" (rect 632 152 667 169)(font "Intel Clear" ))
-	(pt 680 168)
-	(pt 624 168)
-)
-(connector
-	(text "bus2[1]" (rect 631 168 666 185)(font "Intel Clear" ))
-	(pt 680 184)
-	(pt 624 184)
-)
-(connector
-	(text "bus1[2]" (rect 632 216 667 233)(font "Intel Clear" ))
-	(pt 680 232)
-	(pt 624 232)
-)
-(connector
-	(text "bus2[2]" (rect 632 232 667 249)(font "Intel Clear" ))
-	(pt 680 248)
-	(pt 624 248)
-)
-(connector
-	(text "bus1[3]" (rect 632 280 667 297)(font "Intel Clear" ))
-	(pt 680 296)
-	(pt 624 296)
-)
-(connector
-	(text "bus2[3]" (rect 632 296 667 313)(font "Intel Clear" ))
-	(pt 680 312)
-	(pt 624 312)
-)
-(connector
-	(text "bus1[4]" (rect 632 352 667 369)(font "Intel Clear" ))
-	(pt 680 368)
-	(pt 624 368)
-)
-(connector
-	(text "bus2[4]" (rect 632 368 667 385)(font "Intel Clear" ))
-	(pt 680 384)
-	(pt 624 384)
-)
-(connector
-	(text "bus1[5]" (rect 632 416 667 433)(font "Intel Clear" ))
-	(pt 680 432)
-	(pt 624 432)
-)
-(connector
-	(text "bus2[5]" (rect 632 432 667 449)(font "Intel Clear" ))
-	(pt 680 448)
-	(pt 624 448)
-)
-(connector
 	(pt 744 104)
 	(pt 888 104)
 )
@@ -463,13 +403,74 @@ https://fpgasoftware.intel.com/eula.
 	(pt 1000 248)
 )
 (connector
-	(pt 528 304)
-	(pt 544 304)
+	(text "a[0]" (rect 632 80 650 97)(font "Intel Clear" ))
+	(pt 680 96)
+	(pt 624 96)
+)
+(connector
+	(text "b[0]" (rect 632 96 650 113)(font "Intel Clear" ))
+	(pt 680 112)
+	(pt 624 112)
+)
+(connector
+	(text "b[1]" (rect 631 168 649 185)(font "Intel Clear" ))
+	(pt 680 184)
+	(pt 624 184)
+)
+(connector
+	(text "a[2]" (rect 632 216 650 233)(font "Intel Clear" ))
+	(pt 680 232)
+	(pt 624 232)
+)
+(connector
+	(text "b[2]" (rect 632 232 650 249)(font "Intel Clear" ))
+	(pt 680 248)
+	(pt 624 248)
+)
+(connector
+	(text "a[3]" (rect 632 280 650 297)(font "Intel Clear" ))
+	(pt 680 296)
+	(pt 624 296)
+)
+(connector
+	(text "b[3]" (rect 632 296 650 313)(font "Intel Clear" ))
+	(pt 680 312)
+	(pt 624 312)
+)
+(connector
+	(text "a[4]" (rect 632 352 650 369)(font "Intel Clear" ))
+	(pt 680 368)
+	(pt 624 368)
+)
+(connector
+	(text "b[4]" (rect 632 368 650 385)(font "Intel Clear" ))
+	(pt 680 384)
+	(pt 624 384)
+)
+(connector
+	(text "a[5]" (rect 632 416 650 433)(font "Intel Clear" ))
+	(pt 680 432)
+	(pt 624 432)
+)
+(connector
+	(text "b[5]" (rect 632 432 650 449)(font "Intel Clear" ))
+	(pt 680 448)
+	(pt 624 448)
+)
+(connector
+	(text "a[1]" (rect 632 152 650 169)(font "Intel Clear" ))
+	(pt 680 168)
+	(pt 624 168)
+)
+(connector
+	(text "a[5..0]" (rect 498 80 527 97)(font "Intel Clear" ))
+	(pt 560 96)
+	(pt 488 96)
 	(bus)
 )
 (connector
-	(text "<<__$DEF_ALIAS3566>>" (rect 647 256 765 273)(font "Intel Clear" )(invisible))
-	(pt 520 216)
-	(pt 544 216)
+	(text "b[5..0]" (rect 499 112 528 129)(font "Intel Clear" ))
+	(pt 488 128)
+	(pt 560 128)
 	(bus)
 )
