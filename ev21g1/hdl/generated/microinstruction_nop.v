@@ -15,15 +15,30 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
-// CREATED		"Tue Jun 15 22:40:29 2021"
+// CREATED		"Wed Jun 16 22:59:55 2021"
+
+module microinstruction_nop(
+	nop
+);
 
 
-module lpm_xor_0(data,result);
-input data;
-output [5:0] result;
+output wire	[32:0] nop;
 
-lpm_xor	lpm_instance(.data(data),.result(result));
-	defparam	lpm_instance.LPM_SIZE = 2;
-	defparam	lpm_instance.LPM_WIDTH = 6;
+wire	[32:0] nop_ALTERA_SYNTHESIZED;
+
+
+
+
+
+
+
+
+
+assign	nop = nop_ALTERA_SYNTHESIZED;
+assign	nop_ALTERA_SYNTHESIZED[7:2] = 6'b111111;
+assign	nop_ALTERA_SYNTHESIZED[29:23] = 7'b1111111;
+assign	nop_ALTERA_SYNTHESIZED[1:0] = 2'b00;
+assign	nop_ALTERA_SYNTHESIZED[22:8] = 15'b000000000000000;
+assign	nop_ALTERA_SYNTHESIZED[32:30] = 3'b000;
 
 endmodule

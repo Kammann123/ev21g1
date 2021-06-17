@@ -15,14 +15,57 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
-// CREATED		"Tue Jun 15 22:40:29 2021"
+// CREATED		"Thu Jun 17 00:19:24 2021"
+
+module uc_memory_dependency(
+	reset,
+	clk,
+	mi_decode,
+	mi_operand,
+	hold
+);
 
 
-module lpm_inv_1(data,result);
-input [5:0] data;
-output [5:0] result;
+input wire	reset;
+input wire	clk;
+input wire	[32:0] mi_decode;
+input wire	[32:0] mi_operand;
+output reg	hold;
 
-lpm_inv	lpm_instance(.data(data),.result(result));
-	defparam	lpm_instance.LPM_WIDTH = 6;
+wire	SYNTHESIZED_WIRE_0;
+wire	SYNTHESIZED_WIRE_1;
+wire	SYNTHESIZED_WIRE_2;
+wire	SYNTHESIZED_WIRE_3;
+
+assign	SYNTHESIZED_WIRE_0 = 1;
+assign	SYNTHESIZED_WIRE_3 = 1;
+
+
+
+assign	SYNTHESIZED_WIRE_2 = mi_operand[21] & mi_decode[20];
+
+
+always@(posedge clk or negedge SYNTHESIZED_WIRE_1 or negedge SYNTHESIZED_WIRE_0)
+begin
+if (!SYNTHESIZED_WIRE_1)
+	begin
+	hold <= 0;
+	end
+else
+if (!SYNTHESIZED_WIRE_0)
+	begin
+	hold <= 1;
+	end
+else
+if (SYNTHESIZED_WIRE_3)
+	begin
+	hold <= SYNTHESIZED_WIRE_2;
+	end
+end
+
+assign	SYNTHESIZED_WIRE_1 =  ~reset;
+
+
+
 
 endmodule

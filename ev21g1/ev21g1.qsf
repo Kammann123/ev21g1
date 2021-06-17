@@ -62,13 +62,11 @@ set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name BDF_FILE bdf/uc_register_dependency.bdf
+set_global_assignment -name BDF_FILE bdf/microinstruction_nop.bdf
 set_global_assignment -name VERILOG_FILE hdl/lifo.v
 set_global_assignment -name VERILOG_FILE hdl/fifo.v
 set_global_assignment -name BDF_FILE bdf/uc_ifu.bdf
-set_global_assignment -name BDF_FILE bdf/stack_test.bdf
-set_global_assignment -name BDF_FILE bdf/pre_decoder.bdf
-set_global_assignment -name BDF_FILE bdf/determine_type.bdf
-set_global_assignment -name BDF_FILE bdf/conditional_jump.bdf
 set_global_assignment -name BDF_FILE bdf/comp_6b.bdf
 set_global_assignment -name BDF_FILE bdf/cpu.bdf
 set_global_assignment -name VERILOG_FILE hdl/generated/ram.v
@@ -99,6 +97,5 @@ set_global_assignment -name VERILOG_FILE hdl/bus_or.v
 set_global_assignment -name BDF_FILE ev21g1.bdf
 set_global_assignment -name BDF_FILE bdf/uc_selector.bdf
 set_global_assignment -name BDF_FILE bdf/chip_select.bdf
-set_global_assignment -name BDF_FILE bdf/uc_2.bdf
-set_global_assignment -name BDF_FILE bdf/uc_1.bdf
+set_global_assignment -name BDF_FILE bdf/uc_memory_dependency.bdf
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

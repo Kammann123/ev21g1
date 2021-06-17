@@ -1,1 +1,1 @@
-Warning (10268): Verilog HDL information at lifo.v(45): always construct contains both blocking and non-blocking assignments File: D:/Users/Joaco/Desktop/repos/Electronica_V/posta/ev21g1/ev21g1/hdl/lifo.v Line: 45
+Warning (10268): Verilog HDL information at lifo.v(45): always construct contains both blocking and non-blocking assignments File: C:/GitHub/ev21g1/ev21g1/hdl/lifo.v Line: 45
