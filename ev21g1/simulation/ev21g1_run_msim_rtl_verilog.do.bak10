@@ -1,0 +1,22 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vlog -vlog01compat -work work +incdir+D:/Users/Joaco/Desktop/repos/Electronica_V/posta/ev21g1/ev21g1/hdl {D:/Users/Joaco/Desktop/repos/Electronica_V/posta/ev21g1/ev21g1/hdl/lifo.v}
+vlog -vlog01compat -work work +incdir+D:/Users/Joaco/Desktop/repos/Electronica_V/posta/ev21g1/ev21g1/hdl/generated {D:/Users/Joaco/Desktop/repos/Electronica_V/posta/ev21g1/ev21g1/hdl/generated/ram.v}
+vlog -vlog01compat -work work +incdir+D:/Users/Joaco/Desktop/repos/Electronica_V/posta/ev21g1/ev21g1/hdl/generated {D:/Users/Joaco/Desktop/repos/Electronica_V/posta/ev21g1/ev21g1/hdl/generated/rom.v}
+vlog -vlog01compat -work work +incdir+D:/Users/Joaco/Desktop/repos/Electronica_V/posta/ev21g1/ev21g1/hdl {D:/Users/Joaco/Desktop/repos/Electronica_V/posta/ev21g1/ev21g1/hdl/instruction_predecoder.v}
+vlog -vlog01compat -work work +incdir+D:/Users/Joaco/Desktop/repos/Electronica_V/posta/ev21g1/ev21g1/hdl {D:/Users/Joaco/Desktop/repos/Electronica_V/posta/ev21g1/ev21g1/hdl/mir_format_1.v}
+vlog -vlog01compat -work work +incdir+D:/Users/Joaco/Desktop/repos/Electronica_V/posta/ev21g1/ev21g1/hdl {D:/Users/Joaco/Desktop/repos/Electronica_V/posta/ev21g1/ev21g1/hdl/mir_format_2.v}
+vlog -vlog01compat -work work +incdir+D:/Users/Joaco/Desktop/repos/Electronica_V/posta/ev21g1/ev21g1/hdl {D:/Users/Joaco/Desktop/repos/Electronica_V/posta/ev21g1/ev21g1/hdl/buffer_tri.v}
+vlog -vlog01compat -work work +incdir+D:/Users/Joaco/Desktop/repos/Electronica_V/posta/ev21g1/ev21g1/hdl {D:/Users/Joaco/Desktop/repos/Electronica_V/posta/ev21g1/ev21g1/hdl/bus_mux.v}
+vlog -vlog01compat -work work +incdir+D:/Users/Joaco/Desktop/repos/Electronica_V/posta/ev21g1/ev21g1/hdl {D:/Users/Joaco/Desktop/repos/Electronica_V/posta/ev21g1/ev21g1/hdl/decoder.v}
+vlog -vlog01compat -work work +incdir+D:/Users/Joaco/Desktop/repos/Electronica_V/posta/ev21g1/ev21g1/hdl {D:/Users/Joaco/Desktop/repos/Electronica_V/posta/ev21g1/ev21g1/hdl/register.v}
+vlog -vlog01compat -work work +incdir+D:/Users/Joaco/Desktop/repos/Electronica_V/posta/ev21g1/ev21g1/hdl {D:/Users/Joaco/Desktop/repos/Electronica_V/posta/ev21g1/ev21g1/hdl/shifter.v}
+vlog -vlog01compat -work work +incdir+D:/Users/Joaco/Desktop/repos/Electronica_V/posta/ev21g1/ev21g1/hdl {D:/Users/Joaco/Desktop/repos/Electronica_V/posta/ev21g1/ev21g1/hdl/adder.v}
+vlog -vlog01compat -work work +incdir+D:/Users/Joaco/Desktop/repos/Electronica_V/posta/ev21g1/ev21g1/hdl {D:/Users/Joaco/Desktop/repos/Electronica_V/posta/ev21g1/ev21g1/hdl/alu.v}
+vlog -vlog01compat -work work +incdir+D:/Users/Joaco/Desktop/repos/Electronica_V/posta/ev21g1/ev21g1/hdl {D:/Users/Joaco/Desktop/repos/Electronica_V/posta/ev21g1/ev21g1/hdl/bus_or.v}
+

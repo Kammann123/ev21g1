@@ -21,7 +21,7 @@ https://fpgasoftware.intel.com/eula.
 */
 (header "symbol" (version "1.2"))
 (symbol
-	(rect 16 16 304 112)
+	(rect 64 64 352 160)
 	(text "instruction_decoder" (rect 5 0 121 19)(font "Intel Clear" (font_size 8)))
 	(text "inst" (rect 8 75 24 92)(font "Intel Clear" ))
 	(port
@@ -34,8 +34,8 @@ https://fpgasoftware.intel.com/eula.
 	(port
 		(pt 288 32)
 		(output)
-		(text "microinstruction[29..0]" (rect 0 0 133 19)(font "Intel Clear" (font_size 8)))
-		(text "microinstruction[29..0]" (rect 134 27 267 46)(font "Intel Clear" (font_size 8)))
+		(text "microinstruction[32..0]" (rect 0 0 133 19)(font "Intel Clear" (font_size 8)))
+		(text "microinstruction[32..0]" (rect 134 27 267 46)(font "Intel Clear" (font_size 8)))
 		(line (pt 288 32)(pt 272 32)(line_width 3))
 	)
 	(drawing
