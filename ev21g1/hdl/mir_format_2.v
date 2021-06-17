@@ -42,7 +42,7 @@ module mir_format_2(
 				flip = 1'b0;
 				print = 1'b0;
 			end
-
+			
 			6'b010001: begin	// MMK Ri,K
 				aluc = 4'b0000;
 				sh = 3'b011;

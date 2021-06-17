@@ -104,7 +104,6 @@ set_global_assignment -name BDF_FILE bdf/uc_selector.bdf
 set_global_assignment -name BDF_FILE bdf/chip_select.bdf
 set_global_assignment -name BDF_FILE bdf/uc_memory_dependency.bdf
 set_global_assignment -name BDF_FILE bdf/instruction_nop.bdf
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_location_assignment PIN_R8 -to clk
 set_location_assignment PIN_M1 -to input_port0[0]
 set_location_assignment PIN_T8 -to input_port0[1]
@@ -126,3 +125,4 @@ set_location_assignment PIN_T15 -to vga_rgb[1]
 set_location_assignment PIN_F13 -to vga_rgb[0]
 set_location_assignment PIN_T12 -to vga_vsync
 set_location_assignment PIN_T11 -to vga_hsync
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
