@@ -5,7 +5,7 @@ module lifo(clk, reset, push, pop, data_in, data_out);
 	/*********************/
 	parameter BUS_WIDTH = 16;
 	parameter STACK_SIZE = 16;
-	parameter INC_VALUE = 3'b100;
+	
 	/*************************/
 	/* Declaring input ports */
 	/*************************/	
@@ -52,7 +52,7 @@ module lifo(clk, reset, push, pop, data_in, data_out);
 		else if(validWrite)
 		begin
 			dataCounter = dataCounter + 1'b1;
-			dirs[stackPointer] <= data_in + INC_VALUE;
+			dirs[stackPointer] <= data_in;
 			stackPointer = stackPointer + 1'b1;
 		end
 		else if(validRead)

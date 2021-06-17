@@ -15,7 +15,7 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
-// CREATED		"Tue Jun 15 18:56:00 2021"
+// CREATED		"Thu Jun 17 07:43:47 2021"
 
 module ifu(
 	bsr,
@@ -84,7 +84,6 @@ lifo	b2v_inst3(
 	.data_in(SYNTHESIZED_WIRE_10),
 	.data_out(SYNTHESIZED_WIRE_7));
 	defparam	b2v_inst3.BUS_WIDTH = 16;
-	defparam	b2v_inst3.INC_VALUE = 1'b1;
 	defparam	b2v_inst3.STACK_SIZE = 16;
 
 

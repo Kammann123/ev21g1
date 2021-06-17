@@ -15,11 +15,7 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
-<<<<<<< HEAD
-// CREATED		"Thu Jun 17 02:00:09 2021"
-=======
-// CREATED		"Thu Jun 17 00:30:10 2021"
->>>>>>> dependencies
+// CREATED		"Thu Jun 17 07:19:10 2021"
 
 module cpu(
 	clk,
@@ -58,7 +54,12 @@ wire	bsr;
 wire	[31:0] bus_a;
 wire	[31:0] bus_b;
 wire	[31:0] bus_c;
+wire	clk_decode;
+wire	clk_fetch;
+wire	clk_operand;
 wire	cond_jmp;
+wire	hold_jump_decode;
+wire	hold_jump_fetch;
 wire	hold_memory_dependency;
 wire	hold_register_dependency;
 wire	[31:0] i_decode;
@@ -78,54 +79,55 @@ wire	[32:0] mi_retire;
 wire	[31:0] psr;
 wire	ret;
 wire	[15:0] rom_addr;
-wire	rom_clk;
 wire	sh_carry;
 wire	sh_overflow;
 wire	[31:0] SYNTHESIZED_WIRE_0;
 wire	[31:0] SYNTHESIZED_WIRE_1;
 wire	[31:0] SYNTHESIZED_WIRE_2;
-wire	SYNTHESIZED_WIRE_33;
-wire	[31:0] SYNTHESIZED_WIRE_34;
+wire	SYNTHESIZED_WIRE_40;
+wire	[31:0] SYNTHESIZED_WIRE_41;
 wire	SYNTHESIZED_WIRE_5;
 wire	SYNTHESIZED_WIRE_6;
 wire	SYNTHESIZED_WIRE_7;
 wire	[31:0] SYNTHESIZED_WIRE_8;
 wire	SYNTHESIZED_WIRE_9;
-wire	SYNTHESIZED_WIRE_10;
+wire	[31:0] SYNTHESIZED_WIRE_10;
 wire	[31:0] SYNTHESIZED_WIRE_11;
 wire	SYNTHESIZED_WIRE_12;
 wire	SYNTHESIZED_WIRE_13;
 wire	SYNTHESIZED_WIRE_14;
-wire	[31:0] SYNTHESIZED_WIRE_15;
-wire	SYNTHESIZED_WIRE_16;
+wire	SYNTHESIZED_WIRE_15;
+wire	[31:0] SYNTHESIZED_WIRE_16;
 wire	SYNTHESIZED_WIRE_17;
-wire	[32:0] SYNTHESIZED_WIRE_18;
-wire	[32:0] SYNTHESIZED_WIRE_19;
+wire	SYNTHESIZED_WIRE_18;
+wire	SYNTHESIZED_WIRE_19;
 wire	SYNTHESIZED_WIRE_20;
 wire	SYNTHESIZED_WIRE_21;
 wire	SYNTHESIZED_WIRE_22;
 wire	SYNTHESIZED_WIRE_23;
-wire	SYNTHESIZED_WIRE_24;
+wire	[32:0] SYNTHESIZED_WIRE_24;
 wire	SYNTHESIZED_WIRE_25;
+wire	[32:0] SYNTHESIZED_WIRE_26;
+wire	SYNTHESIZED_WIRE_27;
 wire	SYNTHESIZED_WIRE_28;
 wire	SYNTHESIZED_WIRE_29;
-wire	[32:0] SYNTHESIZED_WIRE_30;
-wire	SYNTHESIZED_WIRE_31;
-wire	[32:0] SYNTHESIZED_WIRE_32;
+wire	[31:0] SYNTHESIZED_WIRE_30;
+wire	SYNTHESIZED_WIRE_33;
+wire	SYNTHESIZED_WIRE_34;
+wire	SYNTHESIZED_WIRE_35;
+wire	SYNTHESIZED_WIRE_36;
+wire	[32:0] SYNTHESIZED_WIRE_37;
+wire	SYNTHESIZED_WIRE_38;
+wire	[32:0] SYNTHESIZED_WIRE_39;
 
 assign	SYNTHESIZED_WIRE_5 = 1;
 assign	SYNTHESIZED_WIRE_6 = 1;
 assign	SYNTHESIZED_WIRE_7 = 1;
 assign	SYNTHESIZED_WIRE_9 = 1;
-assign	SYNTHESIZED_WIRE_14 = 1;
-assign	SYNTHESIZED_WIRE_17 = 1;
-<<<<<<< HEAD
-assign	SYNTHESIZED_WIRE_24 = 1;
-assign	SYNTHESIZED_WIRE_27 = 1;
-=======
-assign	SYNTHESIZED_WIRE_28 = 1;
-assign	SYNTHESIZED_WIRE_31 = 1;
->>>>>>> dependencies
+assign	SYNTHESIZED_WIRE_15 = 1;
+assign	SYNTHESIZED_WIRE_21 = 1;
+assign	SYNTHESIZED_WIRE_36 = 1;
+assign	SYNTHESIZED_WIRE_38 = 1;
 
 
 
@@ -149,8 +151,8 @@ shifter	b2v_inst1(
 
 
 port_register_bank	b2v_inst10(
-	.clk(SYNTHESIZED_WIRE_33),
-	.in(SYNTHESIZED_WIRE_34),
+	.clk(SYNTHESIZED_WIRE_40),
+	.in(SYNTHESIZED_WIRE_41),
 	.in_sel(mi_retire[7:2]),
 	.input_port0(input_port0),
 	.input_port1(input_port1),
@@ -178,7 +180,7 @@ register	b2v_inst11(
 
 register	b2v_inst18(
 	.en(SYNTHESIZED_WIRE_6),
-	.clk(clk),
+	.clk(clk_operand),
 	.in(k),
 	.out(SYNTHESIZED_WIRE_11));
 	defparam	b2v_inst18.BUS_WIDTH = 32;
@@ -189,7 +191,7 @@ register	b2v_inst2(
 	.en(SYNTHESIZED_WIRE_7),
 	.clk(clk),
 	.in(SYNTHESIZED_WIRE_8),
-	.out(SYNTHESIZED_WIRE_34));
+	.out(SYNTHESIZED_WIRE_41));
 	defparam	b2v_inst2.BUS_WIDTH = 32;
 
 
@@ -206,12 +208,12 @@ instruction_predecoder	b2v_inst20(
 
 register	b2v_inst21(
 	.en(SYNTHESIZED_WIRE_9),
-	.clk(SYNTHESIZED_WIRE_10),
-	.in(rom_data_bus),
+	.clk(clk_decode),
+	.in(SYNTHESIZED_WIRE_10),
 	.out(i_decode));
 	defparam	b2v_inst21.BUS_WIDTH = 32;
 
-assign	SYNTHESIZED_WIRE_33 =  ~clk;
+assign	SYNTHESIZED_WIRE_40 =  ~clk;
 
 
 buffer_tri	b2v_inst23(
@@ -225,7 +227,7 @@ bus_mux	b2v_inst24(
 	.sel(mi_operand[22]),
 	.in0(bus_a),
 	.in1(SYNTHESIZED_WIRE_11),
-	.out(SYNTHESIZED_WIRE_15));
+	.out(SYNTHESIZED_WIRE_16));
 	defparam	b2v_inst24.BUS_WIDTH = 32;
 
 
@@ -253,39 +255,40 @@ bus_mux	b2v_inst28(
 	defparam	b2v_inst28.BUS_WIDTH = 32;
 
 
+uc_conditional_jump	b2v_inst29(
+	.jump(cond_jmp),
+	.clk(SYNTHESIZED_WIRE_14),
+	.reset(reset),
+	.hold_jump_fetch(hold_jump_fetch),
+	.hold_jump_deco(hold_jump_decode));
+
+
 register	b2v_inst3(
-	.en(SYNTHESIZED_WIRE_14),
-	.clk(clk),
-	.in(SYNTHESIZED_WIRE_15),
+	.en(SYNTHESIZED_WIRE_15),
+	.clk(clk_operand),
+	.in(SYNTHESIZED_WIRE_16),
 	.out(SYNTHESIZED_WIRE_0));
 	defparam	b2v_inst3.BUS_WIDTH = 32;
 
-assign	SYNTHESIZED_WIRE_29 = clk & SYNTHESIZED_WIRE_16;
+assign	clk_decode = SYNTHESIZED_WIRE_17 & clk & SYNTHESIZED_WIRE_18 & SYNTHESIZED_WIRE_19;
 
-assign	SYNTHESIZED_WIRE_16 =  ~hold_register_dependency;
+assign	clk_operand = clk & SYNTHESIZED_WIRE_20;
 
-assign	SYNTHESIZED_WIRE_20 =  ~clk;
+assign	SYNTHESIZED_WIRE_20 =  ~hold_register_dependency;
 
-<<<<<<< HEAD
-uc_cjmp	b2v_inst35(
-	.clk(clk),
-	.cond_jmp(cond_jmp),
-	.hold(hold),
-	.reset(reset),
-	.condjmp_hold(condjmp_hold));
-=======
-assign	SYNTHESIZED_WIRE_21 =  ~clk;
->>>>>>> dependencies
+assign	SYNTHESIZED_WIRE_27 =  ~clk;
+
+assign	SYNTHESIZED_WIRE_28 =  ~clk;
 
 
 uc_ifu	b2v_inst36(
 	.jmp(jmp),
 	.jze(jze),
 	.jne(jne),
-	.jcy(jov),
-	.jov(jcy),
 	.ret(ret),
 	.bsr(bsr),
+	.jov(jov),
+	.jcy(jcy),
 	.psr(psr),
 	.ifu_jmp(ifu_jmp),
 	.ifu_bsr(ifu_bsr),
@@ -293,16 +296,16 @@ uc_ifu	b2v_inst36(
 
 assign	cond_jmp = jze | jov | jcy | jne;
 
+assign	SYNTHESIZED_WIRE_25 = hold_jump_decode | hold_memory_dependency;
 
-uc_1	b2v_inst38(
-	.hold(condjmp_hold),
-	.bus_inp(mi_decode),
-	.bus_out(SYNTHESIZED_WIRE_26));
+
+instruction_nop	b2v_inst39(
+	.nop(SYNTHESIZED_WIRE_30));
 
 
 register	b2v_inst4(
-	.en(SYNTHESIZED_WIRE_17),
-	.clk(clk),
+	.en(SYNTHESIZED_WIRE_21),
+	.clk(clk_operand),
 	.in(bus_b),
 	.out(SYNTHESIZED_WIRE_1));
 	defparam	b2v_inst4.BUS_WIDTH = 32;
@@ -311,26 +314,23 @@ assign	k[15:0] = i_decode[21:6];
 
 
 
-assign	SYNTHESIZED_WIRE_10 = clk & SYNTHESIZED_WIRE_18 & SYNTHESIZED_WIRE_19;
+assign	SYNTHESIZED_WIRE_29 = ifu_bsr | ifu_ret | ifu_jmp;
+
+assign	SYNTHESIZED_WIRE_14 = SYNTHESIZED_WIRE_22 & clk & SYNTHESIZED_WIRE_23;
 
 
 bus_mux	b2v_inst46(
 	.sel(hold_register_dependency),
 	.in0(mi_operand),
-	.in1(SYNTHESIZED_WIRE_18),
-	.out(SYNTHESIZED_WIRE_32));
+	.in1(SYNTHESIZED_WIRE_24),
+	.out(SYNTHESIZED_WIRE_39));
 	defparam	b2v_inst46.BUS_WIDTH = 33;
 
-<<<<<<< HEAD
-assign	rom_clk = clk & SYNTHESIZED_WIRE_20 & SYNTHESIZED_WIRE_21;
-
-=======
 
 microinstruction_nop	b2v_inst47(
-	.nop(SYNTHESIZED_WIRE_18));
+	.nop(SYNTHESIZED_WIRE_24));
 
->>>>>>> dependencies
-assign	SYNTHESIZED_WIRE_12 =  ~rom_clk;
+assign	SYNTHESIZED_WIRE_12 =  ~clk_fetch;
 
 
 uc_psr	b2v_inst5(
@@ -344,93 +344,94 @@ uc_psr	b2v_inst5(
 	.sh(mi_execute[25:23]),
 	.psr(psr));
 
-<<<<<<< HEAD
-assign	SYNTHESIZED_WIRE_20 =  ~hold;
+assign	SYNTHESIZED_WIRE_33 =  ~hold_register_dependency;
 
-assign	SYNTHESIZED_WIRE_21 =  ~condjmp_hold;
-
-assign	SYNTHESIZED_WIRE_18 =  ~hold;
-
-assign	SYNTHESIZED_WIRE_19 =  ~condjmp_hold;
-=======
-assign	SYNTHESIZED_WIRE_24 =  ~hold_register_dependency;
-
-assign	SYNTHESIZED_WIRE_22 =  ~hold_register_dependency;
+assign	SYNTHESIZED_WIRE_17 =  ~hold_register_dependency;
 
 
 bus_mux	b2v_inst53(
-	.sel(hold_memory_dependency),
+	.sel(SYNTHESIZED_WIRE_25),
 	.in0(mi_decode),
-	.in1(SYNTHESIZED_WIRE_19),
-	.out(SYNTHESIZED_WIRE_30));
+	.in1(SYNTHESIZED_WIRE_26),
+	.out(SYNTHESIZED_WIRE_37));
 	defparam	b2v_inst53.BUS_WIDTH = 33;
 
 
 uc_register_dependency	b2v_inst54(
 	.reset(reset),
-	.clk(SYNTHESIZED_WIRE_20),
+	.clk(SYNTHESIZED_WIRE_27),
 	.mi_execute(mi_execute),
 	.mi_operand(mi_operand),
 	.hold(hold_register_dependency));
 
 
 microinstruction_nop	b2v_inst55(
-	.nop(SYNTHESIZED_WIRE_19));
+	.nop(SYNTHESIZED_WIRE_26));
 
 
 uc_memory_dependency	b2v_inst56(
 	.reset(reset),
-	.clk(SYNTHESIZED_WIRE_21),
+	.clk(SYNTHESIZED_WIRE_28),
 	.mi_decode(mi_decode),
 	.mi_operand(mi_operand),
 	.hold(hold_memory_dependency));
 
-assign	SYNTHESIZED_WIRE_10 = SYNTHESIZED_WIRE_22 & clk & SYNTHESIZED_WIRE_23;
 
-assign	SYNTHESIZED_WIRE_23 =  ~hold_memory_dependency;
+bus_mux	b2v_inst57(
+	.sel(SYNTHESIZED_WIRE_29),
+	.in0(rom_data_bus),
+	.in1(SYNTHESIZED_WIRE_30),
+	.out(SYNTHESIZED_WIRE_10));
+	defparam	b2v_inst57.BUS_WIDTH = 32;
 
-assign	rom_clk = SYNTHESIZED_WIRE_24 & clk & SYNTHESIZED_WIRE_25;
->>>>>>> dependencies
+assign	SYNTHESIZED_WIRE_18 =  ~hold_memory_dependency;
+
+assign	SYNTHESIZED_WIRE_19 =  ~hold_jump_decode;
 
 
 general_register_bank	b2v_inst6(
-	.clk(SYNTHESIZED_WIRE_33),
-	.in(SYNTHESIZED_WIRE_34),
+	.clk(SYNTHESIZED_WIRE_40),
+	.in(SYNTHESIZED_WIRE_41),
 	.in_sel(mi_retire[7:2]),
 	.outa_sel(mi_operand[19:14]),
 	.outb_sel(mi_operand[13:8]),
 	.outa(bus_a),
 	.outb(bus_b));
 
-<<<<<<< HEAD
-=======
-assign	SYNTHESIZED_WIRE_25 =  ~hold_memory_dependency;
+assign	SYNTHESIZED_WIRE_34 =  ~hold_memory_dependency;
 
->>>>>>> dependencies
+assign	SYNTHESIZED_WIRE_22 =  ~hold_memory_dependency;
+
+assign	SYNTHESIZED_WIRE_23 =  ~hold_register_dependency;
+
 
 instruction_decoder	b2v_inst7(
 	.instruction(i_decode),
 	.microinstruction(mi_decode));
 
+assign	SYNTHESIZED_WIRE_35 = SYNTHESIZED_WIRE_33 & clk & SYNTHESIZED_WIRE_34;
+
+assign	clk_fetch = hold_jump_fetch | SYNTHESIZED_WIRE_35;
+
 
 register	b2v_inst8(
-	.en(SYNTHESIZED_WIRE_28),
-	.clk(SYNTHESIZED_WIRE_29),
-	.in(SYNTHESIZED_WIRE_30),
+	.en(SYNTHESIZED_WIRE_36),
+	.clk(clk_operand),
+	.in(SYNTHESIZED_WIRE_37),
 	.out(mi_operand));
 	defparam	b2v_inst8.BUS_WIDTH = 33;
 
 
 register	b2v_inst9(
-	.en(SYNTHESIZED_WIRE_31),
+	.en(SYNTHESIZED_WIRE_38),
 	.clk(clk),
-	.in(SYNTHESIZED_WIRE_32),
+	.in(SYNTHESIZED_WIRE_39),
 	.out(mi_execute));
 	defparam	b2v_inst9.BUS_WIDTH = 33;
 
 assign	mem_read = mi_operand[21];
 assign	mem_write = mi_operand[20];
-assign	rom_read = rom_clk;
+assign	rom_read = clk_fetch;
 assign	mem_addr_bus = bus_b;
 assign	rom_addr_bus[12:0] = rom_addr[12:0];
 assign	k[31:16] = 16'b0000000000000000;
