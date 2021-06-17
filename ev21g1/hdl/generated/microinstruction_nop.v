@@ -15,29 +15,30 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
-// CREATED		"Tue Jun 15 20:33:20 2021"
+// CREATED		"Wed Jun 16 22:59:55 2021"
 
-module chip_select(
-	address,
-	cs_ram
+module microinstruction_nop(
+	nop
 );
 
 
-input wire	[31:0] address;
-output wire	cs_ram;
+output wire	[32:0] nop;
 
-wire	SYNTHESIZED_WIRE_0;
-
+wire	[32:0] nop_ALTERA_SYNTHESIZED;
 
 
 
 
-bus_or	b2v_inst(
-	.in(address[31:13]),
-	.out(SYNTHESIZED_WIRE_0));
-	defparam	b2v_inst.BUS_WIDTH = 19;
 
-assign	cs_ram =  ~SYNTHESIZED_WIRE_0;
 
+
+
+
+assign	nop = nop_ALTERA_SYNTHESIZED;
+assign	nop_ALTERA_SYNTHESIZED[7:2] = 6'b111111;
+assign	nop_ALTERA_SYNTHESIZED[29:23] = 7'b1111111;
+assign	nop_ALTERA_SYNTHESIZED[1:0] = 2'b00;
+assign	nop_ALTERA_SYNTHESIZED[22:8] = 15'b000000000000000;
+assign	nop_ALTERA_SYNTHESIZED[32:30] = 3'b000;
 
 endmodule

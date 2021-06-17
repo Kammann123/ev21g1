@@ -33,8 +33,17 @@ module mir_format_1(
 	/**************/
 	always @ (opcode) begin
 		case(opcode)
+		
+			10'b0000000000: begin	// NOP
+				aluc = 4'b1111;
+				sh = 3'b111;
+				read = 1'b0;
+				write = 1'b0;
+				flip = 1'b0;
+				print = 1'b0;
+			end
 
-			10'b0000000000: begin	// AND Ri,Rj,Rk
+			10'b0000001101: begin	// AND Ri,Rj,Rk
 				aluc = 4'b0111;
 				sh = 3'b000;
 				read = 1'b0;

@@ -15,7 +15,7 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
-// CREATED		"Sun Jun 13 17:48:37 2021"
+// CREATED		"Wed Jun 16 22:11:04 2021"
 
 module instruction_decoder(
 	instruction,
@@ -24,10 +24,10 @@ module instruction_decoder(
 
 
 input wire	[31:0] instruction;
-output wire	[29:0] microinstruction;
+output wire	[32:0] microinstruction;
 
 wire	[5:0] gnd;
-wire	[29:0] microinstruction_ALTERA_SYNTHESIZED;
+wire	[32:0] microinstruction_ALTERA_SYNTHESIZED;
 wire	[5:0] vcc;
 wire	[5:0] SYNTHESIZED_WIRE_0;
 wire	[5:0] SYNTHESIZED_WIRE_1;
@@ -76,6 +76,8 @@ bus_mux	b2v_inst10(
 	.out(SYNTHESIZED_WIRE_14));
 	defparam	b2v_inst10.BUS_WIDTH = 6;
 
+assign	microinstruction_ALTERA_SYNTHESIZED[30] = instruction[30];
+
 
 
 
@@ -94,6 +96,11 @@ bus_mux	b2v_inst14(
 	.out(SYNTHESIZED_WIRE_0));
 	defparam	b2v_inst14.BUS_WIDTH = 6;
 
+assign	microinstruction_ALTERA_SYNTHESIZED[31] = instruction[29];
+
+
+assign	microinstruction_ALTERA_SYNTHESIZED[32] = instruction[28];
+
 
 
 bus_mux	b2v_inst17(
@@ -102,7 +109,6 @@ bus_mux	b2v_inst17(
 	.in1(instruction[5:0]),
 	.out(SYNTHESIZED_WIRE_1));
 	defparam	b2v_inst17.BUS_WIDTH = 6;
-
 
 
 bus_mux	b2v_inst19(
@@ -173,9 +179,6 @@ bus_mux	b2v_inst9(
 	defparam	b2v_inst9.BUS_WIDTH = 6;
 
 assign	microinstruction = microinstruction_ALTERA_SYNTHESIZED;
-assign	gnd = 6'b000000;
-assign	gnd = 6'b000000;
-assign	gnd = 6'b000000;
 assign	gnd = 6'b000000;
 assign	vcc = 6'b111111;
 

@@ -15,29 +15,57 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
-// CREATED		"Tue Jun 15 20:33:20 2021"
+// CREATED		"Thu Jun 17 00:19:24 2021"
 
-module chip_select(
-	address,
-	cs_ram
+module uc_memory_dependency(
+	reset,
+	clk,
+	mi_decode,
+	mi_operand,
+	hold
 );
 
 
-input wire	[31:0] address;
-output wire	cs_ram;
+input wire	reset;
+input wire	clk;
+input wire	[32:0] mi_decode;
+input wire	[32:0] mi_operand;
+output reg	hold;
 
 wire	SYNTHESIZED_WIRE_0;
+wire	SYNTHESIZED_WIRE_1;
+wire	SYNTHESIZED_WIRE_2;
+wire	SYNTHESIZED_WIRE_3;
+
+assign	SYNTHESIZED_WIRE_0 = 1;
+assign	SYNTHESIZED_WIRE_3 = 1;
 
 
 
+assign	SYNTHESIZED_WIRE_2 = mi_operand[21] & mi_decode[20];
 
 
-bus_or	b2v_inst(
-	.in(address[31:13]),
-	.out(SYNTHESIZED_WIRE_0));
-	defparam	b2v_inst.BUS_WIDTH = 19;
+always@(posedge clk or negedge SYNTHESIZED_WIRE_1 or negedge SYNTHESIZED_WIRE_0)
+begin
+if (!SYNTHESIZED_WIRE_1)
+	begin
+	hold <= 0;
+	end
+else
+if (!SYNTHESIZED_WIRE_0)
+	begin
+	hold <= 1;
+	end
+else
+if (SYNTHESIZED_WIRE_3)
+	begin
+	hold <= SYNTHESIZED_WIRE_2;
+	end
+end
 
-assign	cs_ram =  ~SYNTHESIZED_WIRE_0;
+assign	SYNTHESIZED_WIRE_1 =  ~reset;
+
+
 
 
 endmodule
