@@ -15,7 +15,7 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
-// CREATED		"Thu Jun 17 11:10:31 2021"
+// CREATED		"Thu Jun 17 13:21:18 2021"
 
 module cpu(
 	clk,
@@ -26,11 +26,14 @@ module cpu(
 	mem_read,
 	mem_write,
 	rom_read,
+	vga_print,
 	mem_addr_bus,
 	mem_data_bus,
 	output_port0,
 	output_port1,
-	rom_addr_bus
+	rom_addr_bus,
+	vga_pixel_address,
+	vga_pixel_rgb
 );
 
 
@@ -42,11 +45,14 @@ input wire	[31:0] rom_data_bus;
 output wire	mem_read;
 output wire	mem_write;
 output wire	rom_read;
+output wire	vga_print;
 output wire	[31:0] mem_addr_bus;
 inout wire	[31:0] mem_data_bus;
 output wire	[31:0] output_port0;
 output wire	[31:0] output_port1;
 output wire	[12:0] rom_addr_bus;
+output wire	[15:0] vga_pixel_address;
+output wire	[2:0] vga_pixel_rgb;
 
 wire	alu_carry;
 wire	alu_overflow;
@@ -432,8 +438,11 @@ register	b2v_inst9(
 assign	mem_read = mi_operand[21];
 assign	mem_write = mi_operand[20];
 assign	rom_read = clk_fetch;
+assign	vga_print = mi_operand[0];
 assign	mem_addr_bus = bus_b;
 assign	rom_addr_bus[12:0] = rom_addr[12:0];
+assign	vga_pixel_address[15:0] = bus_a[15:0];
+assign	vga_pixel_rgb[2:0] = bus_b[2:0];
 assign	k[31:16] = 16'b0000000000000000;
 
 endmodule
