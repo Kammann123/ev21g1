@@ -15,23 +15,15 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
-<<<<<<< HEAD
-// CREATED		"Thu Jun 17 01:40:23 2021"
-=======
-// CREATED		"Tue Jun 15 19:56:42 2021"
->>>>>>> master
+// CREATED		"Thu Jun 17 13:33:07 2021"
 
 module ev21g1(
 	clk,
 	reset,
 	input_port0,
 	input_port1,
-<<<<<<< HEAD
-	instruction,
-	hsync,
-	vsync,
-=======
->>>>>>> master
+	vga_hsync,
+	vga_vsync,
 	output_port0,
 	output_port1,
 	vga_rgb
@@ -42,16 +34,13 @@ input wire	clk;
 input wire	reset;
 input wire	[31:0] input_port0;
 input wire	[31:0] input_port1;
-<<<<<<< HEAD
-input wire	[31:0] instruction;
-output wire	hsync;
-output wire	vsync;
-=======
->>>>>>> master
+output wire	vga_hsync;
+output wire	vga_vsync;
 output wire	[31:0] output_port0;
 output wire	[31:0] output_port1;
 output wire	[2:0] vga_rgb;
 
+wire	cpu_clk;
 wire	cs_ram;
 wire	[31:0] mem_addr_bus;
 wire	[31:0] mem_data_bus;
@@ -62,44 +51,40 @@ wire	ram_write;
 wire	[12:0] rom_addr_bus;
 wire	[31:0] rom_data_bus;
 wire	rom_read;
-reg	DFF_inst6;
+wire	[15:0] vga_pixel_address;
+wire	[2:0] vga_pixel_rgb;
+wire	vga_print;
+reg	DFFE_inst9;
 wire	[31:0] SYNTHESIZED_WIRE_0;
 wire	SYNTHESIZED_WIRE_1;
 wire	SYNTHESIZED_WIRE_2;
+wire	SYNTHESIZED_WIRE_3;
 
 assign	SYNTHESIZED_WIRE_1 = 1;
 assign	SYNTHESIZED_WIRE_2 = 1;
+assign	SYNTHESIZED_WIRE_3 = 1;
 
 
 
 
 cpu	b2v_inst(
-	.clk(clk),
-<<<<<<< HEAD
-	.vga_clk(clk),
-=======
+	.clk(cpu_clk),
 	.reset(reset),
->>>>>>> master
 	.input_port0(input_port1),
 	.input_port1(input_port0),
+	.mem_data_bus(mem_data_bus),
 	.rom_data_bus(rom_data_bus),
+	.rom_read(rom_read),
 	.mem_read(mem_read),
 	.mem_write(mem_write),
-<<<<<<< HEAD
-	.hsync(hsync),
-	.vsync(vsync),
-=======
-	.rom_read(rom_read),
->>>>>>> master
+	.vga_print(vga_print),
 	.mem_addr_bus(mem_addr_bus),
-	.mem_data_bus(mem_data_bus),
+	
 	.output_port0(output_port0),
 	.output_port1(output_port1),
-<<<<<<< HEAD
-	.vga_rgb(vga_rgb));
-=======
-	.rom_addr_bus(rom_addr_bus));
->>>>>>> master
+	.rom_addr_bus(rom_addr_bus),
+	.vga_pixel_address(vga_pixel_address),
+	.vga_pixel_rgb(vga_pixel_rgb));
 
 
 ram	b2v_inst1(
@@ -112,6 +97,7 @@ ram	b2v_inst1(
 
 
 
+
 rom	b2v_inst12(
 	.clock(rom_read),
 	.address(rom_addr_bus),
@@ -119,7 +105,7 @@ rom	b2v_inst12(
 
 
 buffer_tri	b2v_inst2(
-	.en(DFF_inst6),
+	.en(DFFE_inst9),
 	.in(SYNTHESIZED_WIRE_0),
 	.out(mem_data_bus));
 	defparam	b2v_inst2.BUS_WIDTH = 32;
@@ -134,23 +120,36 @@ chip_select	b2v_inst5(
 	.cs_ram(cs_ram));
 
 
-always@(posedge clk or negedge SYNTHESIZED_WIRE_1 or negedge SYNTHESIZED_WIRE_2)
+vga_module	b2v_inst7(
+	.print(vga_print),
+	.vga_clk(cpu_clk),
+	.cpu_clk(cpu_clk),
+	.pixel_address(vga_pixel_address),
+	.pixel_rgb(vga_pixel_rgb),
+	.vga_hsync(vga_hsync),
+	.vga_vsync(vga_vsync),
+	.vga_rgb(vga_rgb));
+
+
+
+always@(posedge clk or negedge SYNTHESIZED_WIRE_2 or negedge SYNTHESIZED_WIRE_1)
 begin
-if (!SYNTHESIZED_WIRE_1)
-	begin
-	DFF_inst6 <= 0;
-	end
-else
 if (!SYNTHESIZED_WIRE_2)
 	begin
-	DFF_inst6 <= 1;
+	DFFE_inst9 <= 0;
 	end
 else
+if (!SYNTHESIZED_WIRE_1)
 	begin
-	DFF_inst6 <= ram_read;
+	DFFE_inst9 <= 1;
+	end
+else
+if (SYNTHESIZED_WIRE_3)
+	begin
+	DFFE_inst9 <= ram_read;
 	end
 end
 
-
+assign	cpu_clk = clk;
 
 endmodule

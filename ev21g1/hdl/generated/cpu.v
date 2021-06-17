@@ -15,68 +15,44 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
-<<<<<<< HEAD
-// CREATED		"Thu Jun 17 01:36:58 2021"
-
-module cpu(
-	clk,
-	vga_clk,
-=======
-// CREATED		"Thu Jun 17 11:10:31 2021"
+// CREATED		"Thu Jun 17 13:21:18 2021"
 
 module cpu(
 	clk,
 	reset,
->>>>>>> master
 	input_port0,
 	input_port1,
 	rom_data_bus,
 	mem_read,
 	mem_write,
-<<<<<<< HEAD
-	hsync,
-	vsync,
-=======
 	rom_read,
->>>>>>> master
+	vga_print,
 	mem_addr_bus,
 	mem_data_bus,
 	output_port0,
 	output_port1,
-<<<<<<< HEAD
-	vga_rgb
-=======
-	rom_addr_bus
->>>>>>> master
+	rom_addr_bus,
+	vga_pixel_address,
+	vga_pixel_rgb
 );
 
 
 input wire	clk;
-<<<<<<< HEAD
-input wire	vga_clk;
-=======
 input wire	reset;
->>>>>>> master
 input wire	[31:0] input_port0;
 input wire	[31:0] input_port1;
 input wire	[31:0] rom_data_bus;
 output wire	mem_read;
 output wire	mem_write;
-<<<<<<< HEAD
-output wire	hsync;
-output wire	vsync;
-=======
 output wire	rom_read;
->>>>>>> master
+output wire	vga_print;
 output wire	[31:0] mem_addr_bus;
 inout wire	[31:0] mem_data_bus;
 output wire	[31:0] output_port0;
 output wire	[31:0] output_port1;
-<<<<<<< HEAD
-output wire	[2:0] vga_rgb;
-=======
 output wire	[12:0] rom_addr_bus;
->>>>>>> master
+output wire	[15:0] vga_pixel_address;
+output wire	[2:0] vga_pixel_rgb;
 
 wire	alu_carry;
 wire	alu_overflow;
@@ -102,19 +78,10 @@ wire	jne;
 wire	jov;
 wire	jze;
 wire	[31:0] k;
-<<<<<<< HEAD
-wire	[29:0] mi_decode;
-wire	[29:0] mi_execute;
-wire	[29:0] mi_operand;
-wire	[29:0] mi_retire;
-wire	[9:0] p_col;
-wire	[9:0] p_row;
-=======
 wire	[32:0] mi_decode;
 wire	[32:0] mi_execute;
 wire	[32:0] mi_operand;
 wire	[32:0] mi_retire;
->>>>>>> master
 wire	[31:0] psr;
 wire	ret;
 wire	[15:0] rom_addr;
@@ -294,25 +261,12 @@ bus_mux	b2v_inst28(
 	defparam	b2v_inst28.BUS_WIDTH = 32;
 
 
-<<<<<<< HEAD
-vga_module	b2v_inst29(
-	.print_enable(mi_operand[0]),
-	.clk(vga_clk),
-	.pixel_address(bus_a[15:0]),
-	.pixel_rgb(bus_b[2:0]),
-	.hsync(hsync),
-	.vsync(vsync),
-	
-	
-	.vga_rgb(vga_rgb));
-=======
 uc_conditional_jump	b2v_inst29(
 	.jump(cond_jmp),
 	.clk(SYNTHESIZED_WIRE_14),
 	.reset(reset),
 	.hold_jump_fetch(hold_jump_fetch),
 	.hold_jump_deco(hold_jump_decode));
->>>>>>> master
 
 
 register	b2v_inst3(
@@ -484,8 +438,11 @@ register	b2v_inst9(
 assign	mem_read = mi_operand[21];
 assign	mem_write = mi_operand[20];
 assign	rom_read = clk_fetch;
+assign	vga_print = mi_operand[0];
 assign	mem_addr_bus = bus_b;
 assign	rom_addr_bus[12:0] = rom_addr[12:0];
+assign	vga_pixel_address[15:0] = bus_a[15:0];
+assign	vga_pixel_rgb[2:0] = bus_b[2:0];
 assign	k[31:16] = 16'b0000000000000000;
 
 endmodule

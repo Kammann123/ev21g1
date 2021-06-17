@@ -15,35 +15,33 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
-// CREATED		"Thu Jun 17 01:34:22 2021"
+// CREATED		"Thu Jun 17 13:21:00 2021"
 
 module vga_module(
-	clk,
-	print_enable,
+	print,
+	cpu_clk,
+	vga_clk,
 	pixel_address,
 	pixel_rgb,
-	hsync,
-	vsync,
-	p_col,
-	p_row,
+	vga_hsync,
+	vga_vsync,
 	vga_rgb
 );
 
 
-input wire	clk;
-input wire	print_enable;
+input wire	print;
+input wire	cpu_clk;
+input wire	vga_clk;
 input wire	[15:0] pixel_address;
 input wire	[2:0] pixel_rgb;
-output wire	hsync;
-output wire	vsync;
-output wire	[9:0] p_col;
-output wire	[9:0] p_row;
+output wire	vga_hsync;
+output wire	vga_vsync;
 output wire	[2:0] vga_rgb;
 
 wire	SYNTHESIZED_WIRE_0;
-wire	[2:0] SYNTHESIZED_WIRE_1;
+wire	[15:0] SYNTHESIZED_WIRE_1;
 wire	SYNTHESIZED_WIRE_2;
-wire	[15:0] SYNTHESIZED_WIRE_3;
+wire	[2:0] SYNTHESIZED_WIRE_3;
 
 assign	SYNTHESIZED_WIRE_0 = 1;
 assign	SYNTHESIZED_WIRE_2 = 1;
@@ -52,16 +50,25 @@ assign	SYNTHESIZED_WIRE_2 = 1;
 
 
 
+vram	b2v_inst1(
+	.wren(print),
+	.rden(SYNTHESIZED_WIRE_0),
+	.wrclock(cpu_clk),
+	.rdclock(vga_clk),
+	.data(pixel_rgb),
+	.rdaddress(SYNTHESIZED_WIRE_1),
+	.wraddress(pixel_address),
+	.q(SYNTHESIZED_WIRE_3));
+
+
 
 vga_controller	b2v_inst5(
-	.reset(SYNTHESIZED_WIRE_0),
-	.clock(clk),
-	.pixel_rgb(SYNTHESIZED_WIRE_1),
-	.vga_hsync(hsync),
-	.vga_vsync(vsync),
-	.pixel_address(SYNTHESIZED_WIRE_3),
-	.pixel_col(p_col),
-	.pixel_row(p_row),
+	.reset(SYNTHESIZED_WIRE_2),
+	.clock(vga_clk),
+	.pixel_rgb(SYNTHESIZED_WIRE_3),
+	.vga_hsync(vga_hsync),
+	.vga_vsync(vga_vsync),
+	.pixel_address(SYNTHESIZED_WIRE_1),
 	.vga_rgb(vga_rgb));
 	defparam	b2v_inst5.hactive = 320;
 	defparam	b2v_inst5.hbackporch = 40;
@@ -73,16 +80,6 @@ vga_controller	b2v_inst5(
 	defparam	b2v_inst5.vfrontporch = 3;
 	defparam	b2v_inst5.vsyncpulse = 6;
 	defparam	b2v_inst5.vtotal = 215;
-
-
-VRAM	b2v_inst6(
-	.wren(print_enable),
-	.rden(SYNTHESIZED_WIRE_2),
-	.clock(clk),
-	.data(pixel_rgb),
-	.rdaddress(SYNTHESIZED_WIRE_3),
-	.wraddress(pixel_address),
-	.q(SYNTHESIZED_WIRE_1));
 
 
 endmodule

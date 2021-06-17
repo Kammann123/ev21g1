@@ -1,21 +1,21 @@
-//----------------------------------------------------------------------------------
-// VGADriver module generates the output signals to control the VGA Monitor,
-// but also controls a slave Pixel Generator, basically this slave receives
-// a row and a column to know when it should send the next pixel to the VGADriver.
-//----------------------------------------------------------------------------------
+/*
+ * vga_controller
+ *
+ * VGA controller that generates the output signals to control the VGA Monitor,
+ * but also controls a slave Pixel Generator, basically this slave receives
+ * a row and a column to know when it should send the next pixel to the VGADriver.
+ */
 module vga_controller(         
-/* Pixel Generator Ports  */
-	pixel_row,		// Output: Current Pixel Row
-	pixel_col,		// Output: Current Pixel Column
-	pixel_rgb,		// Input: Pixel Generator RGB data
-	/* VGA Ports */
-	vga_hsync,		// Output: VGA hsync 
-	vga_vsync,		// Output: VGA vsync
-	vga_rgb,		// Output: VGA RGB data
-	pixel_address,			// Output: VGA current pixel address
-	/* Master Ports */
-	reset,			// Input: Resets the update process. Active LOW.
-	clock				// Input: Clock, expected 25MHz, generated independently
+	// Pixel Generator Ports
+	pixel_rgb,					// Input: Pixel Generator RGB data
+	// VGA Ports 
+	vga_hsync,					// Output: VGA hsync 
+	vga_vsync,					// Output: VGA vsync
+	vga_rgb,						// Output: VGA RGB data
+	pixel_address,				// Output: VGA current pixel address
+	// Master Ports 
+	reset,						// Input: Resets the update process. Active LOW.
+	clock							// Input: Clock for VGA
 );
 	
 	/************************/
@@ -26,7 +26,6 @@ module vga_controller(
 	parameter hsyncpulse = 96;
 	parameter hbackporch = 48;
 	parameter htotal = 800;
-	
 	
 	parameter vactive = 480;
 	parameter vfrontporch = 10;
@@ -42,8 +41,8 @@ module vga_controller(
 	output reg vga_vsync = 1'b1;
 	output reg [15:0] pixel_address;
 	
-	output wire [9:0] pixel_row;
-	output wire [9:0] pixel_col;
+	wire [9:0] pixel_row;
+	wire [9:0] pixel_col;
 	
 	/*************************/
 	/* Declaring input ports */
