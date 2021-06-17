@@ -182,7 +182,7 @@ https://fpgasoftware.intel.com/eula.
 )
 (pin
 	(output)
-	(rect -2648 -208 -2472 -192)
+	(rect -2752 -208 -2576 -192)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "rom_read" (rect 90 0 136 12)(font "Arial" ))
 	(pt 0 8)
@@ -198,7 +198,7 @@ https://fpgasoftware.intel.com/eula.
 )
 (pin
 	(output)
-	(rect -2648 -232 -2472 -216)
+	(rect -2752 -232 -2576 -216)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "rom_addr_bus[12..0]" (rect 90 0 191 12)(font "Arial" ))
 	(pt 0 8)
@@ -1257,7 +1257,7 @@ https://fpgasoftware.intel.com/eula.
 	)
 )
 (symbol
-	(rect -1960 -560 -1928 -544)
+	(rect -2008 -560 -1976 -544)
 	(text "VCC" (rect 7 0 27 10)(font "Arial" (font_size 6)))
 	(text "inst25" (rect 3 5 32 17)(font "Arial" )(invisible))
 	(port
@@ -1272,7 +1272,7 @@ https://fpgasoftware.intel.com/eula.
 	)
 )
 (symbol
-	(rect -1896 -560 -1616 -448)
+	(rect -1944 -560 -1664 -448)
 	(text "register" (rect 5 0 41 12)(font "Arial" ))
 	(text "inst21" (rect 8 96 37 108)(font "Arial" ))
 	(port
@@ -1311,10 +1311,10 @@ https://fpgasoftware.intel.com/eula.
 	(drawing
 		(rectangle (rect 16 16 264 96))
 	)
-	(annotation_block (parameter)(rect -1896 -600 -1715 -562))
+	(annotation_block (parameter)(rect -1944 -600 -1763 -562))
 )
 (symbol
-	(rect -2648 -480 -2432 -320)
+	(rect -2752 -480 -2536 -320)
 	(text "ifu" (rect 196 0 211 19)(font "Intel Clear" (font_size 8)))
 	(text "inst26" (rect 180 139 208 156)(font "Intel Clear" ))
 	(port
@@ -1429,7 +1429,7 @@ https://fpgasoftware.intel.com/eula.
 	)
 )
 (symbol
-	(rect -2608 -312 -2560 -280)
+	(rect -2712 -312 -2664 -280)
 	(text "NOT" (rect 1 0 21 10)(font "Arial" (font_size 6)))
 	(text "inst48" (rect 3 21 32 33)(font "Arial" ))
 	(port
@@ -1454,7 +1454,7 @@ https://fpgasoftware.intel.com/eula.
 	)
 )
 (symbol
-	(rect -2112 -504 -2064 -472)
+	(rect -2160 -504 -2112 -472)
 	(text "NOT" (rect 1 0 21 10)(font "Arial" (font_size 6)))
 	(text "inst52" (rect 3 21 32 33)(font "Arial" ))
 	(port
@@ -1793,7 +1793,7 @@ https://fpgasoftware.intel.com/eula.
 	)
 )
 (symbol
-	(rect -560 -400 -368 -272)
+	(rect -560 -408 -368 -280)
 	(text "uc_memory_dependency" (rect 5 0 154 19)(font "Intel Clear" (font_size 8)))
 	(text "inst56" (rect 8 107 36 124)(font "Intel Clear" ))
 	(port
@@ -1836,7 +1836,7 @@ https://fpgasoftware.intel.com/eula.
 	)
 )
 (symbol
-	(rect -624 -336 -576 -304)
+	(rect -624 -344 -576 -312)
 	(text "NOT" (rect 1 0 21 10)(font "Arial" (font_size 6)))
 	(text "inst35" (rect 3 21 31 38)(font "Intel Clear" ))
 	(port
@@ -1861,7 +1861,7 @@ https://fpgasoftware.intel.com/eula.
 	)
 )
 (symbol
-	(rect -2032 -488 -1968 -440)
+	(rect -2080 -488 -2016 -440)
 	(text "AND3" (rect 1 0 25 10)(font "Arial" (font_size 6)))
 	(text "inst57" (rect 3 37 31 54)(font "Intel Clear" ))
 	(port
@@ -1900,7 +1900,7 @@ https://fpgasoftware.intel.com/eula.
 	)
 )
 (symbol
-	(rect -2112 -456 -2064 -424)
+	(rect -2160 -456 -2112 -424)
 	(text "NOT" (rect 1 0 21 10)(font "Arial" (font_size 6)))
 	(text "inst58" (rect 3 21 31 38)(font "Intel Clear" ))
 	(port
@@ -1925,7 +1925,7 @@ https://fpgasoftware.intel.com/eula.
 	)
 )
 (symbol
-	(rect -2856 -320 -2792 -272)
+	(rect -2960 -320 -2896 -272)
 	(text "AND3" (rect 1 0 25 10)(font "Arial" (font_size 6)))
 	(text "inst59" (rect 3 37 31 54)(font "Intel Clear" ))
 	(port
@@ -1964,7 +1964,7 @@ https://fpgasoftware.intel.com/eula.
 	)
 )
 (symbol
-	(rect -2928 -336 -2880 -304)
+	(rect -3032 -336 -2984 -304)
 	(text "NOT" (rect 1 0 21 10)(font "Arial" (font_size 6)))
 	(text "inst51" (rect 3 21 31 38)(font "Intel Clear" ))
 	(port
@@ -1989,7 +1989,7 @@ https://fpgasoftware.intel.com/eula.
 	)
 )
 (symbol
-	(rect -2928 -288 -2880 -256)
+	(rect -3032 -288 -2984 -256)
 	(text "NOT" (rect 1 0 21 10)(font "Arial" (font_size 6)))
 	(text "inst60" (rect 3 21 31 38)(font "Intel Clear" ))
 	(port
@@ -2509,48 +2509,6 @@ https://fpgasoftware.intel.com/eula.
 	(pt -1248 -368)
 )
 (connector
-	(text "rom_addr[15..0]" (rect -2726 -464 -2651 -447)(font "Intel Clear" ))
-	(pt -2736 -448)
-	(pt -2648 -448)
-	(bus)
-)
-(connector
-	(pt -2520 -256)
-	(pt -2520 -320)
-)
-(connector
-	(text "reset" (rect -2728 -272 -2705 -255)(font "Intel Clear" ))
-	(pt -2520 -256)
-	(pt -2736 -256)
-)
-(connector
-	(text "k[15..0]" (rect -2398 -464 -2363 -447)(font "Intel Clear" ))
-	(pt -2432 -448)
-	(pt -2352 -448)
-	(bus)
-)
-(connector
-	(text "ifu_bsr" (rect -2390 -432 -2359 -415)(font "Intel Clear" ))
-	(pt -2432 -416)
-	(pt -2352 -416)
-)
-(connector
-	(text "ifu_ret" (rect -2390 -408 -2360 -391)(font "Intel Clear" ))
-	(pt -2432 -392)
-	(pt -2352 -392)
-)
-(connector
-	(text "ifu_jmp" (rect -2390 -384 -2355 -367)(font "Intel Clear" ))
-	(pt -2432 -368)
-	(pt -2352 -368)
-)
-(connector
-	(text "rom_addr[12..0]" (rect -2725 -240 -2650 -223)(font "Intel Clear" ))
-	(pt -2648 -224)
-	(pt -2736 -224)
-	(bus)
-)
-(connector
 	(pt 1152 448)
 	(pt 1192 448)
 	(bus)
@@ -2620,44 +2578,6 @@ https://fpgasoftware.intel.com/eula.
 	(bus)
 )
 (connector
-	(pt -2560 -320)
-	(pt -2560 -296)
-)
-(connector
-	(text "rom_clk" (rect -2728 -216 -2690 -199)(font "Intel Clear" ))
-	(pt -2648 -200)
-	(pt -2736 -200)
-)
-(connector
-	(text "i_decode[31..0]" (rect -1573 -544 -1502 -527)(font "Intel Clear" ))
-	(pt -1616 -528)
-	(pt -1488 -528)
-	(bus)
-)
-(connector
-	(pt -1488 -528)
-	(pt -1424 -528)
-	(bus)
-)
-(connector
-	(pt -1944 -544)
-	(pt -1944 -512)
-)
-(connector
-	(pt -3144 -528)
-	(pt -1896 -528)
-	(bus)
-)
-(connector
-	(pt -1896 -512)
-	(pt -1944 -512)
-)
-(connector
-	(text "hold_register_dependency" (rect -2256 -504 -2130 -487)(font "Intel Clear" ))
-	(pt -2264 -488)
-	(pt -2112 -488)
-)
-(connector
 	(text "reset" (rect -3135 -480 -3112 -463)(font "Intel Clear" ))
 	(pt -3096 -464)
 	(pt -3144 -464)
@@ -2685,96 +2605,6 @@ https://fpgasoftware.intel.com/eula.
 	(pt 2704 -480)
 	(pt 2832 -480)
 	(bus)
-)
-(connector
-	(text "hold_memory_dependency" (rect -2256 -456 -2126 -439)(font "Intel Clear" ))
-	(pt -2112 -440)
-	(pt -2264 -440)
-)
-(connector
-	(text "clk" (rect -2256 -480 -2242 -463)(font "Intel Clear" ))
-	(pt -2032 -464)
-	(pt -2264 -464)
-)
-(connector
-	(pt -2064 -488)
-	(pt -2048 -488)
-)
-(connector
-	(pt -2048 -488)
-	(pt -2048 -472)
-)
-(connector
-	(pt -2048 -472)
-	(pt -2032 -472)
-)
-(connector
-	(pt -2064 -440)
-	(pt -2048 -440)
-)
-(connector
-	(pt -2032 -456)
-	(pt -2048 -456)
-)
-(connector
-	(pt -2048 -456)
-	(pt -2048 -440)
-)
-(connector
-	(pt -1896 -496)
-	(pt -1944 -496)
-)
-(connector
-	(pt -1944 -496)
-	(pt -1944 -464)
-)
-(connector
-	(pt -1968 -464)
-	(pt -1944 -464)
-)
-(connector
-	(text "rom_clk" (rect -2672 -312 -2634 -295)(font "Intel Clear" ))
-	(pt -2608 -296)
-	(pt -2792 -296)
-)
-(connector
-	(pt -2880 -272)
-	(pt -2864 -272)
-)
-(connector
-	(pt -2864 -272)
-	(pt -2864 -288)
-)
-(connector
-	(pt -2864 -288)
-	(pt -2856 -288)
-)
-(connector
-	(pt -2856 -304)
-	(pt -2864 -304)
-)
-(connector
-	(pt -2864 -304)
-	(pt -2864 -320)
-)
-(connector
-	(pt -2864 -320)
-	(pt -2880 -320)
-)
-(connector
-	(text "clk" (rect -3048 -312 -3034 -295)(font "Intel Clear" ))
-	(pt -3056 -296)
-	(pt -2856 -296)
-)
-(connector
-	(text "hold_register_dependency" (rect -3048 -336 -2922 -319)(font "Intel Clear" ))
-	(pt -3056 -320)
-	(pt -2928 -320)
-)
-(connector
-	(text "hold_memory_dependency" (rect -3048 -288 -2918 -271)(font "Intel Clear" ))
-	(pt -3056 -272)
-	(pt -2928 -272)
 )
 (connector
 	(pt 1312 -496)
@@ -2845,10 +2675,6 @@ https://fpgasoftware.intel.com/eula.
 	(pt 168 -520)
 )
 (connector
-	(pt -248 -440)
-	(pt -248 -368)
-)
-(connector
 	(text "clk" (rect -96 -496 -82 -479)(font "Intel Clear" ))
 	(pt -104 -480)
 	(pt 96 -480)
@@ -2867,28 +2693,6 @@ https://fpgasoftware.intel.com/eula.
 	(pt -1136 -528)
 	(pt -280 -528)
 	(bus)
-)
-(connector
-	(text "mi_decode[32..0]" (rect -648 -384 -567 -367)(font "Intel Clear" ))
-	(pt -656 -368)
-	(pt -560 -368)
-	(bus)
-)
-(connector
-	(text "mi_operand[32..0]" (rect -648 -368 -562 -351)(font "Intel Clear" ))
-	(pt -656 -352)
-	(pt -560 -352)
-	(bus)
-)
-(connector
-	(text "reset" (rect -648 -352 -625 -335)(font "Intel Clear" ))
-	(pt -656 -336)
-	(pt -560 -336)
-)
-(connector
-	(text "clk" (rect -648 -336 -634 -319)(font "Intel Clear" ))
-	(pt -656 -320)
-	(pt -624 -320)
 )
 (connector
 	(pt 160 -472)
@@ -2915,18 +2719,214 @@ https://fpgasoftware.intel.com/eula.
 	(bus)
 )
 (connector
-	(text "hold_memory_dependency" (rect -367 -384 -237 -367)(font "Intel Clear" ))
-	(pt -368 -368)
-	(pt -248 -368)
-)
-(connector
-	(pt -576 -320)
-	(pt -560 -320)
-)
-(connector
 	(pt 184 -48)
 	(pt 1000 -48)
 	(bus)
+)
+(connector
+	(pt -248 -440)
+	(pt -248 -376)
+)
+(connector
+	(text "mi_decode[32..0]" (rect -648 -392 -567 -375)(font "Intel Clear" ))
+	(pt -656 -376)
+	(pt -560 -376)
+	(bus)
+)
+(connector
+	(text "mi_operand[32..0]" (rect -648 -376 -562 -359)(font "Intel Clear" ))
+	(pt -656 -360)
+	(pt -560 -360)
+	(bus)
+)
+(connector
+	(text "reset" (rect -648 -360 -625 -343)(font "Intel Clear" ))
+	(pt -656 -344)
+	(pt -560 -344)
+)
+(connector
+	(text "clk" (rect -648 -344 -634 -327)(font "Intel Clear" ))
+	(pt -656 -328)
+	(pt -624 -328)
+)
+(connector
+	(text "hold_memory_dependency" (rect -367 -392 -237 -375)(font "Intel Clear" ))
+	(pt -368 -376)
+	(pt -248 -376)
+)
+(connector
+	(pt -576 -328)
+	(pt -560 -328)
+)
+(connector
+	(pt -2624 -256)
+	(pt -2624 -320)
+)
+(connector
+	(text "reset" (rect -2832 -272 -2809 -255)(font "Intel Clear" ))
+	(pt -2624 -256)
+	(pt -2840 -256)
+)
+(connector
+	(pt -2664 -320)
+	(pt -2664 -296)
+)
+(connector
+	(pt -2968 -272)
+	(pt -2968 -288)
+)
+(connector
+	(pt -2968 -288)
+	(pt -2960 -288)
+)
+(connector
+	(pt -2960 -304)
+	(pt -2968 -304)
+)
+(connector
+	(pt -2968 -304)
+	(pt -2968 -320)
+)
+(connector
+	(text "rom_addr[15..0]" (rect -2830 -464 -2755 -447)(font "Intel Clear" ))
+	(pt -2840 -448)
+	(pt -2752 -448)
+	(bus)
+)
+(connector
+	(text "clk" (rect -3152 -312 -3138 -295)(font "Intel Clear" ))
+	(pt -3160 -296)
+	(pt -2960 -296)
+)
+(connector
+	(text "hold_register_dependency" (rect -3152 -336 -3026 -319)(font "Intel Clear" ))
+	(pt -3160 -320)
+	(pt -3032 -320)
+)
+(connector
+	(text "hold_memory_dependency" (rect -3152 -288 -3022 -271)(font "Intel Clear" ))
+	(pt -3160 -272)
+	(pt -3032 -272)
+)
+(connector
+	(text "rom_clk" (rect -2832 -216 -2794 -199)(font "Intel Clear" ))
+	(pt -2840 -200)
+	(pt -2752 -200)
+)
+(connector
+	(text "rom_addr[12..0]" (rect -2829 -240 -2754 -223)(font "Intel Clear" ))
+	(pt -2840 -224)
+	(pt -2752 -224)
+	(bus)
+)
+(connector
+	(text "k[15..0]" (rect -2502 -464 -2467 -447)(font "Intel Clear" ))
+	(pt -2536 -448)
+	(pt -2456 -448)
+	(bus)
+)
+(connector
+	(text "ifu_bsr" (rect -2494 -432 -2463 -415)(font "Intel Clear" ))
+	(pt -2536 -416)
+	(pt -2456 -416)
+)
+(connector
+	(text "ifu_jmp" (rect -2494 -384 -2459 -367)(font "Intel Clear" ))
+	(pt -2536 -368)
+	(pt -2456 -368)
+)
+(connector
+	(text "ifu_ret" (rect -2494 -408 -2464 -391)(font "Intel Clear" ))
+	(pt -2536 -392)
+	(pt -2456 -392)
+)
+(connector
+	(text "rom_clk" (rect -2776 -312 -2738 -295)(font "Intel Clear" ))
+	(pt -2896 -296)
+	(pt -2712 -296)
+)
+(connector
+	(pt -2984 -320)
+	(pt -2968 -320)
+)
+(connector
+	(pt -2984 -272)
+	(pt -2968 -272)
+)
+(connector
+	(pt -1992 -544)
+	(pt -1992 -512)
+)
+(connector
+	(pt -1944 -512)
+	(pt -1992 -512)
+)
+(connector
+	(text "hold_register_dependency" (rect -2304 -504 -2178 -487)(font "Intel Clear" ))
+	(pt -2312 -488)
+	(pt -2160 -488)
+)
+(connector
+	(text "hold_memory_dependency" (rect -2304 -456 -2174 -439)(font "Intel Clear" ))
+	(pt -2160 -440)
+	(pt -2312 -440)
+)
+(connector
+	(text "clk" (rect -2304 -480 -2290 -463)(font "Intel Clear" ))
+	(pt -2080 -464)
+	(pt -2312 -464)
+)
+(connector
+	(pt -2096 -488)
+	(pt -2096 -472)
+)
+(connector
+	(pt -2096 -472)
+	(pt -2080 -472)
+)
+(connector
+	(pt -2080 -456)
+	(pt -2096 -456)
+)
+(connector
+	(pt -2096 -456)
+	(pt -2096 -440)
+)
+(connector
+	(pt -1944 -496)
+	(pt -1992 -496)
+)
+(connector
+	(pt -1992 -496)
+	(pt -1992 -464)
+)
+(connector
+	(pt -3144 -528)
+	(pt -1944 -528)
+	(bus)
+)
+(connector
+	(pt -1488 -528)
+	(pt -1424 -528)
+	(bus)
+)
+(connector
+	(text "i_decode[31..0]" (rect -1621 -544 -1550 -527)(font "Intel Clear" ))
+	(pt -1664 -528)
+	(pt -1488 -528)
+	(bus)
+)
+(connector
+	(pt -2112 -488)
+	(pt -2096 -488)
+)
+(connector
+	(pt -2016 -464)
+	(pt -1992 -464)
+)
+(connector
+	(pt -2112 -440)
+	(pt -2096 -440)
 )
 (junction (pt -192 120))
 (junction (pt -368 -72))
@@ -2946,4 +2946,4 @@ https://fpgasoftware.intel.com/eula.
 (rectangle (rect 2168 -128 3024 296))
 (rectangle (rect 896 320 1480 648))
 (rectangle (rect -1448 -584 -920 -128))
-(rectangle (rect -2776 -584 -2312 -128))
+(rectangle (rect -2880 -584 -2416 -128))
