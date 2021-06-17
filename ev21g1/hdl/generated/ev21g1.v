@@ -15,15 +15,18 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
-// CREATED		"Mon Jun 14 00:13:16 2021"
+// CREATED		"Wed Jun 16 20:17:03 2021"
 
 module ev21g1(
 	clk,
 	input_port0,
 	input_port1,
 	instruction,
+	hsync,
+	vsync,
 	output_port0,
-	output_port1
+	output_port1,
+	vga_rgb
 );
 
 
@@ -31,8 +34,11 @@ input wire	clk;
 input wire	[31:0] input_port0;
 input wire	[31:0] input_port1;
 input wire	[31:0] instruction;
+output wire	hsync;
+output wire	vsync;
 output wire	[31:0] output_port0;
 output wire	[31:0] output_port1;
+output wire	[2:0] vga_rgb;
 
 wire	cs_ram;
 wire	[31:0] mem_addr_bus;
@@ -59,18 +65,19 @@ assign	SYNTHESIZED_WIRE_4 = 1;
 
 cpu	b2v_inst(
 	.clk(clk),
+	.vga_clk(clk),
 	.input_port0(input_port1),
 	.input_port1(input_port0),
 	.instruction(instruction),
 	.mem_read(mem_read),
 	.mem_write(mem_write),
-	
-	
-	
+	.hsync(hsync),
+	.vsync(vsync),
 	.mem_addr_bus(mem_addr_bus),
 	.mem_data_bus(mem_data_bus),
 	.output_port0(output_port0),
-	.output_port1(output_port1));
+	.output_port1(output_port1),
+	.vga_rgb(vga_rgb));
 
 
 ram	b2v_inst1(

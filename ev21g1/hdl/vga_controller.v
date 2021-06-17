@@ -5,6 +5,8 @@
 //----------------------------------------------------------------------------------
 module vga_controller(         
 /* Pixel Generator Ports  */
+	pixel_row,		// Output: Current Pixel Row
+	pixel_col,		// Output: Current Pixel Column
 	pixel_rgb,		// Input: Pixel Generator RGB data
 	/* VGA Ports */
 	vga_hsync,		// Output: VGA hsync 
@@ -39,6 +41,9 @@ module vga_controller(
 	output reg vga_hsync = 1'b1;
 	output reg vga_vsync = 1'b1;
 	output reg [15:0] pixel_address;
+	
+	output wire [9:0] pixel_row;
+	output wire [9:0] pixel_col;
 	
 	/*************************/
 	/* Declaring input ports */
@@ -100,12 +105,13 @@ module vga_controller(
 	/***************************/
 	/* Pixel Driver Controller */
 	/***************************/
-
+	assign pixel_row = v_count;
+	assign pixel_col = h_count;
 	
 	always @* begin
 	
 		if (active) begin
-			pixel_address <= v_count * hactive + h_count;
+			pixel_address <= v_count * hactive + h_count + 1;
 			vga_rgb = pixel_rgb;
 		end else begin
 			pixel_address = 0;

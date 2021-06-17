@@ -15,32 +15,40 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
-// CREATED		"Mon Jun 14 00:13:06 2021"
+// CREATED		"Wed Jun 16 20:18:04 2021"
 
 module cpu(
 	clk,
+	vga_clk,
 	input_port0,
 	input_port1,
 	instruction,
 	mem_read,
 	mem_write,
+	hsync,
+	vsync,
 	mem_addr_bus,
 	mem_data_bus,
 	output_port0,
-	output_port1
+	output_port1,
+	vga_rgb
 );
 
 
 input wire	clk;
+input wire	vga_clk;
 input wire	[31:0] input_port0;
 input wire	[31:0] input_port1;
 input wire	[31:0] instruction;
 output wire	mem_read;
 output wire	mem_write;
+output wire	hsync;
+output wire	vsync;
 output wire	[31:0] mem_addr_bus;
 inout wire	[31:0] mem_data_bus;
 output wire	[31:0] output_port0;
 output wire	[31:0] output_port1;
+output wire	[2:0] vga_rgb;
 
 wire	alu_carry;
 wire	alu_overflow;
@@ -209,6 +217,16 @@ bus_mux	b2v_inst28(
 	.in1(mem_data_bus),
 	.out(SYNTHESIZED_WIRE_21));
 	defparam	b2v_inst28.BUS_WIDTH = 32;
+
+
+vga_module	b2v_inst29(
+	.print_enable(mi_operand[0]),
+	.clk(vga_clk),
+	.pixel_address(bus_a[15:0]),
+	.pixel_rgb(bus_b[2:0]),
+	.hsync(hsync),
+	.vsync(vsync),
+	.vga_rgb(vga_rgb));
 
 
 register	b2v_inst3(

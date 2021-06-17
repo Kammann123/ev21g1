@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "Cyclone IV E"
 set_global_assignment -name DEVICE EP4CE22F17C6
-set_global_assignment -name TOP_LEVEL_ENTITY cpu
+set_global_assignment -name TOP_LEVEL_ENTITY vga_module
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 20.1.1
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "10:04:34  MAY 22, 2021"
 set_global_assignment -name LAST_QUARTUS_VERSION "20.1.1 Lite Edition"
@@ -59,6 +59,8 @@ set_global_assignment -name EDA_NETLIST_WRITER_OUTPUT_DIR simulation -section_id
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 
+set_global_assignment -name BSF_FILE symbols/VRAM.bsf
+set_global_assignment -name VERILOG_FILE hdl/generated/VRAM.v
 set_global_assignment -name VERILOG_FILE hdl/vga_controller.v
 set_global_assignment -name VERILOG_FILE hdl/lifo.v
 set_global_assignment -name BDF_FILE bdf/cpu.bdf
@@ -93,10 +95,9 @@ set_global_assignment -name BDF_FILE bdf/program_memory.bdf
 set_global_assignment -name VERILOG_FILE hdl/generated/rom.v
 set_global_assignment -name VECTOR_WAVEFORM_FILE simulation/vga.vwf
 set_global_assignment -name BDF_FILE bdf/vga_module.bdf
-set_global_assignment -name QIP_FILE VRAM.qip
-set_global_assignment -name VECTOR_WAVEFORM_FILE simulation/vga_module.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE simulation/cpu.vwf
 set_global_assignment -name MIF_FILE VRAM.mif
+set_global_assignment -name VECTOR_WAVEFORM_FILE simulation/vga_module.vwf
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top

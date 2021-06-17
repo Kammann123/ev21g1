@@ -53,6 +53,13 @@ https://fpgasoftware.intel.com/eula.
 		(line (pt 0 32)(pt 16 32)(line_width 3))
 	)
 	(port
+		(pt 0 56)
+		(input)
+		(text "vga_clk" (rect 24 48 68 67)(font "Intel Clear" (font_size 8)))
+		(text "vga_clk" (rect 24 48 68 67)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 56)(pt 16 56))
+	)
+	(port
 		(pt 320 32)
 		(output)
 		(text "mem_data_bus[31..0]" (rect 0 0 132 19)(font "Intel Clear" (font_size 8)))
@@ -93,6 +100,27 @@ https://fpgasoftware.intel.com/eula.
 		(text "output_port1[31..0]" (rect 0 0 118 19)(font "Intel Clear" (font_size 8)))
 		(text "output_port1[31..0]" (rect 181 155 299 174)(font "Intel Clear" (font_size 8)))
 		(line (pt 320 160)(pt 304 160)(line_width 3))
+	)
+	(port
+		(pt 320 96)
+		(output)
+		(text "hsync" (rect 269 88 302 107)(font "Intel Clear" (font_size 8)))
+		(text "hsync" (rect 269 88 302 107)(font "Intel Clear" (font_size 8)))
+		(line (pt 320 96)(pt 304 96))
+	)
+	(port
+		(pt 320 112)
+		(output)
+		(text "vsync" (rect 269 112 302 131)(font "Intel Clear" (font_size 8)))
+		(text "vsync" (rect 264 104 297 123)(font "Intel Clear" (font_size 8)))
+		(line (pt 320 112)(pt 304 112))
+	)
+	(port
+		(pt 320 128)
+		(output)
+		(text "vga_rgb[2..0]" (rect 269 120 348 139)(font "Intel Clear" (font_size 8)))
+		(text "vga_rgb[2..0]" (rect 224 120 303 139)(font "Intel Clear" (font_size 8)))
+		(line (pt 320 128)(pt 304 128))
 	)
 	(drawing
 		(text "CPU" (rect 136 88 186 110)(font "Arial" (color 0 0 0)(font_size 14)(bold)))
