@@ -15,7 +15,7 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
-// CREATED		"Wed Jun 16 20:18:04 2021"
+// CREATED		"Thu Jun 17 01:36:58 2021"
 
 module cpu(
 	clk,
@@ -71,6 +71,8 @@ wire	[29:0] mi_decode;
 wire	[29:0] mi_execute;
 wire	[29:0] mi_operand;
 wire	[29:0] mi_retire;
+wire	[9:0] p_col;
+wire	[9:0] p_row;
 wire	[31:0] psr;
 wire	ret;
 wire	sh_carry;
@@ -226,6 +228,8 @@ vga_module	b2v_inst29(
 	.pixel_rgb(bus_b[2:0]),
 	.hsync(hsync),
 	.vsync(vsync),
+	
+	
 	.vga_rgb(vga_rgb));
 
 

@@ -15,7 +15,7 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
-// CREATED		"Wed Jun 16 20:17:03 2021"
+// CREATED		"Thu Jun 17 01:40:23 2021"
 
 module ev21g1(
 	clk,
