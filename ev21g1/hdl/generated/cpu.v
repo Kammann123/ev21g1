@@ -15,7 +15,7 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
-// CREATED		"Wed Jun 16 16:39:56 2021"
+// CREATED		"Wed Jun 16 23:31:08 2021"
 
 module cpu(
 	clk,
@@ -111,8 +111,6 @@ assign	SYNTHESIZED_WIRE_7 = 1;
 assign	SYNTHESIZED_WIRE_9 = 1;
 assign	SYNTHESIZED_WIRE_14 = 1;
 assign	SYNTHESIZED_WIRE_17 = 1;
-assign	SYNTHESIZED_WIRE_20 = 1;
-assign	SYNTHESIZED_WIRE_21 = 0;
 assign	SYNTHESIZED_WIRE_24 = 1;
 assign	SYNTHESIZED_WIRE_27 = 1;
 
@@ -260,12 +258,6 @@ assign	SYNTHESIZED_WIRE_25 = clk & SYNTHESIZED_WIRE_16;
 assign	SYNTHESIZED_WIRE_16 =  ~hold;
 
 
-uc_1	b2v_inst34(
-	.hold(condjmp_hold),
-	.bus_inp(mi_decode),
-	.bus_out(SYNTHESIZED_WIRE_26));
-
-
 uc_ifu	b2v_inst36(
 	.jmp(jmp),
 	.jze(jze),
@@ -279,6 +271,13 @@ uc_ifu	b2v_inst36(
 	.ifu_bsr(ifu_bsr),
 	.ifu_ret(ifu_ret));
 
+assign	cond_jmp = jze | jov | jcy | jne;
+
+
+uc_1	b2v_inst38(
+	.hold(condjmp_hold),
+	.bus_inp(mi_decode),
+	.bus_out(SYNTHESIZED_WIRE_26));
 
 
 register	b2v_inst4(
@@ -292,6 +291,8 @@ assign	k[15:0] = i_decode[21:6];
 
 
 
+assign	SYNTHESIZED_WIRE_10 = clk & SYNTHESIZED_WIRE_18 & SYNTHESIZED_WIRE_19;
+
 
 uc_2	b2v_inst43(
 	.clk(clk),
@@ -300,9 +301,9 @@ uc_2	b2v_inst43(
 	.c(mi_execute[7:2]),
 	.hold(hold));
 
-assign	SYNTHESIZED_WIRE_12 =  ~rom_clk;
+assign	rom_clk = clk & SYNTHESIZED_WIRE_20 & SYNTHESIZED_WIRE_21;
 
-assign	rom_clk = clk & SYNTHESIZED_WIRE_18;
+assign	SYNTHESIZED_WIRE_12 =  ~rom_clk;
 
 
 uc_psr	b2v_inst5(
@@ -316,17 +317,19 @@ uc_psr	b2v_inst5(
 	.sh(mi_execute[25:23]),
 	.psr(psr));
 
+assign	SYNTHESIZED_WIRE_20 =  ~hold;
+
+assign	SYNTHESIZED_WIRE_21 =  ~condjmp_hold;
+
 assign	SYNTHESIZED_WIRE_18 =  ~hold;
 
-assign	SYNTHESIZED_WIRE_10 = clk & SYNTHESIZED_WIRE_19;
-
-assign	SYNTHESIZED_WIRE_19 =  ~hold;
+assign	SYNTHESIZED_WIRE_19 =  ~condjmp_hold;
 
 
-uc_cjmp	b2v_inst54(
+uc_cndjmp	b2v_inst54(
 	.clk(clk),
-	.cond_jmp(SYNTHESIZED_WIRE_20),
-	.hold(SYNTHESIZED_WIRE_21),
+	.reset(cond_jmp),
+	.hold(hold),
 	.condjmp_hold(condjmp_hold));
 
 
@@ -338,8 +341,6 @@ general_register_bank	b2v_inst6(
 	.outb_sel(mi_operand[13:8]),
 	.outa(bus_a),
 	.outb(bus_b));
-
-
 
 
 instruction_decoder	b2v_inst7(
