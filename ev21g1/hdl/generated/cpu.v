@@ -15,7 +15,7 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
-// CREATED		"Wed Jun 16 23:31:08 2021"
+// CREATED		"Thu Jun 17 02:00:09 2021"
 
 module cpu(
 	clk,
@@ -258,6 +258,14 @@ assign	SYNTHESIZED_WIRE_25 = clk & SYNTHESIZED_WIRE_16;
 assign	SYNTHESIZED_WIRE_16 =  ~hold;
 
 
+uc_cjmp	b2v_inst35(
+	.clk(clk),
+	.cond_jmp(cond_jmp),
+	.hold(hold),
+	.reset(reset),
+	.condjmp_hold(condjmp_hold));
+
+
 uc_ifu	b2v_inst36(
 	.jmp(jmp),
 	.jze(jze),
@@ -324,13 +332,6 @@ assign	SYNTHESIZED_WIRE_21 =  ~condjmp_hold;
 assign	SYNTHESIZED_WIRE_18 =  ~hold;
 
 assign	SYNTHESIZED_WIRE_19 =  ~condjmp_hold;
-
-
-uc_cndjmp	b2v_inst54(
-	.clk(clk),
-	.reset(cond_jmp),
-	.hold(hold),
-	.condjmp_hold(condjmp_hold));
 
 
 general_register_bank	b2v_inst6(

@@ -1,22 +1,27 @@
 // Down counter
-module uc_cndjmp(input clk, reset, hold, output condjmp_hold
+module uc_cndjmp(input clk, reset, output condjmp_hold
 		);
 
 	reg[1:0] down_counter = 0;
+	reg reset_prev;
+	wire [1 : 0] rNext;
 
+	always @(posedge clk)
+		reset_prev <= reset;
+		
 	always @(negedge clk or posedge reset)
 	begin
-
-		if(~hold && down_counter > 0)
-			//decrement counter
-			down_counter <= down_counter - 1;
+		if(reset)
+		begin
+			if(!reset_prev)
+				down_counter <= 2'b10;
+		end
+		else begin
+			if(down_counter>0)
+				down_counter <= down_counter - 2'b01;
+		end
+	end 
 		
-		else if(reset && down_counter == 0)
-			down_counter <= 2;
-		
-	end
-
-		// hold high if counter is not 0
 	assign condjmp_hold = (down_counter != 0);
- 
+		
 endmodule
