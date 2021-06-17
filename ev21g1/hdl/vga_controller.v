@@ -57,6 +57,10 @@ module vga_controller(
 	/***********************/
 	reg [9:0] h_count = 0;	// Counter of vertical pixels
 	reg [9:0] v_count = 0; 	// Counter of horizontal lines
+	
+	reg [9:0] next_h_count = 0;	// Next Counter of vertical pixels
+	reg [9:0] next_v_count = 0; 	// Next Counter of horizontal lines
+	
 	reg active;				// Active high when printing in the active area of the vga display
 	
 	/************************************/
@@ -64,20 +68,22 @@ module vga_controller(
 	/************************************/
 	always @(posedge clock) begin: COUNTER_LOGIC
 		if (reset) begin
-			if (h_count == (htotal - 1)) begin
-				h_count <= 0;
-				if (v_count == (vtotal - 1)) begin
-					v_count <= 0;
+			h_count = next_h_count;
+			v_count = next_v_count;
+			if (next_h_count == (htotal - 1)) begin
+				next_h_count <= 0;
+				if (next_v_count == (vtotal - 1)) begin
+					next_v_count <= 0;
 				end else begin
-					v_count <= v_count + 1;
+					next_v_count <= next_v_count + 1;
 				end
 			end else begin
-				h_count <= h_count + 1;
+				next_h_count <= next_h_count + 1;
 			end
 		end else begin
-			h_count <= 0;
-			v_count <= 0;
-		end
+			next_h_count <= 0;
+			next_v_count <= 0;
+		end	
 	end
 	
 	/**********************************/
@@ -111,7 +117,7 @@ module vga_controller(
 	always @* begin
 	
 		if (active) begin
-			pixel_address <= v_count * hactive + h_count + 1;
+			pixel_address <= next_v_count * hactive + next_h_count;
 			vga_rgb = pixel_rgb;
 		end else begin
 			pixel_address = 0;
