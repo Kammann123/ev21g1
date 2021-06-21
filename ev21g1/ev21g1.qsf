@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "Cyclone IV E"
 set_global_assignment -name DEVICE EP4CE22F17C6
-set_global_assignment -name TOP_LEVEL_ENTITY program_memory
+set_global_assignment -name TOP_LEVEL_ENTITY ev21g1
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 20.1.1
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "10:04:34  MAY 22, 2021"
 set_global_assignment -name LAST_QUARTUS_VERSION "20.1.1 Lite Edition"
@@ -59,10 +59,6 @@ set_global_assignment -name EDA_NETLIST_WRITER_OUTPUT_DIR simulation -section_id
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name VERILOG_FILE hdl/freq_divider.v
 set_global_assignment -name VERILOG_FILE hdl/generated/vram.v
 set_global_assignment -name BDF_FILE ev21g1.bdf
 set_global_assignment -name VERILOG_FILE hdl/vga_controller.v
@@ -125,4 +121,7 @@ set_location_assignment PIN_T15 -to vga_rgb[1]
 set_location_assignment PIN_F13 -to vga_rgb[0]
 set_location_assignment PIN_T12 -to vga_vsync
 set_location_assignment PIN_T11 -to vga_hsync
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
