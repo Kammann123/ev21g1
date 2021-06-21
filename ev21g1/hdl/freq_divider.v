@@ -1,4 +1,4 @@
-module freq_divider(in, out);
+module freq_divider(in, out, reset);
 	
 	/*********************/
 	/* Module parameters */
@@ -9,6 +9,7 @@ module freq_divider(in, out);
 	/* Declaring input ports */
 	/*************************/
 	input wire in;
+	input wire reset;
 
 	/**************************/
 	/* Declaring output ports */
@@ -19,14 +20,20 @@ module freq_divider(in, out);
 	
 	always @(posedge in)
 	begin
-		if (counter <= VALUE)
+		if (reset == 1'b1)
 		begin
-			counter <= counter + 1;
+			counter = 0;
+			out = 0;
+		end
+		
+		if (counter < ((VALUE / 2) - 1))
+		begin
+			counter = counter + 1;
 		end
 		else
 		begin
-			counter <= 0;
-			out <= ~out;
+			counter = 0;
+			out = ~out;
 		end
 	end
 endmodule

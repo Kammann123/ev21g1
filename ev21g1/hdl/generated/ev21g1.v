@@ -15,7 +15,7 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
-// CREATED		"Thu Jun 17 13:33:07 2021"
+// CREATED		"Mon Jun 21 10:55:21 2021"
 
 module ev21g1(
 	clk,
@@ -51,6 +51,8 @@ wire	ram_write;
 wire	[12:0] rom_addr_bus;
 wire	[31:0] rom_data_bus;
 wire	rom_read;
+wire	system_reset;
+wire	vga_clk;
 wire	[15:0] vga_pixel_address;
 wire	[2:0] vga_pixel_rgb;
 wire	vga_print;
@@ -69,7 +71,7 @@ assign	SYNTHESIZED_WIRE_3 = 1;
 
 cpu	b2v_inst(
 	.clk(cpu_clk),
-	.reset(reset),
+	.reset(system_reset),
 	.input_port0(input_port1),
 	.input_port1(input_port0),
 	.mem_data_bus(mem_data_bus),
@@ -87,21 +89,26 @@ cpu	b2v_inst(
 	.vga_pixel_rgb(vga_pixel_rgb));
 
 
-ram	b2v_inst1(
-	.wren(ram_write),
-	.rden(ram_read),
-	.clock(clk),
-	.address(mem_addr_bus[12:0]),
-	.data(mem_data_bus),
-	.q(SYNTHESIZED_WIRE_0));
-
-
 
 
 rom	b2v_inst12(
 	.clock(rom_read),
-	.address(rom_addr_bus),
+	.address(rom_addr_bus[11:0]),
 	.q(rom_data_bus));
+
+
+ram	b2v_inst15(
+	.wren(ram_write),
+	.rden(ram_read),
+	.clock(clk),
+	.address(mem_addr_bus[9:0]),
+	.data(mem_data_bus),
+	.q(SYNTHESIZED_WIRE_0));
+
+assign	system_reset =  ~reset;
+
+assign	vga_clk = cpu_clk;
+
 
 
 buffer_tri	b2v_inst2(
@@ -122,7 +129,7 @@ chip_select	b2v_inst5(
 
 vga_module	b2v_inst7(
 	.print(vga_print),
-	.vga_clk(cpu_clk),
+	.vga_clk(vga_clk),
 	.cpu_clk(cpu_clk),
 	.pixel_address(vga_pixel_address),
 	.pixel_rgb(vga_pixel_rgb),
