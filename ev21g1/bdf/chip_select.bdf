@@ -97,7 +97,7 @@ https://fpgasoftware.intel.com/eula.
 	)
 	(parameter
 		"BUS_WIDTH"
-		"19"
+		"21"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(drawing
@@ -119,12 +119,12 @@ https://fpgasoftware.intel.com/eula.
 	(pt 424 208)
 )
 (connector
-	(text "address[31..13]" (rect 192 192 263 209)(font "Intel Clear" ))
+	(pt 472 208)
+	(pt 624 208)
+)
+(connector
+	(text "address[31..11]" (rect 192 192 263 209)(font "Intel Clear" ))
 	(pt 280 208)
 	(pt 184 208)
 	(bus)
-)
-(connector
-	(pt 472 208)
-	(pt 624 208)
 )

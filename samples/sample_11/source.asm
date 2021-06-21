@@ -1,0 +1,6 @@
+MLK 0,00FF  // R0 = 000000FF
+MLK 1,000A  // R1 = 0000000A
+MLK 2,00FE  // R2 = 000000FE
+STR 1,0     // M(R0) = R1
+LDR 3,0     // R3 = M(R0)
+STR 3,2     // M(R2) = R3

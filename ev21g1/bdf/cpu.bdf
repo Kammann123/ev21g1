@@ -2392,6 +2392,40 @@ https://fpgasoftware.intel.com/eula.
 		(rectangle (rect 16 16 144 176))
 	)
 )
+(symbol
+	(rect -2152 -456 -2104 -392)
+	(text "OR2" (rect 0 45 10 63)(font "Arial" (font_size 6))(vertical))
+	(text "inst30" (rect 37 33 54 61)(font "Intel Clear" )(vertical))
+	(port
+		(pt 32 64)
+		(input)
+		(text "IN2" (rect 2 23 19 35)(font "Courier New" (bold))(invisible))
+		(text "IN2" (rect 23 45 35 62)(font "Courier New" (bold))(vertical)(invisible))
+		(line (pt 32 64)(pt 32 49))
+	)
+	(port
+		(pt 16 64)
+		(input)
+		(text "IN1" (rect 2 7 19 19)(font "Courier New" (bold))(invisible))
+		(text "IN1" (rect 7 45 19 62)(font "Courier New" (bold))(vertical)(invisible))
+		(line (pt 16 64)(pt 16 49))
+	)
+	(port
+		(pt 24 0)
+		(output)
+		(text "OUT" (rect 48 15 65 27)(font "Courier New" (bold))(invisible))
+		(text "OUT" (rect 15 -1 27 16)(font "Courier New" (bold))(vertical)(invisible))
+		(line (pt 24 16)(pt 24 0))
+	)
+	(drawing
+		(line (pt 36 50)(pt 36 39))
+		(line (pt 13 50)(pt 13 39))
+		(arc (pt 29 57)(pt 19 57)(rect 8 45 41 78))
+		(arc (pt 24 15)(pt 13 39)(rect 13 7 76 70))
+		(arc (pt 35 39)(pt 24 15)(rect -27 7 36 70))
+	)
+	(rotate90)
+)
 (connector
 	(pt -1488 -416)
 	(pt -1424 -416)
@@ -3029,10 +3063,6 @@ https://fpgasoftware.intel.com/eula.
 	(bus)
 )
 (connector
-	(pt -2128 -464)
-	(pt -2128 -384)
-)
-(connector
 	(pt -2232 -392)
 	(pt -2232 -400)
 )
@@ -3057,10 +3087,6 @@ https://fpgasoftware.intel.com/eula.
 	(text "ifu_ret" (rect -2278 -384 -2248 -367)(font "Intel Clear" ))
 	(pt -2232 -368)
 	(pt -2288 -368)
-)
-(connector
-	(pt -2160 -384)
-	(pt -2128 -384)
 )
 (connector
 	(text "ifu_bsr" (rect -2280 -400 -2249 -383)(font "Intel Clear" ))
@@ -3501,6 +3527,27 @@ https://fpgasoftware.intel.com/eula.
 	(text "mi_operand[0]" (rect 1008 1224 1077 1241)(font "Intel Clear" ))
 	(pt 1000 1240)
 	(pt 1080 1240)
+)
+(connector
+	(pt -2128 -464)
+	(pt -2128 -456)
+)
+(connector
+	(pt -2136 -384)
+	(pt -2160 -384)
+)
+(connector
+	(pt -2136 -384)
+	(pt -2136 -392)
+)
+(connector
+	(pt -2120 -392)
+	(pt -2120 -336)
+)
+(connector
+	(text "reset" (rect -2262 -352 -2239 -335)(font "Intel Clear" ))
+	(pt -2120 -336)
+	(pt -2288 -336)
 )
 (junction (pt -1488 -528))
 (junction (pt -1488 -416))

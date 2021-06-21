@@ -1,6 +1,6 @@
 `timescale 1 ps / 1 ps
 
-module ev21g1_fetch_tb;
+module ev21g1_tb;
 
 	/*****************************/
 	/* Variables for Input Ports */
@@ -43,14 +43,185 @@ module ev21g1_fetch_tb;
 	/***********/
 	initial begin
 		// Initialization of signals (initial conditions...)
-		reset = 1;
+		reset = 0;
 		clk = 0;
 		#1;
+		
 		clk = 1'b1;
 		#1;
 		clk = 1'b0;
 		#1;
-		reset = 0;
+		
+		clk = 1'b1;
+		#1;
+		reset = 1;
+		clk = 1'b0;
+		#1;
+		
+		clk = 1'b1;
+		#1;
+		clk = 1'b0;
+		#1;
+		
+		clk = 1'b1;
+		#1;
+		clk = 1'b0;
+		#1;
+		
+		clk = 1'b1;
+		#1;
+		clk = 1'b0;
+		#1;
+		
+		clk = 1'b1;
+		#1;
+		clk = 1'b0;
+		#1;
+		
+		clk = 1'b1;
+		#1;
+		clk = 1'b0;
+		#1;
+		
+		clk = 1'b1;
+		#1;
+		clk = 1'b0;
+		#1;
+		
+		clk = 1'b1;
+		#1;
+		clk = 1'b0;
+		#1;
+		
+		clk = 1'b1;
+		#1;
+		clk = 1'b0;
+		#1;
+		
+		clk = 1'b1;
+		#1;
+		clk = 1'b0;
+		#1;
+		
+		clk = 1'b1;
+		#1;
+		clk = 1'b0;
+		#1;
+		
+		clk = 1'b1;
+		#1;
+		clk = 1'b0;
+		#1;
+		
+		clk = 1'b1;
+		#1;
+		clk = 1'b0;
+		#1;
+		
+		clk = 1'b1;
+		#1;
+		clk = 1'b0;
+		#1;
+		
+		clk = 1'b1;
+		#1;
+		clk = 1'b0;
+		#1;
+		
+		clk = 1'b1;
+		#1;
+		clk = 1'b0;
+		#1;
+		
+		clk = 1'b1;
+		#1;
+		clk = 1'b0;
+		#1;
+		
+		clk = 1'b1;
+		#1;
+		clk = 1'b0;
+		#1;
+		
+		clk = 1'b1;
+		#1;
+		clk = 1'b0;
+		#1;
+		
+		clk = 1'b1;
+		#1;
+		clk = 1'b0;
+		#1;
+		
+		clk = 1'b1;
+		#1;
+		clk = 1'b0;
+		#1;
+		
+		clk = 1'b1;
+		#1;
+		clk = 1'b0;
+		#1;
+		
+		clk = 1'b1;
+		#1;
+		clk = 1'b0;
+		#1;
+		
+		clk = 1'b1;
+		#1;
+		clk = 1'b0;
+		#1;
+		
+		clk = 1'b1;
+		#1;
+		clk = 1'b0;
+		#1;
+		
+		clk = 1'b1;
+		#1;
+		clk = 1'b0;
+		#1;
+		
+		clk = 1'b1;
+		#1;
+		clk = 1'b0;
+		#1;
+		
+		clk = 1'b1;
+		#1;
+		clk = 1'b0;
+		#1;
+		
+		clk = 1'b1;
+		#1;
+		clk = 1'b0;
+		#1;
+		
+		clk = 1'b1;
+		#1;
+		clk = 1'b0;
+		#1;
+		
+		clk = 1'b1;
+		#1;
+		clk = 1'b0;
+		#1;
+		
+		clk = 1'b1;
+		#1;
+		clk = 1'b0;
+		#1;
+		
+		clk = 1'b1;
+		#1;
+		clk = 1'b0;
+		#1;
+		
+		clk = 1'b1;
+		#1;
+		clk = 1'b0;
+		#1;
 		
 		clk = 1'b1;
 		#1;

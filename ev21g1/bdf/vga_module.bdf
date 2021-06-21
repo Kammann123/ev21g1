@@ -70,7 +70,7 @@ https://fpgasoftware.intel.com/eula.
 )
 (pin
 	(input)
-	(rect -48 384 128 400)
+	(rect -56 384 120 400)
 	(text "INPUT" (rect 133 0 161 10)(font "Arial" (font_size 6)))
 	(text "cpu_clk" (rect 9 0 46 12)(font "Arial" ))
 	(pt 176 8)
@@ -86,7 +86,7 @@ https://fpgasoftware.intel.com/eula.
 )
 (pin
 	(input)
-	(rect -48 408 128 424)
+	(rect -56 408 120 424)
 	(text "INPUT" (rect 133 0 161 10)(font "Arial" (font_size 6)))
 	(text "vga_clk" (rect 9 0 47 12)(font "Arial" ))
 	(pt 176 8)
@@ -528,22 +528,12 @@ https://fpgasoftware.intel.com/eula.
 	(pt 336 312)
 )
 (connector
+	(text "cpu_clk" (rect 120 376 156 393)(font "Intel Clear" ))
 	(pt 120 392)
-	(pt 128 392)
+	(pt 208 392)
 )
 (connector
-	(text "cpu_clk" (rect 128 376 164 393)(font "Intel Clear" ))
-	(pt 128 392)
-	(pt 216 392)
-)
-(connector
+	(text "vga_clk" (rect 123 400 160 417)(font "Intel Clear" ))
 	(pt 120 416)
-	(pt 128 416)
+	(pt 208 416)
 )
-(connector
-	(text "vga_clk" (rect 131 400 168 417)(font "Intel Clear" ))
-	(pt 128 416)
-	(pt 216 416)
-)
-(junction (pt 128 392))
-(junction (pt 128 416))
