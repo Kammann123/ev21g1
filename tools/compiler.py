@@ -1,9 +1,16 @@
 """
-
+    compiler.py
+    Usage:
+        compiler.py source output
+    
+    Basic assembly compiler for the EV21G1 processor.
 """
 
 # Python modules
 import sys
+
+# Compiler parameters and settings
+MEMORY_DEPTH = 4096
 
 def create_instruction(mnemonic: str, link: list, format: int, opcode: int):
   """ Creates a descriptor or data structure which describes an instruction
@@ -23,10 +30,10 @@ def non_operand_instruction(a: bool, b: bool, c: bool, opcode: int, rk: int, rj:
   word |= (1 if b else 0) << 29
   word |= (1 if c else 0) << 28
   word |= opcode << 18
-  word |= rk << 12 if a else 63
-  word |= rj << 6 if b else 63
-  word |= ri << 0 if c else 63
-  return word 
+  word |= rk << 12 if a else 63 << 12
+  word |= rj << 6 if b else 63 << 6
+  word |= ri << 0 if c else 63 << 0
+  return word
 
 def operand_instruction(b: bool, c: bool, opcode: int, operand: int, ri: int):
   """ Generates the binary word for a operand instruction
@@ -36,13 +43,17 @@ def operand_instruction(b: bool, c: bool, opcode: int, operand: int, ri: int):
   word |= (1 if c else 0) << 28
   word |= opcode << 22
   word |= operand << 6
-  word |= ri << 0 if b or c else 63
+  word |= ri << 0 if b or c else 63 << 0
   return word 
 
+# Register supported instructions for the processor
+# If instruction belongs to format N° 1 => Mnemonic, (Ri, Rj, Rk), 1, Operand
+# If instruction belongs to format N° 2 => Mnemonic, (Ri(B), Rj, Ri(C)), 2, Operand
 instructions = [
   create_instruction('AND', (0, 1, 2), 1, 0),
   create_instruction('OR', (0, 1, 2), 1, 1),
   create_instruction('ORK', (0, 1, 0), 2, 16),
+  create_instruction('ANK', (0, 1, 0), 2, 19),
   create_instruction('ADC', (0, 1, 2), 1, 2),
   create_instruction('ADD', (0, 1, 2), 1, 3),
   create_instruction('MOV', (0, 1, -1), 1, 4),
@@ -83,12 +94,17 @@ def main(*arg, **kwargs):
   # Open the source file
   source = open(source_filepath, 'r')
   for line in source:
-    # Ignore comment lines
-    if '//' in line:
-      continue
 
     # Remove end of line
     if '\n' in line:
+      line = line[:-1]
+
+    # Ignore comment lines
+    if '//' in line:
+      line = line[:line.index('//')]
+
+    # Remove dead blank spaces at end
+    while len(line) and (line[-1] == ' ' or line[-1] == '\t'):
       line = line[:-1]
 
     # Ignore empty lines
@@ -165,16 +181,22 @@ def main(*arg, **kwargs):
 
       # Save the translation
       object.append(code)
-
-  # Save the result
-  output = open(object_filepath, 'w')
-  for code in object:
-    # output.write("{0:032b}\n".format(code))
-    output.write("instruction = 32'b{0:032b};\n".format(code))
-    output.write("clk = 1'b1;\n");
-    output.write("#1;\n\n");
-    output.write("clk = 1'b0;\n");
-    output.write("#1;\n\n");
+    
+  # Create the binary output
+  output = open(f'{object_filepath}.mif', 'w')
+  output.write('\n')
+  output.write('WIDTH=32;\n')
+  output.write(f'DEPTH={MEMORY_DEPTH};\n')
+  output.write('\n')
+  output.write('ADDRESS_RADIX=UNS;\n')
+  output.write('DATA_RADIX=BIN;\n')
+  output.write('\n')
+  output.write('CONTENT BEGIN\n')
+  for i, code in enumerate(object):
+    output.write("\t{}\t:\t{:032b};\n".format(i, code))
+  if i < MEMORY_DEPTH - 1:
+    output.write("\t[{}..{}]\t:\t{:032b};\n".format(i + 1, MEMORY_DEPTH - 1, 0))
+  output.write('END;\n\n')
   output.close()
 
 if __name__ == '__main__':

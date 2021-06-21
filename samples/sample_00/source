@@ -1,0 +1,9 @@
+// Load registers with initial value
+MLK 0,00AA
+MLK 1,0001
+
+// Insert a NOP instruction waiting
+NOP
+
+// Add values and save result in final register
+ADD 2,0,1
