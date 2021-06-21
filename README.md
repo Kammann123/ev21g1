@@ -14,6 +14,8 @@ EV21G1 Processor design and implementation in FPGA using Quartus Prime Lite
 * *ev21g1.qpf* : Quartus Prime project file
 * *ev21g1.qps* : Quartus Prime settings file
 
+**docs/** : Processor documentation
+
 **samples/** : ROM program samples for EV21G1
 
 **tools/** : Tools for developing with the EV21G1
