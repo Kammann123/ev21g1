@@ -22,9 +22,9 @@ https://fpgasoftware.intel.com/eula.
 (header "graphic" (version "1.4"))
 (pin
 	(input)
-	(rect 16 200 192 216)
+	(rect -128 200 48 216)
 	(text "INPUT" (rect 133 0 161 10)(font "Arial" (font_size 6)))
-	(text "address[31..0]" (rect 5 0 76 12)(font "Arial" ))
+	(text "address[31..0]" (rect 5 0 75 12)(font "Arial" ))
 	(pt 176 8)
 	(drawing
 		(line (pt 92 12)(pt 117 12))
@@ -38,7 +38,7 @@ https://fpgasoftware.intel.com/eula.
 )
 (pin
 	(output)
-	(rect 456 200 632 216)
+	(rect 624 200 800 216)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "cs_ram" (rect 90 0 124 17)(font "Intel Clear" ))
 	(pt 0 8)
@@ -53,38 +53,7 @@ https://fpgasoftware.intel.com/eula.
 	)
 )
 (symbol
-	(rect 224 128 336 272)
-	(text "bus_or" (rect 40 48 73 60)(font "Arial" ))
-	(text "inst" (rect 48 96 65 108)(font "Arial" ))
-	(port
-		(pt 0 80)
-		(input)
-		(text "in[BUS_WIDTH-1..0]" (rect 0 48 102 60)(font "Arial" ))
-		(text "i" (rect 24 64 26 76)(font "Arial" )(invisible))
-		(line (pt 0 80)(pt 40 80)(line_width 3))
-	)
-	(port
-		(pt 112 80)
-		(output)
-		(text "out" (rect 37 72 55 91)(font "Intel Clear" (font_size 8)))
-		(text "o" (rect 80 64 87 83)(font "Intel Clear" (font_size 8))(invisible))
-		(line (pt 112 80)(pt 72 80))
-	)
-	(parameter
-		"BUS_WIDTH"
-		"32"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(drawing
-		(arc (pt 40 80)(pt 32 64)(rect 24 64 40 96))
-		(arc (pt 32 96)(pt 40 80)(rect 24 63 40 95))
-		(arc (pt 72 80)(pt 32 64)(rect -8 64 72 96))
-		(arc (pt 32 96)(pt 72 80)(rect -8 63 72 95))
-	)
-	(annotation_block (parameter)(rect 224 88 408 128))
-)
-(symbol
-	(rect 368 192 416 224)
+	(rect 424 192 472 224)
 	(text "NOT" (rect 1 0 21 10)(font "Arial" (font_size 6)))
 	(text "inst1" (rect 3 21 25 38)(font "Intel Clear" ))
 	(port
@@ -108,16 +77,54 @@ https://fpgasoftware.intel.com/eula.
 		(circle (rect 31 12 39 20))
 	)
 )
+(symbol
+	(rect 280 128 392 272)
+	(text "bus_or" (rect 40 48 73 60)(font "Arial" ))
+	(text "inst" (rect 48 96 65 108)(font "Arial" ))
+	(port
+		(pt 0 80)
+		(input)
+		(text "in[BUS_WIDTH-1..0]" (rect 0 48 102 60)(font "Arial" ))
+		(text "i" (rect 24 64 26 76)(font "Arial" )(invisible))
+		(line (pt 0 80)(pt 40 80)(line_width 3))
+	)
+	(port
+		(pt 112 80)
+		(output)
+		(text "out" (rect 37 72 55 91)(font "Intel Clear" (font_size 8)))
+		(text "o" (rect 80 64 87 83)(font "Intel Clear" (font_size 8))(invisible))
+		(line (pt 112 80)(pt 72 80))
+	)
+	(parameter
+		"BUS_WIDTH"
+		"21"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(drawing
+		(arc (pt 40 80)(pt 32 64)(rect 24 64 40 96))
+		(arc (pt 32 96)(pt 40 80)(rect 24 63 40 95))
+		(arc (pt 72 80)(pt 32 64)(rect -8 64 72 96))
+		(arc (pt 32 96)(pt 72 80)(rect -8 63 72 95))
+	)
+	(annotation_block (parameter)(rect 280 88 461 126))
+)
 (connector
-	(pt 192 208)
-	(pt 224 208)
+	(text "address[31..0]" (rect 56 192 122 209)(font "Intel Clear" ))
+	(pt 48 208)
+	(pt 128 208)
 	(bus)
 )
 (connector
-	(pt 336 208)
-	(pt 368 208)
+	(pt 392 208)
+	(pt 424 208)
 )
 (connector
-	(pt 416 208)
-	(pt 456 208)
+	(pt 472 208)
+	(pt 624 208)
+)
+(connector
+	(text "address[31..11]" (rect 192 192 263 209)(font "Intel Clear" ))
+	(pt 280 208)
+	(pt 184 208)
+	(bus)
 )

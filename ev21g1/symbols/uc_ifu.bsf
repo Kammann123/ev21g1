@@ -21,7 +21,7 @@ https://fpgasoftware.intel.com/eula.
 */
 (header "symbol" (version "1.2"))
 (symbol
-	(rect 16 16 176 208)
+	(rect 64 64 224 256)
 	(text "uc_ifu" (rect 5 0 40 19)(font "Intel Clear" (font_size 8)))
 	(text "inst" (rect 8 171 24 188)(font "Intel Clear" ))
 	(port
@@ -46,20 +46,6 @@ https://fpgasoftware.intel.com/eula.
 		(line (pt 0 64)(pt 16 64))
 	)
 	(port
-		(pt 0 80)
-		(input)
-		(text "jcy" (rect 0 0 16 19)(font "Intel Clear" (font_size 8)))
-		(text "jcy" (rect 21 75 37 94)(font "Intel Clear" (font_size 8)))
-		(line (pt 0 80)(pt 16 80))
-	)
-	(port
-		(pt 0 96)
-		(input)
-		(text "jov" (rect 0 0 17 19)(font "Intel Clear" (font_size 8)))
-		(text "jov" (rect 21 91 38 110)(font "Intel Clear" (font_size 8)))
-		(line (pt 0 96)(pt 16 96))
-	)
-	(port
 		(pt 0 112)
 		(input)
 		(text "ret" (rect 0 0 16 19)(font "Intel Clear" (font_size 8)))
@@ -79,6 +65,20 @@ https://fpgasoftware.intel.com/eula.
 		(text "psr[31..0]" (rect 0 0 57 19)(font "Intel Clear" (font_size 8)))
 		(text "psr[31..0]" (rect 21 139 78 158)(font "Intel Clear" (font_size 8)))
 		(line (pt 0 144)(pt 16 144)(line_width 3))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "jov" (rect 0 0 17 19)(font "Intel Clear" (font_size 8)))
+		(text "jov" (rect 24 72 41 91)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 80)(pt 16 80))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "jcy" (rect 0 0 16 19)(font "Intel Clear" (font_size 8)))
+		(text "jcy" (rect 24 88 40 107)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 96)(pt 16 96))
 	)
 	(port
 		(pt 160 32)
