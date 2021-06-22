@@ -15,7 +15,7 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
-// CREATED		"Mon Jun 21 10:55:21 2021"
+// CREATED		"Mon Jun 21 22:48:31 2021"
 
 module ev21g1(
 	clk,
@@ -56,15 +56,18 @@ wire	vga_clk;
 wire	[15:0] vga_pixel_address;
 wire	[2:0] vga_pixel_rgb;
 wire	vga_print;
-reg	DFFE_inst9;
-wire	[31:0] SYNTHESIZED_WIRE_0;
+wire	SYNTHESIZED_WIRE_8;
 wire	SYNTHESIZED_WIRE_1;
-wire	SYNTHESIZED_WIRE_2;
+reg	DFFE_inst9;
+wire	[31:0] SYNTHESIZED_WIRE_2;
 wire	SYNTHESIZED_WIRE_3;
+wire	SYNTHESIZED_WIRE_5;
+wire	SYNTHESIZED_WIRE_6;
+wire	SYNTHESIZED_WIRE_7;
 
-assign	SYNTHESIZED_WIRE_1 = 1;
-assign	SYNTHESIZED_WIRE_2 = 1;
-assign	SYNTHESIZED_WIRE_3 = 1;
+assign	SYNTHESIZED_WIRE_5 = 1;
+assign	SYNTHESIZED_WIRE_6 = 1;
+assign	SYNTHESIZED_WIRE_7 = 1;
 
 
 
@@ -89,12 +92,21 @@ cpu	b2v_inst(
 	.vga_pixel_rgb(vga_pixel_rgb));
 
 
+pll	b2v_inst1(
+	.inclk0(clk),
+	.c0(SYNTHESIZED_WIRE_3),
+	.c1(SYNTHESIZED_WIRE_1),
+	.locked(SYNTHESIZED_WIRE_8));
+
+
 
 
 rom	b2v_inst12(
 	.clock(rom_read),
 	.address(rom_addr_bus[11:0]),
 	.q(rom_data_bus));
+
+assign	vga_clk = SYNTHESIZED_WIRE_8 & SYNTHESIZED_WIRE_1;
 
 
 ram	b2v_inst15(
@@ -103,17 +115,14 @@ ram	b2v_inst15(
 	.clock(clk),
 	.address(mem_addr_bus[9:0]),
 	.data(mem_data_bus),
-	.q(SYNTHESIZED_WIRE_0));
+	.q(SYNTHESIZED_WIRE_2));
 
 assign	system_reset =  ~reset;
-
-assign	vga_clk = cpu_clk;
-
 
 
 buffer_tri	b2v_inst2(
 	.en(DFFE_inst9),
-	.in(SYNTHESIZED_WIRE_0),
+	.in(SYNTHESIZED_WIRE_2),
 	.out(mem_data_bus));
 	defparam	b2v_inst2.BUS_WIDTH = 32;
 
@@ -125,6 +134,8 @@ assign	ram_read = mem_read & cs_ram;
 chip_select	b2v_inst5(
 	.address(mem_addr_bus),
 	.cs_ram(cs_ram));
+
+assign	cpu_clk = SYNTHESIZED_WIRE_3 & SYNTHESIZED_WIRE_8;
 
 
 vga_module	b2v_inst7(
@@ -139,24 +150,23 @@ vga_module	b2v_inst7(
 
 
 
-always@(posedge clk or negedge SYNTHESIZED_WIRE_2 or negedge SYNTHESIZED_WIRE_1)
+always@(posedge cpu_clk or negedge SYNTHESIZED_WIRE_6 or negedge SYNTHESIZED_WIRE_5)
 begin
-if (!SYNTHESIZED_WIRE_2)
+if (!SYNTHESIZED_WIRE_6)
 	begin
 	DFFE_inst9 <= 0;
 	end
 else
-if (!SYNTHESIZED_WIRE_1)
+if (!SYNTHESIZED_WIRE_5)
 	begin
 	DFFE_inst9 <= 1;
 	end
 else
-if (SYNTHESIZED_WIRE_3)
+if (SYNTHESIZED_WIRE_7)
 	begin
 	DFFE_inst9 <= ram_read;
 	end
 end
 
-assign	cpu_clk = clk;
 
 endmodule
